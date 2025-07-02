@@ -37,10 +37,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     'accounts',
     'home',
     'learn',
-    'quiz',
+    'quiz', 
+
+    # 앱 추가
+    'feedback',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +76,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "herethonProject.wsgi.application"
 
+# 추가: 커스텀유저 설정
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -108,17 +114,20 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'Asia/Seoul' # 한국 시간대로 변경
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False # 한국 시간대로 변경
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
