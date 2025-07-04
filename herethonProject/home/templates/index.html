@@ -9,7 +9,28 @@
 <body>
     <h1>home</h1>
     <div>
-        <a href="{% url 'accounts:logout' %}">로그아웃</a>
+        <a href="{% url 'accounts:signup' %}">회원가입</a>
     </div>
+    {% if user.is_authenticated %}
+    <div>
+        <a href="{% url 'accounts:logout' %}">로그아웃</a>
+        <p>{{ user.name }}</p>
+        <p>{{ user.username }}</p>
+    </div>
+    {% else %}
+    <div>
+        <a href="{% url 'accounts:login' %}">로그인</a>
+    </div>
+    {% endif %}
+    <div>
+        <a href="{% url 'accounts:password_change'%}">비밀번호 변경</a>
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        alert("{{ message|escapejs }}");
+    </script>
+    {% endfor %}
+    {% endif %}
 </body>
 </html>

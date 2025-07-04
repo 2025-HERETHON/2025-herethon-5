@@ -79,6 +79,9 @@ WSGI_APPLICATION = "herethonProject.wsgi.application"
 # 추가: 커스텀유저 설정
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+# 추가: 프로세스 종료 시 세션 만료
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
