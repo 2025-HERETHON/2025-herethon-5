@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
+from .models import LearningRecord
 
 # 회원가입
 def signup(request):
@@ -16,11 +21,15 @@ def signup(request):
 # 로그인
 def login(request):
     if request.method == "POST":
-        username=request.POST['username']
-        password=request.POST['password']
+        username = request.POST['username']
+        password = request.POST['password']
+        remember_me = bool(request.POST.get('remember_me'))
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
+            if not remember_me:
+                request.session.set_expiry(0)
+                request.session.modified = True
             print('로그인 성공')
             return redirect('home')
         else: 
@@ -34,3 +43,23 @@ def logout(reqeust):
     auth_logout(reqeust)
     print('로그아웃 성공')
     return redirect('home')
+
+# 비밀번호 변경
+@login_required
+def password_change(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, "비밀번호가 성공적으로 변경되었습니다!")
+            return redirect('home')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'password_change.html', {'form':form})
+
+# 학습 기록
+@login_required
+def learn_record(request):
+    records = LearningRecord.objects.filter(user=request.user).order_by('-updated_at')
+    return render(request, 'learn_record.html', {'records':records})

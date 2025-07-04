@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <h2>{{ quiz.question }}</h2>
+
+<form method="post">
+  {% csrf_token %}
+
+  {% if quiz.question_type == "ox" %}
+    <button type="submit" name="answer" value="O">O</button>
+    <button type="submit" name="answer" value="X">X</button>
+  {% elif quiz.question_type == "choice" %}
+    <button type="submit" name="answer" value="1">{{ quiz.choice1 }}</button><br>
+    <button type="submit" name="answer" value="2">{{ quiz.choice2 }}</button><br>
+    <button type="submit" name="answer" value="3">{{ quiz.choice3 }}</button>
+  {% endif %}
+</form>
+
+{% if is_correct is not None %}
+  <div>
+    {% if is_correct %}
+      <p style="color:green;">✅ 정답입니다!</p>
+    {% else %}
+      <p style="color:red;">❌ 오답입니다!</p>
+    {% endif %}
+    <p>{{ quiz.explanation }}</p>
+  </div>
+{% endif %}
+
+</body>
+</html>
