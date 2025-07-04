@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커리큘럼</title>
+</head>
+<body>
+    <!-- 이전(커리큘럼) -->
+    <!-- 저장 전 학습을 종료하시겠습니까? -->
+    <a href="{% url 'learn:curriculum' curriculum.category.slug %}">←</a>
+    <br/>
+
+    <!-- 제목 -->
+    <h1>{{ curriculum.title }}</h1>
+
+    <!-- 단계 표시 -->
+    1 학습하기 2 퀴즈 풀기 3 학습 완료
+    <br/>
+    
+    <!-- 소제목&본문 내용 -->
+    {% for section in sections %}
+        <h3>{{ section.subtitle }}</h3>
+        <p>{{ section.content|linebreaksbr }}</p>
+        <!-- |linebreaksbr: 줄바꿈 포함 -->
+        <br/>
+    {% empty %}
+        아직 등록된 내용이 없습니다. 잠시만 기다려주세요.
+    {% endfor %}
+    
+    <!-- 퀴즈 풀기 단계로 -->
+    <form method="GET" action="#">
+        <button type="submit">완료</button>
+    </form>
+</body>
+</html>

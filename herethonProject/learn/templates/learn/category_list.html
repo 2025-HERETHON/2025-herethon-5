@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습 목록</title> <!--카테고리 목록-->
+</head>
+<body>
+    <!-- 이전(첫화면) -->
+    <a href="#">←</a>
+    <br/>
+
+    <!-- 카테고리 목록 나열 (개념, 사건, 인물, 역사) -->
+    {% for category in categories %}
+        <a href = "{% url 'learn:curriculum' category.slug %}">{{ category.name }}</a>
+        <br/>
+    {% empty%}
+        등록된 학습이 없습니다.
+    {% endfor %}
+</body>
+</html>
