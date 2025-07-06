@@ -36,10 +36,16 @@
 .input_container>input{
     width:418px;
     height:59px;
-    border:1px solid #ABABAB;
+    border:0.4px solid #ABABAB;
     border-radius:10px;
     color:#ABABAB;
     padding-left:18px;
+}
+input:hover{
+    border:0.6px solid black;
+}
+.password-wrapper>input:hover{
+    border: 0.6px solid black;
 }
 
 .password-wrapper{
@@ -48,7 +54,7 @@
 .password-wrapper>input{
     width:418px;
     height:59px;
-    border:1px solid #ABABAB;
+    border:0.4px solid #ABABAB;
     border-radius:10px;
     color:#ABABAB;
     padding-left:18px;
