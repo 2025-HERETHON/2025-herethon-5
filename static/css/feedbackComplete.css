@@ -1,0 +1,58 @@
+body {
+  background: #f3eefd;
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+.complete-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 235px;
+  margin-bottom: 500px;
+}
+
+.complete-icon svg {
+  background-color: #000;
+}
+
+.complete-message {
+  font-size: 28px;
+  color: #4d0099;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.35;
+}
+
+.complete-sub-message {
+  color: #b6a1f0;
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.complete-btn {
+  outline: none;
+  background: #4d0099;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 56px;
+  width: 260px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.complete-btn:hover {
+  background: #3a0070;
+}

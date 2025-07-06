@@ -1,11 +1,9 @@
-/* 전체 화면 배경과 기본 세팅 */
 body {
   margin: 0;
   background: #f7f7f7;
   font-family: "Pretendard";
 }
 
-/* 컨테이너 - 중앙정렬, 최대너비 */
 #container {
   min-height: 100vh;
   display: flex;
@@ -14,7 +12,6 @@ body {
   align-items: center;
 }
 
-/* 섹션 공통 (화면 중앙정렬) */
 section {
   width: 100vw;
   min-height: 100vh;
@@ -23,9 +20,8 @@ section {
   align-items: center;
 }
 
-/* ------- 인트로 ------- */
 #intro {
-  background: #4d0099; /* 진한 보라 */
+  background: #4d0099;
   position: relative;
 }
 
@@ -46,7 +42,7 @@ section {
 }
 
 .intro-header img {
-  width: 330px; /* 로고 크기 */
+  width: 330px;
   margin-bottom: 30px;
   display: block;
   margin-left: auto;
@@ -60,7 +56,6 @@ section {
   margin-bottom: 0px;
 }
 
-/* ------- 메인 ------- */
 #main {
   justify-content: center;
   align-items: center;
