@@ -103,3 +103,31 @@ a:visited {
     font-weight: 600;
 
 }
+
+.checkbox-container input[type='checkbox'] {
+    display:none;
+}
+
+.checkbox-container label{
+    position:relative;
+    padding-left:25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size:14px;
+}
+.checkbox-container label::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ABABAB;
+    background-color: white;
+}
+/* 체크되었을 때: 검정 네모 */
+.checkbox-container input[type="checkbox"]:checked + label::before {
+  background-color: black;
+  border: 1px solid black;
+}
