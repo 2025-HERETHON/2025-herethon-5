@@ -41,6 +41,25 @@
     color:#ABABAB;
     padding-left:18px;
 }
+
+.password-wrapper{
+    position:relative;
+}
+.password-wrapper>input{
+    width:418px;
+    height:59px;
+    border:1px solid #ABABAB;
+    border-radius:10px;
+    color:#ABABAB;
+    padding-left:18px;
+}
+.password-wrapper>img{
+    position: absolute;
+    right:50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
 .button-container{
     width:436px;
     height:59px;
