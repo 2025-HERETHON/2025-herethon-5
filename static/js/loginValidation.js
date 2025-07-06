@@ -12,22 +12,6 @@ function validateInputs() {
     const isIdValid = engRegex.test(idValue);
     const isPasswordValid = /^[A-Za-z]{8,}$/.test(passwordValue);
 
-    if(isIdValid){
-        idInput.style.backgroundColor='rgba(189, 174, 217, 0.20)';
-        idInput.style.borderColor= '#BDAED9';
-        idInput.style.color="black";
-    } else {
-        idInput.style.backgroundColor = 'white';
-    }
-
-    if (isPasswordValid) {
-        passwordInput.style.backgroundColor = 'rgba(189, 174, 217, 0.20)';
-        passwordInput.style.borderColor= '#BDAED9';
-        passwordInput.style.color="black";
-    } else {
-        passwordInput.style.backgroundColor = 'white';
-    }
-
 
     if(isIdValid && isPasswordValid) {
         submitBtn.classList.add('active');
