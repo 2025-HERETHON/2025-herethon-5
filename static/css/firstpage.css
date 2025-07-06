@@ -1,0 +1,167 @@
+/* 전체 화면 배경과 기본 세팅 */
+body {
+  margin: 0;
+  background: #f7f7f7;
+  font-family: "Pretendard";
+}
+
+/* 컨테이너 - 중앙정렬, 최대너비 */
+#container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 섹션 공통 (화면 중앙정렬) */
+section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------- 인트로 ------- */
+#intro {
+  background: #4d0099; /* 진한 보라 */
+  position: relative;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.intro-header p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.intro-header img {
+  width: 330px; /* 로고 크기 */
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-graphic img {
+  width: 456px;
+  display: block;
+  margin-top: 56px;
+  margin-bottom: 0px;
+}
+
+/* ------- 메인 ------- */
+#main {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff url("../assets/background.png") no-repeat bottom center;
+  background-size: 100% 50%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container img {
+  width: 330px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+}
+
+.main-quote {
+  color: #4d0099;
+  font-size: 1.08rem;
+  text-align: center;
+  font-style: normal;
+  margin: 150px 0 15px 0;
+}
+
+.main-quote strong {
+  font-size: 1.14rem;
+  display: block;
+  margin-bottom: 10px;
+  color: #4d0099;
+  font-weight: bold;
+}
+
+.main-quote footer {
+  color: #4d0099;
+  font-size: 0.92rem;
+  font-style: normal;
+  margin-top: 22px;
+}
+
+.main-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 200px;
+  width: 100%;
+  position: relative;
+}
+
+.login-warning-popup {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 140px;
+  transform: translateX(-50%);
+  color: #6c3f9c;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 2;
+}
+.login-warning-popup.visible {
+  display: block;
+  opacity: 1;
+}
+
+#start-btn {
+  background: #4d0099;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 19px 81px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(122, 63, 255, 0.1);
+}
+#start-btn:hover {
+  background: #3a0070;
+}
+
+#auth-btn {
+  background: #fff;
+  color: #4d0099;
+  border: 0.8px solid #4d0099;
+  border-radius: 30px;
+  font-size: 1.06rem;
+  font-weight: 600;
+  padding: 19px 81px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  width: 100%;
+}
+#auth-btn:hover {
+  background: #f4eeff;
+  border-color: #4d0099;
+  color: #4d0099;
+}
