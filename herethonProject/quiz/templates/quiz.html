@@ -6,32 +6,49 @@
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Quiz</h1>
+    <!-- 이전(커리큘럼) -->
+    <!-- 저장 전 학습을 종료하시겠습니까? -->
+    <a href="{% url 'learn:curriculum' category_slug %}">←</a>
+    <br/>
+
+    <h1>{{ curriculum.id }}. {{ curriculum.title }}</h1>
+
+    <!-- 단계 표시 -->
+    1 학습하기 2 퀴즈 풀기 3 학습 완료
+
     <h2>{{ quiz.question }}</h2>
 
-<form method="post">
-  {% csrf_token %}
-
-  {% if quiz.question_type == "ox" %}
-    <button type="submit" name="answer" value="O">O</button>
-    <button type="submit" name="answer" value="X">X</button>
-  {% elif quiz.question_type == "choice" %}
-    <button type="submit" name="answer" value="1">{{ quiz.choice1 }}</button><br>
-    <button type="submit" name="answer" value="2">{{ quiz.choice2 }}</button><br>
-    <button type="submit" name="answer" value="3">{{ quiz.choice3 }}</button>
-  {% endif %}
-</form>
-
-{% if is_correct is not None %}
-  <div>
-    {% if is_correct %}
-      <p style="color:green;">✅ 정답입니다!</p>
-    {% else %}
-      <p style="color:red;">❌ 오답입니다!</p>
+  <form method="post">
+    {% csrf_token %}
+    {% if is_correct is None %}
+      {% if quiz.question_type == "ox" %}
+        <button type="submit" name="answer" value="O">O</button>
+        <button type="submit" name="answer" value="X">X</button>
+      {% elif quiz.question_type == "choice" %}
+        <button type="submit" name="answer" value="1">{{ quiz.choice1 }}</button><br>
+        <button type="submit" name="answer" value="2">{{ quiz.choice2 }}</button><br>
+        <button type="submit" name="answer" value="3">{{ quiz.choice3 }}</button>
+      {% endif %}
     {% endif %}
-    <p>{{ quiz.explanation }}</p>
-  </div>
-{% endif %}
+  </form>
+
+  {% if is_correct is not None %}
+    <div>
+      {% if is_correct %}
+        <p style="color:green;">✅ 정답입니다!</p>
+      {% else %}
+        <p style="color:red;">❌ 오답입니다!</p>
+      {% endif %}
+      <p>{{ quiz.explanation|linebreaksbr }}</p>
+      <!-- |linebreaksbr: 줄바꿈 포함 -->
+    </div>
+
+    <!-- 학습 완료 단계로 (정답 제출 후 완료 버튼 보여주기) -->
+    <form method="GET" action="{% url 'learn:learn_complete' curriculum.id %}">
+        <button type="submit">완료</button>
+    </form>
+  {% endif %}
+  <br/>
 
 </body>
 </html>

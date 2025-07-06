@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모든 커리큘럼</title>
+</head>
+<body>
+    <!-- 이전(커리큘럼) -->
+    <a href="{% url 'learn:category_list' %}">←</a>
+    <br/>
+
+    <!-- 제목 -->
+    <h3>{{ category.name }}</h3>
+
+    <!-- 내용 -->
+    <div>
+        <p>대단해요!</p>
+        <p>{{ category.name }} {{ curriculums_with_status|length }}강 모두 학습을 완료하였어요</p>
+        
+        <!-- 이미지 -->
+        
+        <p>해당하는 강좌를 클릭하면 학습했던 내용을 다시 볼 수 있고,</p>
+
+        <p>
+            <a href="{% url 'learn:category_list' %}">홈으로</a> 
+            돌아가서 다른 파트를 학습할 수도 있어요.
+        </p>
+    </div>
+    <br/>
+    <br/>
+    
+    <!-- 커리큘럼 나열 -->
+    {% for item in curriculums_with_status %}
+    <div>
+        {% if item.is_accessible %}
+            <h3><a href="{% url 'learn:curriculum_detail' item.curriculum.id %}">
+                {{ item.curriculum.title }}
+            </a>
+            {% if item.is_completed %}✅{% endif %}
+            </h3>
+        {% else %}
+            <h3 style="color:gray;">{{ item.curriculum.title }} (먼저 이전 강의를 완료하세요)</h3>
+        {% endif %}
+        <p>{{ item.curriculum.explanation }}</p>
+    </div>
+{% empty %}
+    <p>등록된 커리큘럼이 없습니다.</p>
+{% endfor %}
+
+</body>
+</html>

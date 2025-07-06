@@ -12,7 +12,7 @@
     <br/>
 
     <!-- 제목 -->
-    <h1>{{ curriculum.title }}</h1>
+    <h1>{{ curriculum.id }}. {{ curriculum.title }}</h1>
 
     <!-- 단계 표시 -->
     1 학습하기 2 퀴즈 풀기 3 학습 완료
@@ -27,9 +27,16 @@
     {% empty %}
         아직 등록된 내용이 없습니다. 잠시만 기다려주세요.
     {% endfor %}
+
+    <!-- 출처 -->
+    <h3>출처</h3>
+    <hr/>
+    {{ curriculum.source|linebreaksbr }}
+    <!-- |linebreaksbr: 줄바꿈 포함 -->
+    <hr/>
     
     <!-- 퀴즈 풀기 단계로 -->
-    <form method="GET" action="#">
+    <form method="GET" action="{% url 'quiz:quiz' curriculum.id %}">
         <button type="submit">완료</button>
     </form>
 </body>

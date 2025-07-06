@@ -17,12 +17,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('', include('home.urls')),
     path('feedback/', include('feedback.urls')),
-    path('quiz/', include('quiz.urls')),
-    path('learn/',include('learn.urls')),
+    path('quiz/', include('quiz.urls',namespace='quiz')),
+    path('learn/',include('learn.urls', namespace='learn')),
 ]
+
+# 이미지 필드
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
