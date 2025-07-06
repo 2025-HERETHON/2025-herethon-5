@@ -1,14 +1,14 @@
-.signup-container{
+.login-container{
     width:100%;
     display:flex;
     justify-content: center;
     align-items: center;
     height:100vh;
 }
-.signup-box{
+.login-box{
     display:flex;
     width:505px;
-    height:757px;
+    height:602px;
     border:1px solid #ABABAB;
     border-radius:20px;
     flex-direction: column;
@@ -76,4 +76,11 @@ a{
 
 a:visited {
   color: inherit;
+}
+.checkbox-container{
+    margin-top:25px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+
 }
