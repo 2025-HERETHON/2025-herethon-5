@@ -282,12 +282,6 @@ body {
   border-color: #000;
   border-width: 0.6px;
 }
-.pw-form-input:focus {
-  outline: none;
-  border-color: #bdaed9;
-  background: #bdaed9;
-  opacity: 0.2;
-}
 
 .pw-btn-wrap {
   text-align: right;
