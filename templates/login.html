@@ -18,7 +18,7 @@
                 </div>
                 <div class="input_container">
                     <p>아이디</p>
-                    <input type="text" placeholder="영문 아이디를 입력해주세요.">
+                    <input type="text" id="id" placeholder="영문 아이디를 입력해주세요.">
                 </div>
                 <div class="input_container">
                     <p>비밀번호</p>
@@ -32,7 +32,7 @@
                     <label for="remember">로그인 정보 기억하기</label>
                 </div>
                 <div class="button-container">
-                    <a href="../templates/login.html"><div class="button">로그인하기</div></a>
+                    <div class="button" id="submitBtn">로그인하기</div>
                 </div>
             </div>
             <div class="login-text">
@@ -43,5 +43,6 @@
     </div>
     <script src="../static/js/passwordblind.js"></script>
     <script src="../static/js/placeholderblind.js"></script>
+    <script src="../static/js/loginValidation.js"></script>
 </body>
 </html>
