@@ -30,6 +30,7 @@ body {
   height: 34px;
   margin-right: auto;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .profile-icon {
@@ -37,6 +38,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .profile-icon img {

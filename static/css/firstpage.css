@@ -23,6 +23,7 @@ section {
 #intro {
   background: #4d0099;
   position: relative;
+  cursor: pointer;
 }
 
 .intro-content {
