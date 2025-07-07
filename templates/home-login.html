@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습 목록</title>
+    {% load static %}
+    <link rel="stylesheet" href="../static/css/homepage.css">
+</head>
+<body>
+    <div>
+        <header>
+            <a href="{% url 'home' %}" class="icon"><img src="../static/assets/img/arrow.svg"></a>
+            <span class="logo"><img src="../static/assets/img/logo.svg"></span>
+
+            <span class="account">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <img src="../static/assets/img/account.svg">
+                    </button>
+                    <div class="dropdown-content">
+                        {% if user.is_authenticated %}
+                            <p class="name">{{ user.name }}님</p>
+                            <p class="add">@likelion</p><hr class="line">
+                            <a href="{% url 'accounts:learn_record' %}">나의 학습</a><hr class="line">
+                            <a href="{% url 'accounts:password_change' %}">비밀번호 변경</a><hr class="line">
+                            <a href="{% url 'feedback_create' %}">의견 보내기</a><hr class="line">
+                            <a href="{% url 'accounts:logout' %}">로그아웃</a>
+                        {% else %}
+                            <a href="{% url 'accounts:login' %}">로그인</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </span>
+        </header>
+        <hr class="line">
+
+        <main>
+            {% for item in categories_with_progress %}
+                <section class="notion-section">
+                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
+                        <div id="notion-page" class="notion-page">
+                            <h1 id="notion" class="notion">
+                                {{ item.category.name }}
+                            </h1>
+                            <span id="progress-notion">{{ item.completed }} / {{ item.total }}</span>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="event-section">
+                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
+                        <div id="event-page" class="event-page">
+                            <h1 id="event" class="event">
+                                {{ item.category.name }}
+                            </h1>
+                            <span id="progress-event">{{ item.completed }} / {{ item.total }}</span>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="person-section">
+                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
+                        <div id="person-page" class="person-page">
+                            <h1 id="person" class="person">
+                                {{ item.category.name }}
+                            </h1>
+                            <span id="progress-person">{{ item.completed }} / {{ item.total }}</span>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="history-section">
+                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
+                        <div id="history-page" class="history-page">
+                            <h1 id="history" class="history">
+                                {{ item.category.name }}
+                            </h1>
+                            <span id="progress-history">{{ item.completed }} / {{ item.total }}</span>
+                        </div>
+                    </a>
+                </section>
+            {% empty %}
+                <p>등록된 카테고리가 없습니다.</p>
+            {% endfor %}
+        </main>
+    </div>
+
+    <script src="../static/js/home.js" ></script>
+</body>
+</html>
