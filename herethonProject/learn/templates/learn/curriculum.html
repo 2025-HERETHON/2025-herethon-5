@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커리큘럼</title>
+</head>
+<body>
+    <!-- 이전(카테고리) -->
+    <a href="{% url 'learn:category_list' %}">←</a>
+    <br/>
+
+    <h2>{{ category.name }}</h2>
+
+    <!-- 커리큘럼 나열 -->
+    {% for item in curriculums_with_status %}
+        <div>
+            {% if item.is_accessible %}
+                <h3>
+                <a href="{% url 'learn:curriculum_detail' item.curriculum.id %}">{{ item.curriculum.title }}</a>
+                {% if item.is_completed %}✅{% endif %}
+                </h3>
+            {% else %}
+                <h3 style="color:gray;">{{ item.curriculum.title }}</h3>
+            
+            {% endif %}
+            <p>{{ item.curriculum.explanation }}</p>
+        </div>
+    {% empty %}
+        등록된 커리큘럼이 없습니다.
+    {% endfor %}
+</body>
+</html>

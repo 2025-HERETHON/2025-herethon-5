@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/firstpage.css' %}" />
+    <title>젠터러시</title>
+  </head>
+  <body>
+    <div id="container">
+      <section id="intro">
+        <div class="intro-content">
+          <header class="intro-header">
+            <p>최초의 페미니즘 마이크로러닝 플랫폼</p>
+            <img src="{% static 'assets/logo_white.svg' %}" alt="젠터러시 로고" />
+          </header>
+          <div class="intro-graphic">
+            <img
+              src="{% static 'assets/logo_graphic.svg' %}"
+              alt="젠터러시 로고 그래픽"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="main">
+        <div class="main-container">
+          <img src="{% static 'assets/logo.svg' %}" alt="로고" />
+          <blockquote class="main-quote">
+            <strong>“여성은 태어나는 것이 아니라 만들어지는 것이다”</strong>
+            <footer>시몬 드 보부아르</footer>
+          </blockquote>
+
+          <div class="main-btn-container">
+            <p class="login-warning-popup">
+              로그인 없이 학습하면 내용이 저장되지 않아요!
+            </p>
+            <!--이주연_페이지 이동을 위해 a태그로 수정/css 수정 필요-->
+            <!-- <button id="start-btn"><a  href="{% url 'home'%}">학습 시작하기</a></button>
+            <button id="auth-btn"><a href="{% url 'accounts:signup'%}">회원가입/로그인</a></button> -->
+            <a id="start-btn" href="{% url 'home'%}">학습 시작하기</a>
+            <a id="auth-btn" href="{% url 'accounts:signup'%}">회원가입/로그인</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="{% static 'js/firstpage.js' %}"></script>
+  </body>
+</html>

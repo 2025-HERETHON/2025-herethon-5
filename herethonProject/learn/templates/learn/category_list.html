@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습 목록</title> <!--카테고리 목록-->
+</head>
+<body>
+    <!-- 이전(첫화면)-->
+    <a href="{% url 'home' %}">←</a>
+
+    <!-- 상단 프로필( 로그인 / 비로그인 ) 
+    {% if user.is_authenticated %}
+    <div>
+        <h4>{{ user.name }}님</h4>
+        <a href="{% url 'accounts:learn_record'%}">나의 학습</a>
+        <br/>
+        <a href="{% url 'accounts:password_change'%}">비밀번호 변경</a>
+        <br/>
+        <a href="{% url 'feedback_create'%}">의견 보내기</a>
+        <br/>
+        <a href="{% url 'accounts:logout' %}">로그아웃</a>
+    </div>
+
+    {% else %}
+    <div>
+        <a href="{% url 'accounts:login' %}">로그인</a>
+    </div>
+    {% endif %}
+    <br/>
+    -->
+
+    <!-- 카테고리 목록 나열 (개념, 사건, 인물, 역사) -->
+    {% for item in categories_with_progress %}
+    <div>
+        <a href="{% url 'learn:curriculum' item.category.slug %}">{{ item.category.name }}</a>
+        {{ item.completed }} / {{ item.total }}
+    </div>
+    {% empty %}
+        등록된 카테고리가 없습니다.
+    {% endfor %}
+
+</body>
+</html>
