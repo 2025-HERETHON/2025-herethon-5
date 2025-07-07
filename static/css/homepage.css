@@ -34,6 +34,15 @@ header {
     margin-right: 50px;
 }
 
+.notion-section, .event-section, .person-section, .history-section {
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* 섹션의 배경색이 흰색이거나 투명하게 하여 클릭되지 않도록 . */
+    background-color: transparent; /* 섹션의 크기를 제한 or 패딩/마진을 제거하여 불필요한 클릭 영역을 없애기 */
+    margin: 0;
+    padding: 0;
+}
+
 /* 각 섹션 컨테이너 (배경 이미지) 공통 스타일 */
 section .notion-page,
 section .event-page,
@@ -44,8 +53,8 @@ section .history-page {
     border-radius: 40px;
     border: none;
     margin: 0 auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex; 
     align-items: center; /* 세로 중앙 정렬 */
     position: relative; /* 자식 요소의 절대 위치 지정을 위해 설정 */
@@ -169,19 +178,4 @@ section .history-page {
     text-decoration: none;
     white-space: nowrap; /* 텍스트가 잘리지 않게 */
     padding-left: 30px;
-}
-
-/*  ✅ home-logout.html 부분 */
-.account-login {
-    margin-left: auto;
-    margin-right: 100px;
-    color: #D9D9D9;
-    font-family: "Pretendard Variable";
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.account-login:hover {
-    color: #4D0099
 }
