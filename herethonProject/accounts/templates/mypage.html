@@ -1,26 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/mypage.css" />
+    <link rel="stylesheet" href="{% static 'css/mypage.css' %}" />
     <title>마이페이지</title>
   </head>
   <body>
     <div class="mypage-container">
       <header class="mypage-header">
-        <img src="../static/assets/backbtn.svg" class="back-btn" />
+        <img src="{% static 'assets/backbtn.svg' %}" class="back-btn" />
+        <a href="{% url 'home'%}"><!--이주연_로고 클릭 시 홈으로 이동-->
         <img
-          src="../static/assets/logo.svg"
+          src="{% static 'assets/logo.svg' %}"
           alt="젠터러시 로고"
           class="mypage-logo"
-        />
+        /></a>
         <div class="profile-icon">
-          <img src="../static/assets/profile.svg" alt="프로필" />
+          <img src="{% static 'assets/profile.svg' %}" alt="프로필" />
         </div>
       </header>
       <div class="mypage-content">
-        <nav class="mypage-nav">
+        <nav class="mypage-nav"> <!--이주연_페이지를 따로 만드는게 좋을 거 같습니다-->
           <ul>
             <li class="nav-tab active" data-target="learning">나의 학습</li>
             <li class="nav-tab" data-target="password-change">비밀번호 변경</li>
@@ -97,8 +99,7 @@
             <form id="pw-form">
               <div class="pw-form-group">
                 <label class="pw-form-label" for="pw-current"
-                  >기존 비밀번호</label
-                >
+                  >기존 비밀번호</label>
                 <input
                   class="pw-form-input"
                   type="password"
@@ -168,6 +169,6 @@
         </main>
       </div>
     </div>
-    <script src="../static/js/mypage.js"></script>
+    <script src="{% static 'js/mypage.js' %}"></script>
   </body>
 </html>

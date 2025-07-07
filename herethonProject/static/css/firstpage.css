@@ -137,6 +137,7 @@ section {
   padding: 19px 81px;
   cursor: pointer;
   width: 100%;
+  text-align: center;
   box-shadow: 0 2px 8px rgba(122, 63, 255, 0.1);
 }
 #start-btn:hover {
@@ -158,4 +159,10 @@ section {
   background: #f4eeff;
   border-color: #4d0099;
   color: #4d0099;
+}
+
+/* 이주연_a태그 밑줄 제거/색상 유지 추가 */
+a {
+  text-decoration: none;
+  color: inherit;
 }

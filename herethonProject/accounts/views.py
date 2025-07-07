@@ -63,3 +63,7 @@ def password_change(request):
 def learn_record(request):
     records = LearningRecord.objects.filter(user=request.user).order_by('-updated_at')
     return render(request, 'learn_record.html', {'records':records})
+
+# 마이페이지 이동
+def mypage(request):
+    return render(request, 'mypage.html')

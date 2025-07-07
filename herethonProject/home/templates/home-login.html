@@ -22,9 +22,9 @@
                         <div class="dropdown-content">
                             <p class="name">{{ user.name }}님</p>
                             <p class="add">@{{ user.username }}</p><hr class="line">
-                            <a href="{% url 'accounts:learn_record' %}">나의 학습</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
-                            <a href="{% url 'accounts:password_change' %}">비밀번호 변경</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
-                            <a href="{% url 'feedback_create' %}">의견 보내기</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                            <a href="{% url 'accounts:mypage' %}">나의 학습</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                            <a href="{% url 'accounts:mypage' %}">비밀번호 변경</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                            <a href="{% url 'accounts:mypage' %}">의견 보내기</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
                             <a href="{% url 'accounts:logout' %}">로그아웃</a> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
                         </div>  
                     </div>
