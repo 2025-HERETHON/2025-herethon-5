@@ -121,7 +121,6 @@ body {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
 }
 
 .filter-tabs .tab.active {
@@ -278,7 +277,6 @@ body {
   margin-left: 100px;
   font-family: inherit;
   box-sizing: border-box;
-  transition: border-color 0.16s, background 0.16s;
 }
 .pw-form-input:hover {
   border-color: #000;
@@ -298,7 +296,6 @@ body {
   font-weight: 600;
   padding: 15px 52px;
   cursor: pointer;
-  transition: background 0.17s;
 }
 .pw-btn:hover {
   background: #3a0070;
@@ -386,7 +383,6 @@ body {
   font-weight: 600;
   padding: 15px 44px;
   cursor: pointer;
-  transition: background 0.17s;
 }
 .feedback-btn:hover {
   background: #3a0070;

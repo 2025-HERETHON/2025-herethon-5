@@ -136,7 +136,6 @@ section {
   font-weight: 600;
   padding: 19px 81px;
   cursor: pointer;
-  transition: background 0.2s;
   width: 100%;
   box-shadow: 0 2px 8px rgba(122, 63, 255, 0.1);
 }
@@ -153,7 +152,6 @@ section {
   font-weight: 600;
   padding: 19px 81px;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, border-color 0.18s;
   width: 100%;
 }
 #auth-btn:hover {

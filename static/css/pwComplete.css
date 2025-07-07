@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard";
 }
 
 .complete-main {
@@ -46,7 +46,6 @@ body {
   width: 220px;
   cursor: pointer;
   margin-top: 8px;
-  transition: background 0.18s;
 }
 .complete-btn:hover {
   background: #3a0070;
