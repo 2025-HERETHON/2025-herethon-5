@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/css/styles.css">
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <span class="icon"><img src="../static/assets/img/arrow.svg"></span>
+                <span class="logo"><img src="../static/assets/img/logo.svg"></span>
+
+                <span class="account">
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <img src="../static/assets/img/account.svg">
+                        </button>
+                        <div class="dropdown-content">
+                            <p class="name">이도윤님</p>
+                            <p class="add">@likelion</p><hr class="line">
+                            <a href="#">나의 학습</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                            <a href="#">비밀번호 변경</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                            <a href="#">의견 보내기</a><hr class="line"> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                            <a href="#">로그아웃</a> <!--✅ 나중에 페이지 연결할 때 추가할 예정-->
+                        </div>  
+                    </div>
+                </span>
+            </header>
+            <hr class="line">
+
+            <main> <!-- ✅ 페이지 연결할 때 경로 수정 필요 -->
+                <section class="notion-section">
+                    <a href="part-notion.html" class="tag">
+                        <div id="notion-page" class="notion-page">
+                            <h1 id="notion" class="notion">
+                                개념
+                            </h1>
+                            <span id="progress-notion"></span>
+                        </div>
+                    </a>
+                </section>
+                <section class="event-section">
+                    <a href="part-event.html" class="tag">
+                        <div id="event-page" class="event-page">
+                            <h1 id="event" class="event">
+                                사건
+                            </h1>
+                            <span id="progress-event"></span>
+                        </div>
+                    </a>
+                </section>
+                <section class="person-section">
+                    <a href="part-person.html" class="tag"> 
+                        <div id="person-page" class="person-page">
+                            <h1 id="person" class="person">
+                                인물
+                            </h1>
+                            <span id="progress-person"></span>
+                        </div>
+                    </a>
+                </section>
+                <section class="history-section">
+                    <a href="part-history.html" class="tag"> 
+                        <div id="history-page" class="history-page">
+                            <h1 id="history" class="history">
+                                역사
+                            </h1>
+                            <span id="progress-history"></span>   
+                        </div>
+                    </a>
+                </section>
+            </main>
+        </div>
+
+        <script src="../static/js/home.js" ></script>
+
+    </body>
+</html>
