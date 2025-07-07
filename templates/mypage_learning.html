@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/mypage_learning.css" />
+    <title>마이페이지</title>
+  </head>
+  <body>
+    <div class="mypage-container">
+      <header class="mypage-header">
+        <a class="back-btn-link">
+          <img src="../static/assets/backbtn.svg" class="back-btn" />
+        </a>
+        <a class="mypage-logo-link">
+          <img
+            src="../static/assets/logo.svg"
+            alt="젠터러시 로고"
+            class="mypage-logo"
+          />
+        </a>
+        <div class="profile-icon">
+          <img src="../static/assets/profile.svg" alt="프로필" />
+        </div>
+      </header>
+      <div class="mypage-content">
+        <nav class="mypage-nav">
+          <ul>
+            <li class="active"><a href="mypage_learning.html">나의 학습</a></li>
+            <li><a href="mypage_pwChange.html">비밀번호 변경</a></li>
+            <li><a href="mypage_feedback.html">의견 보내기</a></li>
+          </ul>
+        </nav>
+        <main class="mypage-main">
+          <section class="mypage-section learning active">
+            <h1>나의 학습</h1>
+            <p class="mypage-desc">
+              해당하는 강좌를 클릭하여 학습했던 내용을 다시 볼 수 있어요.
+            </p>
+
+            <div class="filter-tabs">
+              <button class="tab active" id="date-tab">날짜별</button>
+              <button class="tab" id="part-tab">파트별</button>
+            </div>
+
+            <hr class="mypage-divider" />
+
+            <div class="study-group-list"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="../static/js/mypage_learning.js"></script>
+  </body>
+</html>
