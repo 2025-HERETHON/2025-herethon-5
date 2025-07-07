@@ -5,52 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="../static/css/signup.css">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
     <div class="signup-container">
         <div class="signup-box">
             <div class="container">
-                <div class="logo">
-                    <img src="../static/assets/logo.png" alt="">
-                </div>
-                <div class="title">
-                    <p>회원가입</p>
-                </div>
-                <div class="input_container">
-                    <p>아이디</p>
-                    <input type="text" id="id" placeholder="영문 아이디를 입력해주세요.">
-                </div>
-                <div class="input_container">
-                    <p>이름</p>
-                    <input type="text" id="name" placeholder="실명을 입력해주세요.">
-                </div>
-                <div class="input_container">
-                    <p>비밀번호</p>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" placeholder="비밀번호를 입력해주세요.(*영문 8자리 이상)">
-                        <img src="../static/assets/Blind.png" id="blindIcon" alt="">
+                <form method = "POST" action="">
+                    {% csrf_token %}
+                    <div class="logo">
+                        <img src="{% static 'assets/logo.png' %}" alt="">
                     </div>
-                </div>
-                <div class="input_container">
-                    <p>비밀번호 확인</p>
-                    <div class="password-wrapper">
-                        <input type="password" id="passwordConfirm" placeholder="비밀번호를 한 번 더 입력해주세요.">
-                        <img src="../static/assets/Blind.png" id="blindIconConfirm" alt="">
+                    <div class="title">
+                        <p>회원가입</p>
                     </div>
-                </div>
-                <div class="button-container">
-                    <div class="button" id="submitBtn">가입하기</div>
-                </div>
+                    <div class="input_container"> <!--이주연_name 속성 추가 - forms.py css 적용 위해 -->
+                        <p>아이디</p>
+                        <input type="text" name="username" id="id" placeholder="영문 아이디를 입력해주세요.">
+                    </div>
+                    <div class="input_container">
+                        <p>이름</p>
+                        <input type="text" name="name" id="name" placeholder="실명을 입력해주세요.">
+                    </div>
+                    <div class="input_container">
+                        <p>비밀번호</p>
+                        <div class="password-wrapper">
+                            <input type="password" name="password1" id="password" placeholder="비밀번호를 입력해주세요.(*영문 8자리 이상)">
+                            <img src="{% static 'assets/Blind.png' %}" id="blindIcon" alt="">
+                        </div>
+                    </div>
+                    <div class="input_container">
+                        <p>비밀번호 확인</p>
+                        <div class="password-wrapper">
+                            <input type="password" name="password2" id="passwordConfirm" placeholder="비밀번호를 한 번 더 입력해주세요.">
+                            <img src="{% static 'assets/Blind.png' %}" id="blindIconConfirm" alt="">
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <!--<div class="button" id="submitBtn">가입하기</div>--> <!--이주연_button으로 수정-->
+                        <button type="submit" class="button" id="submitBtn">가입하기</button>
+                    </div>
+                </form>
             </div>
             <div class="login-text">
                 <p class="text1">이미 계정이 있으신가요?</p>
-                <a href="../templates/login.html"><p class="text2">로그인하기</p></a>
+                <a href="{% url 'accounts:login' %}"><p class="text2">로그인하기</p></a>
             </div>
         </div>
     </div>
-    <script src="../static/js/passwordblind.js"></script>
-    <script src="../static/js/placeholderblind.js"></script>
-    <script src="../static/js/signupValidation.js"></script>
+    <script src="{% static 'js/passwordblind.js' %}"></script>
+    <script src="{% static 'js/placeholderblind.js' %}"></script>
+    <script src="{% static 'js/signupValidation.js' %}"></script>
 </body>
 </html>
