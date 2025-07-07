@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: "Pretendard";
   color: #000;
+  overflow-y: scroll;
 }
 
 .mypage-container {
@@ -20,7 +21,6 @@ body {
 }
 
 .back-btn {
-  font-size: 2rem;
   color: #b8a5e3;
   cursor: pointer;
   margin-right: 18px;
@@ -46,10 +46,6 @@ body {
   height: 40px;
 }
 
-.mypage-nav a {
-  text-decoration: none;
-}
-
 .mypage-content {
   display: flex;
   margin-top: 20px;
@@ -72,16 +68,21 @@ body {
 
 .mypage-nav li {
   font-size: 1.11rem;
-  color: #ababab;
+  color: #ababab; /* 나머지 메뉴는 회색 */
   margin-bottom: 35px;
   cursor: pointer;
   font-weight: 500;
   transition: color 0.15s;
 }
-.mypage-nav li.nav-tab.active {
-  color: #4d0099;
+
+.mypage-nav li.active {
+  color: #4d0099; /* 활성 메뉴만 보라색 */
   font-weight: 700;
-  background: transparent;
+}
+
+.mypage-nav a {
+  text-decoration: none;
+  color: inherit; /* li의 색상 상속 */
 }
 
 .mypage-main {
@@ -104,7 +105,7 @@ body {
 }
 
 .mypage-desc {
-  font-size: 1.04rem;
+  font-size: 18px;
   color: #000000;
   margin-bottom: 36px;
 }
@@ -219,7 +220,7 @@ body {
 
 .study-date {
   color: #c1b2e1;
-  font-size: 0.97rem;
+  font-size: 14px;
   margin-bottom: 12px;
   margin-right: 52px;
   font-weight: 500;
@@ -231,163 +232,4 @@ body {
   background: #bdaed9;
   border-radius: 10px;
   display: inline-block;
-}
-
-/* 비밀번호 변경 */
-.password-change {
-  font-size: 34px;
-  font-weight: 800;
-  margin: 0 0 8px 0;
-  letter-spacing: -0.03em;
-}
-
-.password-change h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 50px;
-  margin-top: 0;
-  letter-spacing: -0.02em;
-}
-
-#pw-form {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  width: 100%;
-}
-
-.pw-form-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0;
-}
-
-.pw-form-label {
-  width: 148px;
-  font-size: 18px;
-  color: #000;
-  font-weight: 500;
-  margin-right: 0;
-  flex-shrink: 0;
-}
-
-.pw-form-input {
-  flex: 1;
-  padding: 18px 20px;
-  border-color: #ababab;
-  border-width: 0.4px;
-  border-radius: 10px;
-  font-size: 1.08rem;
-  margin-left: 100px;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-.pw-form-input:hover {
-  border-color: #000;
-  border-width: 0.6px;
-}
-
-.pw-btn-wrap {
-  text-align: right;
-  margin-top: 120px;
-}
-.pw-btn {
-  background: #4d0099;
-  color: #fff;
-  border: none;
-  border-radius: 18px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 15px 52px;
-  cursor: pointer;
-}
-.pw-btn:hover {
-  background: #3a0070;
-}
-
-/* 의견 보내기 */
-.feedback h1 {
-  font-size: 34px;
-  font-weight: 800;
-  margin: 0 0 8px 0;
-  letter-spacing: -0.03em;
-}
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  margin-top: 34px;
-  width: 100%;
-}
-.input-group {
-  position: relative;
-  width: 100%;
-}
-.part-input {
-  width: 100%;
-  padding: 22px 18px 13px 18px;
-  border-radius: 20px;
-  border: none;
-  font-size: 1.07rem;
-  font-family: inherit;
-  box-sizing: border-box;
-  background: #f5f5f5;
-}
-.part-input::placeholder {
-  color: #bb271a;
-  font-size: 16px;
-}
-
-.opinion-textarea {
-  width: 100%;
-  min-height: 155px;
-  border-radius: 20px;
-  border: none;
-  background: #f5f5f5;
-  font-size: 1.05rem;
-  padding: 20px 24px;
-  color: #555;
-  resize: vertical;
-  box-sizing: border-box;
-  font-family: inherit;
-}
-.opinion-textarea::placeholder {
-  color: #ababab;
-  font-size: 16px;
-}
-
-.email-input {
-  width: 100%;
-  border-radius: 20px;
-  border: none;
-  background: #f5f5f5;
-  font-size: 1.04rem;
-  padding: 18px 24px;
-  margin-bottom: 16px;
-  color: #555;
-  box-sizing: border-box;
-  font-family: inherit;
-}
-.email-input::placeholder {
-  color: #ababab;
-  font-size: 16px;
-}
-.feedback-btn-wrap {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 16px;
-}
-.feedback-btn {
-  background: #4d0099;
-  color: #fff;
-  border: none;
-  border-radius: 18px;
-  font-size: 1.07rem;
-  font-weight: 600;
-  padding: 15px 44px;
-  cursor: pointer;
-}
-.feedback-btn:hover {
-  background: #3a0070;
 }

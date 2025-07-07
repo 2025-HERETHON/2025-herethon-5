@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/mypage_pwChange.css" />
+    <title>마이페이지</title>
+  </head>
+  <body>
+    <div class="mypage-container">
+      <header class="mypage-header">
+        <img src="../static/assets/backbtn.svg" class="back-btn" />
+        <img
+          src="../static/assets/logo.svg"
+          alt="젠터러시 로고"
+          class="mypage-logo"
+        />
+        <div class="profile-icon">
+          <img src="../static/assets/profile.svg" alt="프로필" />
+        </div>
+      </header>
+      <div class="mypage-content">
+        <nav class="mypage-nav">
+          <ul>
+            <li><a href="mypage_learning.html">나의 학습</a></li>
+            <li class="active">
+              <a href="mypage_pwChange.html">비밀번호 변경</a>
+            </li>
+            <li><a href="mypage_feedback.html">의견 보내기</a></li>
+          </ul>
+        </nav>
+        <main class="mypage-main">
+          <section class="mypage-section password-change active">
+            <h1>비밀번호 변경</h1>
+            <form id="pw-form">
+              <div class="pw-form-group">
+                <label class="pw-form-label" for="pw-current"
+                  >기존 비밀번호</label
+                >
+                <input
+                  class="pw-form-input"
+                  type="password"
+                  id="pw-current"
+                  name="current"
+                  placeholder="기존 비밀번호를 입력해주세요."
+                  required
+                />
+              </div>
+              <div class="pw-form-group">
+                <label class="pw-form-label" for="pw-new">새 비밀번호</label>
+                <input
+                  class="pw-form-input"
+                  type="password"
+                  id="pw-new"
+                  name="new"
+                  placeholder="새 비밀번호를 입력해주세요."
+                  required
+                />
+              </div>
+              <div class="pw-form-group">
+                <label class="pw-form-label" for="pw-new2"
+                  >새 비밀번호 확인</label
+                >
+                <input
+                  class="pw-form-input"
+                  type="password"
+                  id="pw-new2"
+                  name="new2"
+                  placeholder="새 비밀번호를 다시 한 번 입력해주세요."
+                  required
+                />
+              </div>
+              <hr class="mypage-divider" />
+              <div class="pw-btn-wrap">
+                <button type="submit" class="pw-btn">변경하기</button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="../static/js//mypage_pwChange.js"></script>
+  </body>
+</html>
