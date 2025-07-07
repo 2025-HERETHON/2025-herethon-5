@@ -34,27 +34,32 @@
         </div>
         <br/>
         
-        <!-- 소제목&본문 내용 -->
-        {% for section in sections %}
-            <h3>{{ section.subtitle }}</h3>
-            <p>{{ section.content|linebreaksbr }}</p>
-            <!-- |linebreaksbr: 줄바꿈 포함 -->
-            <br/>
-        {% empty %}
-            아직 등록된 내용이 없습니다. 잠시만 기다려주세요.
-        {% endfor %}
+        <div class="graybox">
+             <!-- 소제목&본문 내용 -->
+            {% for section in sections %}
+                <h3 class="box_title">{{ section.subtitle }}</h3>
+                <p class="box_content">{{ section.content|linebreaksbr }}</p>
+                <!-- |linebreaksbr: 줄바꿈 포함 -->
+                <br/>
+            {% empty %}
+                아직 등록된 내용이 없습니다. 잠시만 기다려주세요.
+            {% endfor %}
+        </div>
 
         <!-- 출처 -->
-        <h3>출처</h3>
-        <hr/>
-        {{ curriculum.source|linebreaksbr }}
+        <h3 class="source">출처</h3>
+        <div class="source_title">
+            {{ curriculum.source|linebreaksbr }}
+        </div>
         <!-- |linebreaksbr: 줄바꿈 포함 -->
-        <hr/>
+        
         
         <!-- 퀴즈 풀기 단계로 -->
-        <form method="GET" action="{% url 'quiz:quiz' curriculum.id %}">
-            <button type="submit">완료</button>
-        </form>
+         <div class="button_container">
+            <form method="GET" action="{% url 'quiz:quiz' curriculum.id %}">
+                        <button type="submit">완료</button>
+            </form>
+         </div>
      </div>
 </body>
 </html>
