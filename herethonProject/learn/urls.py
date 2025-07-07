@@ -9,5 +9,4 @@ urlpatterns = [
     path('curriculum_detail/<int:id>/',curriculum_detail,name='curriculum_detail'),
     path('learn_complete/<int:curriculum_id>/', learn_complete, name='learn_complete'),
     path('category_complete/<slug:category_slug>/', category_complete, name='category_complete'),
-
 ]
