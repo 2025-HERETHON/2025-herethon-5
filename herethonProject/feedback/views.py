@@ -14,7 +14,7 @@ def feedback_create(request):
             return render(request, 'feedbackComplete.html', {'user': request.user})
     else:
         form = FeedbackModelForm()
-    return render(request, 'feedback_create.html', {'form':form})
+    return render(request, 'mypage_feedback.html', {'form':form})
 
 # 생성만..
 # # 전체 조회

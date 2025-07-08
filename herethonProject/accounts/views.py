@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
@@ -6,6 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from .models import LearningRecord
+from learn.models import Curriculum
 
 # 회원가입
 def signup(request):
@@ -39,8 +40,8 @@ def login(request):
         return render(request, 'login.html')
 
 # 로그아웃
-def logout(reqeust):
-    auth_logout(reqeust)
+def logout(request):
+    auth_logout(request)
     print('로그아웃 성공')
     return redirect('home')
 
@@ -53,17 +54,13 @@ def password_change(request):
             user = form.save()
             update_session_auth_hash(request, user)
             messages.success(request, "비밀번호가 성공적으로 변경되었습니다!")
-            return redirect('home')
+            return render(request, 'pwComplete.html', {'user':user})
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'password_change.html', {'form':form})
+    return render(request, 'mypage_pwChange.html', {'form':form})
 
 # 학습 기록
 @login_required
 def learn_record(request):
     records = LearningRecord.objects.filter(user=request.user).order_by('-updated_at')
-    return render(request, 'learn_record.html', {'records':records})
-
-# 마이페이지 이동
-def mypage(request):
-    return render(request, 'mypage.html')
+    return render(request, 'mypage_learning.html', {'records':records})

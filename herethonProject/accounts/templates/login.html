@@ -27,7 +27,9 @@
                         <p>비밀번호</p>
                         <div class="password-wrapper">
                             <input type="password" name="password" id="password" placeholder="비밀번호를 입력해주세요.(*영문 8자리 이상)">
-                            <img src="{% static 'assets/Blind.png' %}" id="blindIcon" alt="">
+                            <img src="{% static 'assets/Blind.png' %}" id="blindIcon" alt="" 
+                                data-blind="{% static 'assets/Blind.png' %}" 
+                                data-blind1="{% static 'assets/Blind (1).png' %}">
                         </div>
                         {% if error_message %}
                             <p style="color:#e02424;">{{ error_message }}</p>

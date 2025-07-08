@@ -110,7 +110,7 @@ def learn_complete(request, curriculum_id):
         LearningRecord.objects.update_or_create(
             user=request.user,
             category=curriculum.category,
-            content_title=curriculum.title
+            content_title=curriculum, # content_title 필드 변경으로 코드 수정
         )
     else:
         completed = request.session.get('completed_curriculums', [])

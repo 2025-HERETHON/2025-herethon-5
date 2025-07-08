@@ -17,7 +17,7 @@ def quiz_view(request, curriculum_id):
         record, created = LearningRecord.objects.update_or_create(
             user=request.user,
             category=curriculum.category,
-            content_title=curriculum.title,
+            content_title=curriculum,
             defaults={}
         )
 
