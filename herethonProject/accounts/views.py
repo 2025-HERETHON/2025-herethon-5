@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
@@ -6,7 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from .models import LearningRecord
-from learn.models import Curriculum
+from collections import defaultdict
 
 # 회원가입
 def signup(request):
@@ -63,4 +63,13 @@ def password_change(request):
 @login_required
 def learn_record(request):
     records = LearningRecord.objects.filter(user=request.user).order_by('-updated_at')
-    return render(request, 'mypage_learning.html', {'records':records})
+
+    records_by_part = defaultdict(list)
+    for record in records:
+        part_name = record.category.name
+        records_by_part[part_name].append(record)
+
+    return render(request, 'mypage_learning.html', {
+        'records_by_date': records,
+        'records_by_part': records_by_part,
+    })
