@@ -23,15 +23,15 @@ const pwForm = document.getElementById("pw-form");
 const pwBtn = document.querySelector(".pw-btn");
 
 function validatePwForm() {
-  const current = currentInput.value;
-  const newPw = newInput.value;
-  const newPw2 = new2Input.value;
+  const current = currentInput.value.trim();
+  const newPw = newInput.value.trim();
+  const newPw2 = new2Input.value.trim();
 
-  // 1. 기존 비밀번호 일치
-  const isCurrentValid = current === REAL_PASSWORD && current.length > 0;
-  // 2. 새 비밀번호: 영문 8자 이상
-  const isNewValid = /^[A-Za-z]{8,}$/.test(newPw);
-  // 3. 새 비밀번호와 확인 일치
+  // 1. 기존 비밀번호는 그냥 값이 있는지만 확인
+  const isCurrentValid = current.length > 0;
+  // 2. 새 비밀번호: 8자 이상이면 OK (영문/숫자/특수문자 허용)
+  const isNewValid = /^.{8,}$/.test(newPw);
+  // 3. 새 비밀번호와 확인이 일치
   const isMatch = newPw === newPw2 && newPw.length > 0;
 
   currentInput.style.backgroundColor = isCurrentValid
@@ -60,9 +60,15 @@ function validatePwForm() {
 });
 
 // 제출(완료 페이지 이동)
+// pwForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   if (validatePwForm()) {
+//     window.location.href = "./pwComplete.html";
+//   }
+// }); //이주연_동작 안돼서 수정
+
 pwForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (validatePwForm()) {
-    window.location.href = "./pwComplete.html";
+  if (!validatePwForm()) {
+    e.preventDefault(); // 유효성 실패한 경우만 막기
   }
 });

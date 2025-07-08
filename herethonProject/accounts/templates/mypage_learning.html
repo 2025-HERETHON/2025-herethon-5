@@ -46,7 +46,19 @@
 
             <hr class="mypage-divider" />
 
-            <div class="study-group-list"></div>
+            <div class="study-group-list">
+              {% if records %}
+                {% for record in records %}
+                  <div class="record-item">
+                      <p><strong>{{ record.content_title }}</strong> ({{ record.get_category_display }})</p>
+                      <p>최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
+                  </div>
+                  <hr>
+                {% endfor %}
+              {% else %}
+                <p>아직 학습 기록이 없습니다.</p>
+              {% endif %}
+            </div>
           </section>
         </main>
       </div>

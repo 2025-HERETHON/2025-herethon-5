@@ -53,7 +53,6 @@ def password_change(request):
             user = form.save()
             update_session_auth_hash(request, user)
             messages.success(request, "비밀번호가 성공적으로 변경되었습니다!")
-            # return redirect('home')
             return render(request, 'pwComplete.html', {'user':user})
     else:
         form = PasswordChangeForm(request.user)

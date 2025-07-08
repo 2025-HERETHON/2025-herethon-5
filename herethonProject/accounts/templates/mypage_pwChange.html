@@ -37,7 +37,7 @@
         <main class="mypage-main">
           <section class="mypage-section password-change active">
             <h1>비밀번호 변경</h1>
-            <form id="pw-form"><!--데이터 넣기위해 name 속성 변경-->
+            <form method="POST" id="pw-form"><!--데이터 넣기위해 name 속성 변경-->
               {% csrf_token %}
               <div class="pw-form-group">
                 <label class="pw-form-label" for="pw-current"
@@ -80,11 +80,23 @@
               <div class="pw-btn-wrap">
                 <button type="submit" class="pw-btn">변경하기</button>
               </div>
+              {% if form.errors %}
+                <ul class="errorlist">
+                  {% for field in form %}
+                    {% for error in field.errors %}
+                      <li>{{ field.label }}: {{ error }}</li>
+                    {% endfor %}
+                  {% endfor %}
+                  {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </form>
           </section>
         </main>
       </div>
     </div>
-    <script src="../static/js/mypage_pwChange.js"></script>
+    <script src="{% static 'js/mypage_pwChange.js' %}"></script>
   </body>
 </html>
