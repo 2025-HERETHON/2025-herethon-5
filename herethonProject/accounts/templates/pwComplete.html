@@ -1,25 +1,26 @@
+{%  load static %}
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/pwComplete.css" />
+    <link rel="stylesheet" href="{% static 'css/pwComplete.css' %}" />
     <title>비밀번호 변경 완료</title>
   </head>
   <body>
     <main class="complete-main">
       <div class="complete-icon">
         <img
-          src="../static/assets/pw_change_complete.svg"
+          src="{% static 'assets/pw_change_complete.svg' %}"
           alt="비밀번호 변경 완료 아이콘"
         />
       </div>
       <h2 class="complete-message">
-        이도윤님,<br />
+        {{user.name}}님,<br />
         비밀번호 변경이 완료되었어요!
       </h2>
       <p class="complete-sub-message">로그인하고 학습하러 가볼까요?</p>
-      <button class="complete-btn">로그인</button>
+      <a class="complete-btn" href="{% url 'accounts:login' %}">로그인</a>
     </main>
   </body>
 </html>

@@ -21,7 +21,7 @@
                     <div class="dropdown-content">
                         {% if user.is_authenticated %}
                             <p class="name">{{ user.name }}님</p>
-                            <p class="add">@likelion</p><hr class="line">
+                            <p class="add">@{{ user.username }}</p><hr class="line">
                             <a href="{% url 'accounts:learn_record' %}">나의 학습</a><hr class="line">
                             <a href="{% url 'accounts:password_change' %}">비밀번호 변경</a><hr class="line">
                             <a href="{% url 'feedback_create' %}">의견 보내기</a><hr class="line">
