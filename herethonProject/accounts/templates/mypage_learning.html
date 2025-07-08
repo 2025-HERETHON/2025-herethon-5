@@ -51,7 +51,7 @@
                 {% for record in records %}
                   <div class="record-item">
                       <p>
-                        <strong>
+                        <strong><!--a태그가 div 감싸도록 -->
                             <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}">
                                 {{ record.curriculum.title }}
                             </a>
