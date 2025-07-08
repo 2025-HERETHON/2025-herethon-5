@@ -16,8 +16,9 @@ function validateInputs() {
 
     const isIdValid = engRegex.test(idValue);
     const isNameValid = korRegex.test(nameValue);
-    const isPasswordValid = /^[A-Za-z]{8,}$/.test(passwordValue);
-    const isPasswordConfirmValid = /^[A-Za-z]{8,}$/.test(passwordConfirmValue);
+    const isPasswordValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordValue);
+    const isPasswordConfirmValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordConfirmValue);
+
 
     if(isIdValid){
         idInput.style.backgroundColor='rgba(189, 174, 217, 0.20)';

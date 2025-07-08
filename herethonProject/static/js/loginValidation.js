@@ -10,7 +10,7 @@ function validateInputs() {
     const passwordValue = passwordInput.value.trim();
 
     const isIdValid = engRegex.test(idValue);
-    const isPasswordValid = /^[A-Za-z]{8,}$/.test(passwordValue);
+    const isPasswordValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordValue);
 
 
     if(isIdValid && isPasswordValid) {
