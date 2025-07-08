@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from learn.models import Category, Curriculum
 from accounts.models import LearningRecord
 
+# category_list = home
 def home(request):
     categories = Category.objects.all().order_by('id')
     
@@ -34,6 +35,7 @@ def home(request):
     }
     return render(request, 'home-login.html', context)
 
+# 로그인한 사용자는 home(category_list) 보여주기
 def first_page(request):
     if request.user.is_authenticated:
         return redirect('home')  
