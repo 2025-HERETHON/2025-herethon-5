@@ -1,17 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="../../static/css/quiz/quiz.css">
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
 </head>
 <body>
     <!-- 이전(커리큘럼) -->
     <!-- 저장 전 학습을 종료하시겠습니까? -->
      <div class="header">
-        <a href="{% url 'learn:curriculum' curriculum.category.slug %}"><img src="../../static/assets/img/arrow.svg" alt=""></a>
-        <img src="../../static/assets/logo2.png" alt="">
+        <a href="{% url 'learn:curriculum' curriculum.category.slug %}"><img src="{% static 'assets/img/arrow.svg' %}" alt=""></a>
+        <img src="{% static 'assets/logo2.png' %}" alt="">
      </div>
      
     <div class="content_container">
@@ -41,40 +42,40 @@
             </div>
         </div>
         <form method="post">
-            <!-- {% csrf_token %}
+            {% csrf_token %}
             {% if is_correct is None %}
-            {% if quiz.question_type == "ox" %} -->
+            {% if quiz.question_type == "ox" %}
             </br>
             <div class="answer_container1">
                 <button class="OX_O" type="submit" name="answer" value="O">O</button>
                 <button class="OX_X"type="submit" name="answer" value="X">X</button>
             </div>
                 </br>
-            <!-- {% elif quiz.question_type == "choice" %} -->
+            {% elif quiz.question_type == "choice" %}
             <div class="answer_container2">
                 <button class="answer1" type="submit" name="answer" value="1">{{ quiz.choice1 }}</button><br>
                 <button class="answer2" type="submit" name="answer" value="2">{{ quiz.choice2 }}</button><br>
                 <button class="answer3" type="submit" name="answer" value="3">{{ quiz.choice3 }}</button>
             </div>
     
-            <!-- {% endif %}
-            {% endif %} -->
+            {% endif %}
+            {% endif %}
         </form>
     
-        <!-- {% if is_correct is not None %} -->
+        {% if is_correct is not None %}
         <div class="answer_container">
             <div class="quiz_answer">
-                <!--{% if is_correct %}-->
+                {% if is_correct %}
                 <div class="true_container">
-                    <img src="../../static/assets/true.png" alt="">
+                    <img src="{% static 'assets/true.png' %}" alt="">
                     <p class="true" style="color:green;">정답입니다!</p>
                 </div>
-                <!--{% else %}-->
+                {% else %}
                 <div class="false_container">
-                    <img src="../../static/assets/false.png" alt="">
+                    <img src="{% static 'assets/false.png' %}" alt="">
                     <p class="false" style="color:red;">오답입니다!</p>
                 </div>
-                <!--{% endif %}-->
+                {% endif %}
                 <p class="answer_reason">{{ quiz.explanation|linebreaksbr }}</p>
                 <!-- |linebreaksbr: 줄바꿈 포함 -->
             </div>
@@ -85,7 +86,7 @@
                     <button type="submit" class="next">완료</button>
             </form>
         </div>
-        <!--{% endif %} -->
+        {% endif %}
     </br>
     </div>
 </body>
