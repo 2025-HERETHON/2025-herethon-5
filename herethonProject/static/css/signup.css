@@ -61,7 +61,15 @@ input:hover{
 .password-wrapper{
     position:relative;
 }
-.password-wrapper>input{
+#password{
+    width:418px;
+    height:59px;
+    border:0.4px solid #ABABAB;
+    border-radius:10px;
+    color:#ABABAB;
+    padding-left:18px;
+}
+#passwordConfirm{
     width:418px;
     height:59px;
     border:0.4px solid #ABABAB;
