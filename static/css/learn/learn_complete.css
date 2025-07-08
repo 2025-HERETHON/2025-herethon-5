@@ -50,13 +50,13 @@ body {
 .line1 {
   display: flex;
   width: 508px;
-  border-bottom: 1px solid #bdaed9;
+  border-bottom: 1px solid #4d0099;
 }
 .second {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #bdaed9;
+  background-color: #4d0099;
   color: white;
   display: flex;
   justify-content: center;
@@ -81,29 +81,52 @@ body {
   justify-content: center;
 }
 
+.study {
+  color: #4d0099;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+.quiz {
+  color: #4d0099;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  padding-left: 483px;
+  padding-right: 447px;
+}
+.finish {
+  color: #bdaed9;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+
 /* 수정 사항 */
 
-.complete-congrats {
+.complete-congrats,
+.complete-title,
+.complete-msg {
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 11px;
   margin-top: 11px;
 }
+.complete-title {
+  color: #4d0099;
+}
+
 .box_content {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   margin-bottom: 82px;
 }
-/* .button_container {
-  display: flex;
-  justify-content: flex-end;
-} */
 
 .complete_text {
-  text-align: center; /* 텍스트, 인라인요소 모두 중앙 */
-  margin: 40px auto 0 auto;
+  text-align: center;
+  margin: 20px auto 0 auto;
 }
 
 .complete-feedback-link {
@@ -118,7 +141,7 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 24px; /* 버튼 사이 간격 */
+  gap: 24px;
   margin-top: 40px;
 }
 .button-container a {
@@ -130,11 +153,13 @@ body {
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
+  margin-top: 0;
   margin-bottom: 22px;
 }
 
 .book_link {
   color: #0051ff;
+  font-size: 16px;
 }
 
 .complete-feedback-link {
@@ -145,61 +170,51 @@ body {
 .recommendation_container {
   display: flex;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
   background-color: #f4eeff;
   border-radius: 30px;
-  padding: 28px 48px;
+  padding: 28px 0;
   margin: 0;
 }
 
-/* 없애야할것들-참고사항 */
-.study {
-  color: #4d0099;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-}
-.quiz {
-  color: #bdaed9;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  padding-left: 483px;
-  padding-right: 447px;
-}
-.finish {
-  color: #bdaed9;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
+.book_image {
+  display: block;
+  margin: 16px auto;
+  width: 130px;
+  height: auto;
 }
 
-button {
-  width: 180px;
-  height: 50px;
-  background-color: #4d0099;
-  color: white;
-  border-radius: 30px;
-  border: none;
+.button-container a {
+  display: inline-block;
+  width: 558px;
+  height: 70px;
+  line-height: 70px;
   font-size: 20px;
-  font-style: normal;
   font-weight: 700;
+  text-align: center;
+  border-radius: 30px;
+  border: 0.8px solid #4d0099;
+  background-color: #fff;
+  color: #4d0099;
+  margin: 0 18px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.source {
-  color: #bdaed9;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 22px;
+.button-container a.go_next {
+  background-color: #4d0099;
+  color: #fff;
+  border: 2px solid #4d0099;
 }
-.source_title {
-  border-top: 1px solid #bdaed9;
-  border-bottom: 1px solid #bdaed9;
-  color: #bdaed9;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  padding: 26px 0;
-  margin-bottom: 34px;
+
+.button-container a.go_home:hover {
+  background: #f4f2f9;
+  color: #4d0099;
+}
+
+.button-container a.go_next:hover {
+  background: #3a0070;
+  color: #fff;
+  border-color: #3a0070;
 }
