@@ -18,15 +18,14 @@
                 <img src="../static/assets/img/logo.svg">
             </span>
 
-
             <span class="account">
+                {% if user.is_authenticated %}
                 <div class="dropdown">
                     <button class="dropbtn">
                         <img src="../static/assets/img/account.svg">
                     </button>
                     <div class="dropdown-content">
                         <!--로그인 상태-->
-                        {% if user.is_authenticated %}
                             <p class="name">{{ user.name }}님</p>
                             <p class="add">@likelion</p><hr class="line">
                             <a href="{% url 'accounts:learn_record' %}">나의 학습</a><hr class="line">
@@ -35,12 +34,12 @@
                             <a href="{% url 'accounts:logout' %}">로그아웃</a>
                     </div>
                 </div>
-            <!-- 로그아웃 상태 -->
-            {% else %}
+                <!-- 로그아웃 상태 -->
+                {% else %}
                 <a href="{% url 'accounts:login' %}" class="logout">
                     <p>로그인</p>
                 </a>
-            {% endif %}
+                {% endif %}
             </span>
         </header>
         <hr class="line">
