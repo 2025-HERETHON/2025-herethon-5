@@ -26,7 +26,7 @@
                     {% if item.id == some_current_item_id and not item.is_completed %}current{% endif %}"
                     data-item-id="{{ item.curriculum.id }}"
                 >
-                    <div class="card-number">forloop.counter|stringformat:"02d"</div> 
+                    <div class="card-number">{{ forloop.counter|stringformat:"02d" }}</div> 
                     <div class="card-content">
                         {% if item.is_accessible %}
                             <h3 class="card-title">
@@ -38,7 +38,7 @@
                             <p class="card-dst">{{ item.curriculum.explanation }}</p>
                         </div>
 
-                        <div class="card-checkbox {% if item.is_completed %}{% endif %}"></div>
+                        <div class="card-checkbox"></div>
                     </div> 
 
                 {% empty %}
@@ -47,5 +47,7 @@
             </section>
         </main>
     </div>
+
+    <script src="../static/js/part.js"></script>
 </body>
 </html>
