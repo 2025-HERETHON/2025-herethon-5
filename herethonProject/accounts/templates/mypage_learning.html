@@ -50,7 +50,13 @@
               {% if records %}
                 {% for record in records %}
                   <div class="record-item">
-                      <p><strong>{{ record.curriculum.title }}</strong></p>
+                      <p>
+                        <strong>
+                            <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}">
+                                {{ record.curriculum.title }}
+                            </a>
+                        </strong>
+                      </p>
                       <p>{{ record.curriculum.explanation }}</p>
                       <p>최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                   </div>

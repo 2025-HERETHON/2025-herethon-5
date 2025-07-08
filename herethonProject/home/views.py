@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from learn.models import Category, Curriculum
 from accounts.models import LearningRecord
 
@@ -35,4 +35,6 @@ def home(request):
     return render(request, 'home-login.html', context)
 
 def first_page(request):
+    if request.user.is_authenticated:
+        return redirect('home')  
     return render(request, 'firstpage.html')
