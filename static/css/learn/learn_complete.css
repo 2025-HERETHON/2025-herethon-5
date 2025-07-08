@@ -41,7 +41,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #4d0099;
+  background-color: #bdaed9;
   color: white;
   display: flex;
   justify-content: center;
@@ -50,13 +50,13 @@ body {
 .line1 {
   display: flex;
   width: 508px;
-  border-bottom: 1px solid #4d0099;
+  border-bottom: 1px solid #bdaed9;
 }
 .second {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #4d0099;
+  background-color: #bdaed9;
   color: white;
   display: flex;
   justify-content: center;
@@ -70,7 +70,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #bdaed9;
+  background-color: #4d0099;
   color: white;
   display: flex;
   justify-content: center;
@@ -82,13 +82,13 @@ body {
 }
 
 .study {
-  color: #4d0099;
+  color: #bdaed9;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
 }
 .quiz {
-  color: #4d0099;
+  color: #bdaed9;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -96,13 +96,11 @@ body {
   padding-right: 447px;
 }
 .finish {
-  color: #bdaed9;
+  color: #4d0099;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
 }
-
-/* 수정 사항 */
 
 .complete-congrats,
 .complete-title,
