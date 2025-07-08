@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,8 +11,13 @@
 <body>
     <div>
         <header>
-            <a href="{% url 'home' %}" class="icon"><img src="{% static 'assets/img/arrow.svg' %}"></a>
-            <span class="logo"><img src="{% static 'assets/img/logo.svg' %}"></span>
+            <a href="{% url 'home' %}" class="icon">
+                <img src="{% static 'assets/img/arrow.svg' %}">
+            </a>
+            <span class="logo">
+                <img src="{% static 'assets/img/logo.svg' %}">
+            </span>
+
 
             <span class="account">
                 <div class="dropdown">
@@ -19,6 +25,7 @@
                         <img src="{% static 'assets/img/account.svg' %}">
                     </button>
                     <div class="dropdown-content">
+                        <!--로그인 상태-->
                         {% if user.is_authenticated %}
                             <p class="name">{{ user.name }}님</p>
                             <p class="add">@{{ user.username }}</p><hr class="line">
@@ -26,6 +33,7 @@
                             <a href="{% url 'accounts:password_change' %}">비밀번호 변경</a><hr class="line">
                             <a href="{% url 'feedback_create' %}">의견 보내기</a><hr class="line">
                             <a href="{% url 'accounts:logout' %}">로그아웃</a>
+                        <!-- 로그아웃 상태 -->
                         {% else %}
                             <a href="{% url 'accounts:login' %}">로그인</a>
                         {% endif %}
@@ -35,57 +43,22 @@
         </header>
         <hr class="line">
 
-        <main>
-            {% for item in categories_with_progress %}
-                <section class="notion-section">
-                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
-                        <div id="notion-page" class="notion-page">
-                            <h1 id="notion" class="notion">
-                                {{ item.category.name }}
-                            </h1>
-                            <span id="progress-notion">{{ item.completed }} / {{ item.total }}</span>
-                        </div>
-                    </a>
-                </section>
-
-                <section class="event-section">
-                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
-                        <div id="event-page" class="event-page">
-                            <h1 id="event" class="event">
-                                {{ item.category.name }}
-                            </h1>
-                            <span id="progress-event">{{ item.completed }} / {{ item.total }}</span>
-                        </div>
-                    </a>
-                </section>
-
-                <section class="person-section">
-                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
-                        <div id="person-page" class="person-page">
-                            <h1 id="person" class="person">
-                                {{ item.category.name }}
-                            </h1>
-                            <span id="progress-person">{{ item.completed }} / {{ item.total }}</span>
-                        </div>
-                    </a>
-                </section>
-
-                <section class="history-section">
-                    <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
-                        <div id="history-page" class="history-page">
-                            <h1 id="history" class="history">
-                                {{ item.category.name }}
-                            </h1>
-                            <span id="progress-history">{{ item.completed }} / {{ item.total }}</span>
-                        </div>
-                    </a>
-                </section>
-            {% empty %}
-                <p>등록된 카테고리가 없습니다.</p>
-            {% endfor %}
-        </main>
+    <main>
+    {% for item in categories_with_progress %}
+        <section class="{{ item.category.slug }}-section">
+            <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
+                <div class="{{ item.category.slug }}-page">
+                    <h1 class="{{ item.category.slug }}">
+                        {{ item.category.name }}
+                    </h1>
+                    <span id="progress-{{ item.category.slug }}">{{ item.completed }} / {{ item.total }}</span>
+                </div>
+            </a>
+        </section>
+    {% endfor %}
+    </main>
     </div>
 
-    <script src="{% static 'js/home.js' %}" ></script>
+    <script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>
