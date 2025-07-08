@@ -59,31 +59,32 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
 }
 
 /* 각 카테고리 컨테이너별 배경 이미지 스타일 */
-.notion-page {
-    background-image: url('../assets/img/notion-bg.svg');
+/* notion -> concept */
+.concept-page {
+    background-image: url("/static/assets/img/notion-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
 .event-page {
-    background-image: url('../assets/img/event-bg.svg');
+    background-image: url("/static/assets/img/event-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
 .person-page {
-    background-image: url('../assets/img/person-bg.svg');
+    background-image: url("/static/assets/img/person-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
 .history-page {
-    background-image: url('../assets/img/history-bg.svg');
+    background-image: url("/static/assets/img/history-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
-.notion, .event, .person, .history { 
+.concept, .event, .person, .history { 
     color: #FFF;
     font-family: "Pretendard Variable";
     font-size: 28px;
@@ -95,7 +96,7 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
 }
 
 /* "0/4, 4/5" 진도 표시 스타일 */
-#progress-notion,
+#progress-concept,
 #progress-event,
 #progress-person,
 #progress-history {
@@ -177,4 +178,20 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
     text-decoration: none;
     white-space: nowrap;
     padding-left: 30px;
+}
+
+/* 로그아웃 경우 */
+.logout {
+    margin-left: auto;
+    margin-right: 100px;
+    color: #D9D9D9;
+    font-family: "Pretendard Variable";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logout:hover {
+    color: #4D0099
 }
