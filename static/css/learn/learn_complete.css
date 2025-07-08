@@ -29,6 +29,7 @@ body {
 }
 .content_container {
   padding: 0 107px;
+  align-items: center;
 }
 .progressbar_container {
   display: flex;
@@ -79,6 +80,68 @@ body {
   display: flex;
   justify-content: center;
 }
+
+/* 수정 사항 */
+
+.complete-congrats {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+.box_content {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 82px;
+}
+/* .button_container {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.complete_text {
+  text-align: center; /* 텍스트, 인라인요소 모두 중앙 */
+  margin: 40px auto 0 auto;
+}
+
+.complete-feedback-link {
+  margin-top: 20px;
+}
+
+.recommendation_container {
+  text-align: center;
+  margin: 32px auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 24px; /* 버튼 사이 간격 */
+  margin-top: 40px;
+}
+.button-container a {
+  text-align: center;
+}
+
+.recommendation_text {
+  color: #6c6c6c;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.book_link {
+  color: #0051ff;
+}
+
+.complete-feedback-link {
+  color: #4d0099;
+  font-size: 16px;
+}
+
+/* 없애야할것들-참고사항 */
 .study {
   color: #4d0099;
   font-size: 18px;
@@ -136,21 +199,4 @@ button {
   background-color: #f5f5f5;
   border-radius: 30px;
   padding: 64px 48px;
-}
-
-.box_title {
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 22px;
-}
-.box_content {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  margin-bottom: 82px;
-}
-.button_container {
-  display: flex;
-  justify-content: flex-end;
 }

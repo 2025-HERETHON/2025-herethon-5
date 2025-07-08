@@ -37,11 +37,14 @@
       <br />
 
       <!-- 내용 -->
-      <div>
-        <p>수고하셨습니다!</p>
-        <p>{{ curriculum.id }}. {{ curriculum.title }} 학습을 완료하였어요!</p>
+      <div class="complete_text">
+        <p class="complete-congrats">수고하셨습니다!</p>
+        <span class="complete-title"
+          >{{ curriculum.id }}. {{ curriculum.title }}
+        </span>
+        <span class="complete-msg">학습을 완료하였어요!</span>
         <p>
-          <a href="{% url 'feedback_create' %}"
+          <a class="complete-feedback-link" href="{% url 'feedback_create' %}"
             >클릭하여 학습과 관련한 의견 보내기</a
           >
         </p>
@@ -49,38 +52,48 @@
       <br />
 
       <!-- 책 추천 -->
-      <div>
-        <h3>이런 책은 어때요?</h3>
+      <div class="recommedation_container">
+        <h3 class="recommendation_text">이런 책은 어때요?</h3>
 
         {% for book in book_recommendations %} {{ book.content|linebreaksbr }}
         <!-- |linebreaksbr: 줄바꿈 포함 -->
         <br />
         {% if book.image %}
         <img
+          class="book_image"
           src="{{ book.image.url }}"
           alt="{{ book.title }}"
           style="width: 150px"
         />
         <br />
         {% endif %} {% if book.link %}
-        <a href="{{ book.link }}">클릭하여 책 구매하러 가기</a>
+        <a class="book_link" href="{{ book.link }}"
+          >클릭하여 책 구매하러 가기</a
+        >
         {% endif %} {% endfor %}
       </div>
       <br />
 
       <!-- 홈으로 돌아가기 & 다음 강좌 바로가기 -->
-      <a href="{% url 'learn:category_list' %}">홈으로 돌아가기</a>
+      <div class="button-container">
+        <a class="go_home" href="{% url 'learn:category_list' %}"
+          >홈으로 돌아가기</a
+        >
 
-      {% if next_curriculum %}
-      <a href="{% url 'learn:curriculum' curriculum.category.slug %}"
-        >다음 강 학습하기</a
-      >
-      {% else %}
-      <a
-        href="{% url 'learn:category_complete' category_slug=curriculum.category.slug %}"
-        >다음 강 학습하기</a
-      >
-      {% endif %}
+        {% if next_curriculum %}
+        <a
+          class="go_next"
+          href="{% url 'learn:curriculum' curriculum.category.slug %}"
+          >이어서 학습하기</a
+        >
+        {% else %}
+        <a
+          class="go_next"
+          href="{% url 'learn:category_complete' category_slug=curriculum.category.slug %}"
+          >이어서 학습하기</a
+        >
+        {% endif %}
+      </div>
     </div>
   </body>
 </html>
