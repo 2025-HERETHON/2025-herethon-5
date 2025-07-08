@@ -50,7 +50,8 @@
               {% if records %}
                 {% for record in records %}
                   <div class="record-item">
-                      <p><strong>{{ record.content_title }}</strong> ({{ record.get_category_display }})</p>
+                      <p><strong>{{ record.curriculum.title }}</strong></p>
+                      <p>{{ record.curriculum.explanation }}</p>
                       <p>최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                   </div>
                   <hr>

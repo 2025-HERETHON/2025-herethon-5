@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const accountImage = dropbtn.querySelector('img'); // account 이미지 요소 찾기
 
         // 이미지 경로
-        const originalAccountSrc = '../assets/img/account.svg'; 
-        const clickedAccountSrc = '../assets/img/account-2.svg';
+        const originalAccountSrc = '/static/assets/img/account.svg'; 
+        const clickedAccountSrc = '/static/assets/img/account-2.svg';
 
         dropbtn.addEventListener('click', function(event) {
             dropdownContent.classList.toggle('show');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const accountImage = dropbtn.querySelector('img'); // account 이미지
 
             // 이미지 경로
-            const originalAccountSrc = '../assets/img/account.svg';
+            const originalAccountSrc = '/static/assets/img/account.svg';
 
             // 클릭된 영역이 드롭다운 컨테이너에 속하지 않고, 드롭다운이 열려 있다면 닫음
             if (dropdownContent.classList.contains('show') && !dropdown.contains(event.target)) {
@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 드롭다운이 닫힐 때 이미지 소스를 원래대로 돌림
                 accountImage.src = originalAccountSrc;
             }
-         });
+        });
     });
 });
