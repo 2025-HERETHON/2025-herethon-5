@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커리큘럼</title>
+    <link rel="stylesheet" href="../static/css/partpage.css">
+</head>
+
+<body>
+<div>
+    <!-- 이전(카테고리) -->
+    <header>
+        <span class="icon"><a href="{% url 'learn:category_list' %}">←</a></span>
+        <span class="logo"><img src="../static/assets/img/logo.svg" alt="로고"></span>
+    </header>
+    <hr class="line">
+
+    <main>
+        <p class="card">{{ category.name }}</p>
+            <section class="notion-section">
+                {% for item in curriculums_with_status %}
+                <div class="card-container
+                    {% if not item.is_accessible %}disabled{% endif %} 
+                    {% if item.is_completed %}completed{% endif %}   
+                    {% if item.id == some_current_item_id and not item.is_completed %}current{% endif %}"
+                    data-item-id="{{ item.curriculum.id }}"
+                >
+                    <div class="card-number">forloop.counter|stringformat:"02d"</div> 
+                    <div class="card-content">
+                        {% if item.is_accessible %}
+                            <h3 class="card-title">
+                                <a href="{% url 'learn:curriculum_detail' item.curriculum.id %}">{{ item.curriculum.title }}</a>
+                            </h3>
+                        {% else %}
+                            <h3 class="card-title">{{ item.curriculum.title }}</h3>
+                        {% endif %}
+                            <p class="card-dst">{{ item.curriculum.explanation }}</p>
+                        </div>
+
+                        <div class="card-checkbox {% if item.is_completed %}{% endif %}"></div>
+                    </div> 
+
+                {% empty %}
+                    <p>등록된 커리큘럼이 없습니다.</p>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>

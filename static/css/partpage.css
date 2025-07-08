@@ -1,0 +1,220 @@
+/* 글자 스타일 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* hr 선 스타일(전체 공통 스타일) */
+.line {
+    background-color: #D9D9D9;
+    height: 1px;
+    border: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+header a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: #D9D9D9;
+}
+
+.logo {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 20px;
+}
+
+main .card { 
+    color: #4D0099;
+    font-family: Pretendard Variable;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    margin-left: 280px;
+    margin-top: 50px;
+}
+
+.card-container {
+    width: 1230px;
+    height: 148px;
+    display: flex; 
+    align-items: center; 
+    background-color: #FFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 40px;
+    padding: 10px; 
+    margin: 25px auto; 
+    transition: all 0.3s ease; 
+}
+
+.card-number {
+    background-color: #D9D9D9;
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 700;
+    width: 88px;
+    height: 88px;
+    border-radius: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: 20px;
+    flex-shrink: 0; /* 내용이 줄어들 때 숫자가 같이 줄어들지 않도록 */
+    transition: background-color 0.3s ease;
+}
+
+.card-content {
+    flex-grow: 1; 
+}
+
+.card-title {
+    font-family: "Pretendard Variable";
+    font-size: 24px;
+    color: #D9D9D9; 
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.card-dst {
+    color: #D9D9D9; 
+    font-family: "Pretendard Variable";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.card-checkbox {
+    width: 31px;
+    height: 30px;
+    border: 2px solid #D9D9D9; 
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-shrink: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* --- 접근 불가 상태 (is_accessible: false) --- */
+.card-container.disabled {
+    opacity: 0.6; 
+    pointer-events: none; /* 클릭 이벤트 비활성화 */
+    border-color: #D9D9D9; 
+}
+
+.card-container.disabled .card-number {
+    background-color: #D9D9D9;
+    color: #FFF;
+}
+
+.card-container.disabled .card-title,
+.card-container.disabled .card-dst {
+    color: #D9D9D9;
+}
+
+.card-container.disabled .card-checkbox {
+    border-color: #D9D9D9;
+    background-color: transparent;
+}
+
+.card-container.disabled .completed-checkmark {
+    display: none; /* 접근 불가 시 체크마크 숨김 */
+}
+
+/* 링크 스타일 */
+.card-container .card-title a {
+    color: inherit; /* 부모 .card-title의 색상을 상속 */
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+/* --- 완료 상태 (is_completed: true) --- */
+.card-container.completed {
+    border-color: #BDAED9; /* 완료된 카드의 테두리 */
+}
+
+.card-container.completed .card-number {
+    background-color: #BDAED9;
+    color: #FFF;
+}
+
+.card-container.completed .card-title,
+.card-container.completed .card-dst {
+    color: #BDAED9;
+}
+
+.card-container.completed .card-title a {
+    color: #BDAED9;
+    text-decoration: none;
+}
+
+.card-container.completed .card-checkbox {
+    border: none; 
+    background-color: #BDAED9; /* 완료 시 배경색 채움 */
+}
+
+
+/* --- 현재 상태 (아직 미완료, 선택된 상태 등) --- */
+.card-container.current {
+    background-color: #FFFFFF; 
+    border-color: #4D0099; 
+}
+
+.card-container.current .card-number {
+    background-color: #4D0099;
+    color: #FFF;
+}
+
+.card-container.current .card-title,
+.card-container.current .card-dst {
+    color: #4D0099;
+}
+
+.card-container.current .card-title a {
+    color: #4D0099;
+    text-decoration: none;
+}
+
+.card-container.current .card-checkbox {
+    border: 1px solid #4D0099;
+    background-color: transparent; 
+}
+/* 현재 상태에서는 체크마크가 보이지 않도록 함 (완료되지 않았으므로) */
+.card-container.current .completed-checkmark {
+    display: none;
+}
+
+/* --- 호버 효과 --- */
+/* disabled 상태가 아닐 때만 호버 효과 적용 */
+.card-container:not(.disabled):hover {
+    background-color: #F4EEFF;
+    border: 1px solid #4D0099;
+}
+
+.card-container:not(.disabled):hover .card-number {
+    background-color: #4D0099;
+}
+
+.card-container:not(.disabled):hover .card-title,
+.card-container:not(.disabled):hover .card-dst {
+    color: #4D0099;
+}
+.card-container:not(.disabled):hover .card-title a {
+    color: #4D0099;
+}
+
+.card-container:not(.disabled):hover .card-checkbox {
+    border: 1px solid #4D0099;
+    background-color: transparent;
+}
