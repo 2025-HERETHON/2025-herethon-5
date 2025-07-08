@@ -87,7 +87,8 @@ body {
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
-  margin-bottom: 22px;
+  margin-bottom: 11px;
+  margin-top: 11px;
 }
 .box_content {
   font-size: 16px;
@@ -141,6 +142,16 @@ body {
   font-size: 16px;
 }
 
+.recommendation_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f4eeff;
+  border-radius: 30px;
+  padding: 28px 48px;
+  margin: 0;
+}
+
 /* 없애야할것들-참고사항 */
 .study {
   color: #4d0099;
@@ -191,12 +202,4 @@ button {
   font-weight: 300;
   padding: 26px 0;
   margin-bottom: 34px;
-}
-.graybox {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #f5f5f5;
-  border-radius: 30px;
-  padding: 64px 48px;
 }
