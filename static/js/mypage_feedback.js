@@ -16,8 +16,8 @@ navTabs.forEach((tab) => {
 const partInput = document.getElementById("partInput");
 const opinionInput = document.getElementById("opinionInput");
 const emailInput = document.getElementById("emailInput");
+const feedbackForm = document.getElementById("feedback-form");
 const feedbackBtn = document.querySelector(".feedback-btn");
-const feedbackForm = document.querySelector(".feedback-form");
 
 function validateFeedback() {
   const partOk = partInput.value.trim().length > 0;
@@ -27,34 +27,22 @@ function validateFeedback() {
     /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(emailInput.value.trim());
 
   if (partOk && opinionOk && emailOk) {
-    feedbackBtn.disabled = false;
     feedbackBtn.classList.add("active");
+    feedbackBtn.disabled = false;
   } else {
-    feedbackBtn.disabled = true;
     feedbackBtn.classList.remove("active");
+    feedbackBtn.disabled = true;
   }
+  return partOk && opinionOk && emailOk;
 }
 
-// 실시간 체크
 [partInput, opinionInput, emailInput].forEach((input) =>
   input.addEventListener("input", validateFeedback)
 );
 
-// 전송 이벤트
+// 제출 시 유효성만 체크, 정상 제출은 서버가 처리
 feedbackForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (feedbackBtn.disabled) return;
-
-  // ---- 실제 저장 ----
-  const feedbackData = {
-    part: partInput.value.trim(),
-    opinion: opinionInput.value.trim(),
-    email: emailInput.value.trim(),
-  };
-  // 일단 localStorage에 저장
-  localStorage.setItem("lastFeedback", JSON.stringify(feedbackData));
-  // 나중에 서버에 fetch로 POST
-
-  // 완료 페이지 이동
-  window.location.href = "./feedbackComplete.html";
+  if (!validateFeedback()) {
+    e.preventDefault();
+  }
 });
