@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/mypage_learning.css' %}" />
+    <title>마이페이지</title>
+  </head>
+  <body>
+    <div class="mypage-container">
+      <header class="mypage-header">
+        <a class="back-btn-link" href="{% url 'home' %}">
+          <img src="{% static 'assets/backbtn.svg' %}" class="back-btn" />
+        </a>
+        <a class="mypage-logo-link" href="{% url 'home' %}">
+          <img
+            src="{% static 'assets/logo.svg' %}"
+            alt="젠터러시 로고"
+            class="mypage-logo"
+          />
+        </a>
+        <div class="profile-icon">
+          <img src="{% static 'assets/profile.svg' %}" alt="프로필" />
+        </div>
+      </header>
+      <div class="mypage-content">
+        <nav class="mypage-nav">
+          <ul>
+            <li class="active"><a href="{% url 'accounts:learn_record' %}">나의 학습</a></li>
+            <li><a href="{% url 'accounts:password_change' %}">비밀번호 변경</a></li>
+            <li><a href="{% url 'feedback_create' %}">의견 보내기</a></li>
+          </ul>
+        </nav>
+        <main class="mypage-main">
+          <section class="mypage-section learning active">
+            <h1>나의 학습</h1>
+            <p class="mypage-desc">
+              해당하는 강좌를 클릭하여 학습했던 내용을 다시 볼 수 있어요.
+            </p>
+
+            <div class="filter-tabs">
+              <button class="tab active" id="date-tab">날짜별</button>
+              <button class="tab" id="part-tab">파트별</button>
+            </div>
+
+            <hr class="mypage-divider" />
+
+            <div class="study-group" id="study-by-date"><!--이주연_날짜별--><!--날짜별, 파트별 id 다르게-->
+              {% if records_date %}
+                {% for date_obj, records in records_date.items %}
+                  <div class="study-group">
+                    <h2>{{ date_obj|date:"n/j" }}</h2> <!--날짜-->
+                    {% for record in records %}
+                    <a href="{% url 'learn:curriculum_detail' record.curriculum.category.slug record.curriculum.number %}" class="study-card">
+                      <p class="study-number">{{ record.curriculum.number }}</p>
+                      <div class="study-detail-container">
+                        <p class="study-title">{{ record.curriculum.title }}</p><!--타이틀-->
+                        <p class="study-desc">{{ record.curriculum.explanation }}</p><!--부제-->
+                      </div>
+                      <div class="date-container">
+                        <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
+                      </div>
+                    </a>
+                    {% endfor %}
+                  </div>
+                {% endfor %}
+              {% else %}
+                <p>아직 학습 기록이 없습니다.</p>
+              {% endif %}
+            </div>
+
+            <div class="study-group" id="study-by-part"><!--이주연_파트별--><!--display:none 사용 js로 display:block 전환-->
+              {% if records_category %}
+                {% for category_name, records in records_category.items %}
+                <div class="study-group">
+                  <h2>{{ category_name }}</h2> <!--파트-->
+                  {% for record in records %}
+                  <a href="{% url 'learn:curriculum_detail' record.curriculum.category.slug record.curriculum.number %}" class="study-card">
+                    
+                    <p class="study-number">{{ record.curriculum.number }}</p>
+                    <div class="study-detail-container">
+                      <p class="study-title">{{ record.curriculum.title }}</p>
+                      <p class="study-desc">{{ record.curriculum.explanation }}</p>
+                    </div>
+                    <div class="date-container">
+                      <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
+                    </div>
+                  </a>
+                  {% endfor %}
+                </div>
+                {% endfor %}
+              {% else %}
+                <p>아직 학습 기록이 없습니다.</p>
+              {% endif %}
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="{% static 'js/mypage_learning.js' %}"></script>
+  </body>
+</html>

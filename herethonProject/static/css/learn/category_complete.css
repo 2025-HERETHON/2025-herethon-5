@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: "Pretendard-Regular";
+  }
+  
+  .header {
+    width: 100%;
+    border-bottom: 1px solid #d9d9d9;
+    height: 94px;
+    display: flex;
+    align-items: center;
+    gap: 47px;
+    padding-left: 36px;
+    margin-bottom: 43px;
+  }
+  
+  .content_container {
+    padding: 0 107px;
+    align-items: center;
+  }
+  
+  .catrgory-name {
+    color: #4d0099;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  .text-container {
+    text-align: center;
+  }
+  
+  .complete-congrats {
+    color: #4d0099;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  .congrat-img {
+    width: 290px;
+    height: auto;
+  }
+  
+  .go-home {
+    color: #4d0099;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .explanation {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+  
+  .curriculum-list {
+    margin: 0 100px;
+    padding: 0 40px;
+  }
+  
+  .curriculum-link {
+    text-decoration: none;
+    color: #bdaed9;
+  }
+  
+  .curriculum-card {
+    display: flex;
+    align-items: center;
+    background: #faf7ff;
+    border: 1px solid #bdaed9;
+    border-radius: 40px;
+    padding: 30px 40px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .curriculum-number {
+    background: #bdaed9;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    border-radius: 30px;
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 34px;
+  }
+  
+  .curriculum-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .curriculum-title {
+    font-size: 24px;
+    color: #bdaed9;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .curriculum-explanation {
+    font-size: 18px;
+    color: #bdaed9;
+    margin: 0;
+  }
+  
+  .curriculum-dot {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: #bdaed9;
+    border-radius: 10px;
+  }
+  
+  .curriculum-card:hover{
+    background-color: rgba(189, 174, 217, 0.2)
+  }

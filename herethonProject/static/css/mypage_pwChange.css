@@ -1,0 +1,205 @@
+body {
+  background: #fff;
+  margin: 0;
+  font-family: "Pretendard";
+  color: #000;
+}
+
+.mypage-container {
+  margin: 0px auto;
+  padding: 0;
+}
+
+.mypage-header {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 60px;
+  border-bottom: 1.2px solid #d9d9d9;
+  position: relative;
+}
+
+.back-btn {
+  color: #b8a5e3;
+  cursor: pointer;
+  margin-right: 18px;
+}
+
+.mypage-logo {
+  height: 34px;
+  margin-right: auto;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.profile-icon {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.mypage-content {
+  display: flex;
+  margin-top: 20px;
+  margin-right: 80px;
+}
+
+.mypage-nav {
+  display: flex;
+  width: 300px;
+  padding: 56px 0 0 36px;
+  justify-content: center;
+}
+
+.mypage-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.mypage-nav li {
+  font-size: 1.11rem;
+  color: #ababab; /* 나머지 메뉴는 회색 */
+  margin-bottom: 35px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.mypage-nav li.active {
+  color: #4d0099; /* 활성 메뉴만 보라색 */
+  font-weight: 700;
+}
+
+.mypage-nav a {
+  text-decoration: none;
+  color: inherit; /* li의 색상 상속 */
+}
+
+.mypage-main {
+  flex: 1;
+  padding: 56px 150px 64px 48px;
+}
+
+.mypage-section {
+  display: none;
+}
+.mypage-section.active {
+  display: block;
+}
+
+.mypage-main h1 {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.03em;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  margin-top: 16px;
+}
+
+.filter-tabs .tab {
+  padding: 8px 28px;
+  border-radius: 18px;
+  background: #d9d9d9;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-tabs .tab.active {
+  background: #4d0099;
+  color: #fff;
+}
+
+.mypage-divider {
+  border: none;
+  border-top: 1.5px solid #d9d9d9;
+  margin: 22px 0 36px 0;
+}
+
+/* 비밀번호 변경 */
+.password-change {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.03em;
+}
+
+.password-change h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  margin-top: 0;
+  letter-spacing: -0.02em;
+}
+
+#pw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 100%;
+}
+
+.pw-form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.pw-form-label {
+  width: 148px;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.pw-form-input {
+  flex: 1;
+  padding: 18px 20px;
+  border-color: #ababab;
+  border-width: 0.4px;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  margin-left: 100px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.pw-form-input:hover {
+  border-color: #000;
+  border-width: 0.6px;
+}
+
+.pw-btn-wrap {
+  text-align: right;
+  margin-top: 120px;
+}
+.pw-btn {
+  background: #4d0099;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 52px;
+  cursor: pointer;
+}
+.pw-btn:hover {
+  background: #3a0070;
+}

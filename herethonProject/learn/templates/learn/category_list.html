@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습 목록</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}"> 
+</head>
+<body>
+    <div>
+        <header class="container">
+            <span class="icon">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'assets/img/arrow.svg' %}">
+                </a>
+            </span>
+            
+            <span class="logo">
+                <img src="{% static 'assets/img/logo.svg' %}">
+            </span>
+
+            <span class="account">
+                {% if user.is_authenticated %}
+                    <div class="same">
+                        <button class="dropbtn">
+                            <img src="{% static 'assets/img/account.svg' %}">
+                        </button>
+                    </div>
+                    <div class="dropdown-content">
+                        <!--로그인 상태-->
+                        <p class="name">{{ user.name }}님</p>
+                        <p class="add">@likelion</p><hr class="line">
+                        <a href="{% url 'accounts:learn_record' %}">나의 학습</a><hr class="line">
+                        <a href="{% url 'accounts:password_change' %}">비밀번호 변경</a><hr class="line">
+                        <a href="{% url 'feedback_create' %}">의견 보내기</a><hr class="line">
+                        <a href="{% url 'accounts:logout' %}">로그아웃</a>
+                    </div>
+                {% else %}
+                    <div class="same">
+                        <a href="{% url 'accounts:login' %}" class="logout"><p>로그인</p></a>
+                    </div>
+                {% endif %}
+            </span>
+        </header>
+        <hr class="line">
+
+        <main>
+        {% for item in categories_with_progress %}
+            <section class="{{ item.category.slug }}-section">
+                <a href="{% url 'learn:curriculum' item.category.slug %}" class="tag">
+                    <div class="{{ item.category.slug }}-page">
+                        <h1 class="{{ item.category.slug }}">
+                            {{ item.category.name }}
+                        </h1>
+                        <span id="progress-{{ item.category.slug }}">{{ item.completed }} / {{ item.total }}</span>
+                    </div>
+                </a>
+            </section>
+        {% endfor %}
+        </main>
+    </div>
+
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
