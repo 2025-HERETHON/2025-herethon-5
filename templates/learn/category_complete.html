@@ -19,7 +19,6 @@
     </div>
     <div class="content_container">
       <!-- 제목 -->
-      <!-- <h3>{{ category.name }}</h3> -->
       <h1 class="catrgory-name">{{ category.name }}</h1>
 
       <!-- 내용 -->
@@ -51,28 +50,38 @@
       <br />
 
       <!-- 커리큘럼 나열 -->
-      {% for item in curriculums_with_status %}
-      <div>
-        {% if item.is_accessible %}
-        <h3>
-          <a
-            class="test"
-            href="{% url 'learn:curriculum_detail' item.curriculum.id %}"
-          >
-            {{ item.number_in_category }} {{ item.curriculum.title }}
-          </a>
-          {% if item.is_completed %}✅{% endif %}
-        </h3>
-        {% else %}
-        <!-- <h3 style="color: gray">
-            {{ item.number_in_category }} {{ item.curriculum.title }} (먼저 이전 강의를 완료하세요)
-        </h3> -->
-        {% endif %}
-        <p>{{ item.curriculum.explanation }}</p>
-      </div>
-      {% empty %}
-      <!-- <p>등록된 커리큘럼이 없습니다.</p> -->
-      {% endfor %}
+      <ul class="curriculum-list">
+        {% for item in curriculums_with_status %}
+        <li class="curriculum-card">
+          {% if item.is_accessible %}
+          <span class="curriculum-number">{{ item.number_in_category }}</span>
+          <div class="curriculum-content">
+            <span class="curriculum-title">
+              <a
+                class="curriculum-link"
+                href="{% url 'learn:curriculum_detail' item.curriculum.id %}"
+              >
+                {{ item.curriculum.title }}
+              </a>
+              {% if item.is_completed %}<span class="curriculum-dot"></span>{%
+              endif %}
+            </span>
+            {% else %}
+            <h3 style="color: gray">
+              {{ item.number_in_category }} {{ item.curriculum.title }} (먼저
+              이전 강의를 완료하세요)
+            </h3>
+            {% endif %}
+            <p class="curriculum-explanation">
+              {{ item.curriculum.explanation }}
+            </p>
+          </div>
+          <span class="curriculum-dot"></span>
+        </li>
+        {% empty %}
+        <p>등록된 커리큘럼이 없습니다.</p>
+        {% endfor %}
+      </ul>
     </div>
   </body>
 </html>

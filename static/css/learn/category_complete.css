@@ -41,6 +41,7 @@ body {
   color: #4d0099;
   font-size: 28px;
   font-weight: 600;
+  margin: 10px 0;
 }
 
 .congrat-img {
@@ -54,15 +55,72 @@ body {
   font-weight: 600;
 }
 
-/* .explanation-container {
-  gap: 0;
-} */
-
 .explanation {
   font-size: 20px;
   margin: 5px 0;
 }
 
-.test {
-  background-color: gray;
+.curriculum-list {
+  margin: 0 100px;
+  padding: 0 40px;
+}
+
+.curriculum-link {
+  text-decoration: none;
+  color: #bdaed9;
+}
+
+.curriculum-card {
+  display: flex;
+  align-items: center;
+  background: #faf7ff;
+  border: 1px solid #bdaed9;
+  border-radius: 40px;
+  padding: 30px 40px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.curriculum-number {
+  background: #bdaed9;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  border-radius: 30px;
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 34px;
+}
+
+.curriculum-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.curriculum-title {
+  font-size: 24px;
+  color: #bdaed9;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.curriculum-explanation {
+  font-size: 18px;
+  color: #bdaed9;
+  margin: 0;
+}
+
+.curriculum-dot {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: #bdaed9;
+  border-radius: 10px;
 }
