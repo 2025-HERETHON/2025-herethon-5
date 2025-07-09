@@ -1,44 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.dropdown');
+    // account 영역 내의 드롭다운 버튼과 드롭다운 콘텐츠를 직접 선택
+    const dropbtn = document.querySelector('.account .dropbtn');
+    const dropdownContent = document.querySelector('.account .dropdown-content');
+    const accountSpan = document.querySelector('.account'); 
 
-    dropdowns.forEach(dropdown => {
-        const dropbtn = dropdown.querySelector('.dropbtn');
-        const dropdownContent = dropdown.querySelector('.dropdown-content');
+    // 로그인 상태일 때만 (즉, dropbtn과 dropdownContent가 존재할 때만) 스크립트를 실행
+    if (dropbtn && dropdownContent && accountSpan) {
         const accountImage = dropbtn.querySelector('img'); // account 이미지 요소 찾기
 
-        // 이미지 경로
-        const originalAccountSrc = '/static/assets/img/account.svg'; 
-        const clickedAccountSrc = '/static/assets/img/account-2.svg';
+        // 이미지 경로 정의
+        const originalAccountSrc = '../../static/assets/img/account.svg';
+        const clickedAccountSrc = '../../static/assets/img/account-2.svg'; // 클릭 시 변경될 이미지 경로
 
+        // 드롭다운 버튼 클릭 이벤트 리스너
         dropbtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+
+            // 'show' 클래스를 토글
             dropdownContent.classList.toggle('show');
 
-            // 이미지 소스 교체
-            if (dropdownContent.classList.contains('show')) { // 드롭다운이 열릴 때 (show 클래스가 추가될 때)
+            // 드롭다운이 열렸는지(show 클래스가 있는지)에 따라 이미지 소스를 변경
+            if (dropdownContent.classList.contains('show')) {
                 accountImage.src = clickedAccountSrc; // 클릭된 이미지로 변경
-            } else { // 드롭다운이 닫힐 때 (show 클래스가 제거될 때)
+            } else {
                 accountImage.src = originalAccountSrc; // 원래 이미지로 변경
             }
-
-            event.stopPropagation(); // 클릭 이벤트 전파 방지
         });
-    });
 
-    window.addEventListener('click', function(event) {
-        dropdowns.forEach(dropdown => {
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
-            const dropbtn = dropdown.querySelector('.dropbtn');
-            const accountImage = dropbtn.querySelector('img'); // account 이미지
-
-            // 이미지 경로
-            const originalAccountSrc = '/static/assets/img/account.svg';
-
-            // 클릭된 영역이 드롭다운 컨테이너에 속하지 않고, 드롭다운이 열려 있다면 닫음
-            if (dropdownContent.classList.contains('show') && !dropdown.contains(event.target)) {
-                dropdownContent.classList.remove('show');
-                // 드롭다운이 닫힐 때 이미지 소스를 원래대로 돌림
-                accountImage.src = originalAccountSrc;
+        // 윈도우 전체 클릭 이벤트 리스너 (드롭다운 외부 클릭 시 닫기)
+        window.addEventListener('click', function(event) {
+            if (dropdownContent.classList.contains('show') && !accountSpan.contains(event.target)) {
+                dropdownContent.classList.remove('show'); // 드롭다운 닫기
+                accountImage.src = originalAccountSrc; // 드롭다운이 닫힐 때 이미지 소스를 원래대로 돌리기
             }
         });
-    });
+    }
 });

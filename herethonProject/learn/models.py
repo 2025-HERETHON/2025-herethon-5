@@ -5,6 +5,11 @@ from accounts.models import CustomUser
 class Category(models.Model):
     name=models.CharField(max_length=100,unique=True)
     slug=models.SlugField(max_length=100, unique=True, blank=True, null=True)
+    number=models.IntegerField(blank=False, unique=True) # 번호 지정
+
+    # number 순서로 정렬됨
+    class Meta:
+        ordering = ['number'] 
 
     def __str__(self):
         return self.name
@@ -12,6 +17,7 @@ class Category(models.Model):
 # 커리큘럼
 class Curriculum(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='curriculums')
+    number=models.IntegerField(blank=False) # 번호 지정
     title = models.CharField(max_length=100) # ex) 강남역 살인 사건
     explanation= models.CharField(max_length=100) # 부제목(설명)
 
@@ -24,6 +30,10 @@ class Curriculum(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     source=models.TextField() # 출처 
+
+    # number 순서로 정렬됨
+    class Meta:
+        ordering = ['number']
 
     def __str__(self):
         return self.title
@@ -38,5 +48,3 @@ class BookRecommendation(models.Model):
 
     def __str__(self):
         return f"{self.curriculum.title} - {self.title}"
-
-    

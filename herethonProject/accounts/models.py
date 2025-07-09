@@ -11,7 +11,7 @@ class CustomUser(AbstractUser):
 # 마이페이지 - 나의 학습
 class LearningRecord(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="사용자")
-    curriculum = models.ForeignKey('learn.Curriculum', on_delete=models.CASCADE, verbose_name="학습 내용", default=1)
+    curriculum = models.ForeignKey('learn.Curriculum', on_delete=models.CASCADE, verbose_name="학습 내용")
     category = models.ForeignKey('learn.Category', on_delete=models.CASCADE, verbose_name="카테고리")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="마지막 학습일")
     

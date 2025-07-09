@@ -64,12 +64,30 @@ def password_change(request):
 def learn_record(request):
     records = LearningRecord.objects.filter(user=request.user).order_by('-updated_at')
 
-    records_by_part = defaultdict(list)
-    for record in records:
-        part_name = record.category.name
-        records_by_part[part_name].append(record)
+    # 날짜별로 그룹
+    records_date=defaultdict(list)
+    for r in records:
+        date_obj = r.updated_at.date()
+        records_date[date_obj].append(r)
 
-    return render(request, 'mypage_learning.html', {
-        'records_by_date': records,
-        'records_by_part': records_by_part,
-    })
+    # 날짜별 안에서 순서 지정
+    for rec_list in records_date.values():
+        rec_list.sort(key=lambda r: r.curriculum.number)
+
+    # 파트별로 그룹
+    records_category=defaultdict(list)
+    for r in records:
+        category_name = r.category.name
+        records_category[category_name].append(r)
+    
+    # 파트별 안에서 순서 지정
+    for rec_list in records_category.values():
+        rec_list.sort(key=lambda r: r.curriculum.number)
+
+    context = {
+       'records_date': dict(records_date),
+       'records_category': dict(records_category),
+    }
+
+    return render(request, 'mypage_learning.html', context)
+    

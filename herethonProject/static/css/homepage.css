@@ -1,6 +1,11 @@
 /* 글자 스타일 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
+body {
+    margin: 0; /* body 태그의 모든 기본 마진을 제거 */
+    padding: 0; /* 혹시 모를 기본 패딩도 제거 */
+}
+
 /* hr 선 스타일 */
 .line {
     background-color: #D9D9D9;
@@ -8,11 +13,15 @@
     border: none;
 }
 
+.tag {
+    text-decoration: none;
+}
+
 header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
+    min-height: 80px;
 }
 
 .icon {
@@ -25,13 +34,53 @@ header {
     padding-right: 0px;
 }
 
-.tag {
+.same {
+    display: flex; 
+    align-items: center;
+    height: 100%;
+}
+
+.logout {
     text-decoration: none;
+    color: #D9D9D9; 
+    font-family: "Pretendard Variable";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.logout p {
+    margin: 0; 
+    padding: 0;
+}
+
+.logout:hover {
+    color: #4D0099
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex; /* 버튼 내의 이미지를 flex로 정렬 */
+    align-items: center; /* 이미지 세로 중앙 정렬 */
+    margin: 0;
+    padding: 0;
+}
+
+.dropbtn img {
+    padding: 0;
+    margin: 0;
 }
 
 .account {
-    margin-left: auto;
-    margin-right: 50px;
+    margin-left: auto; /* 오른쪽으로 밀어냄 */
+    margin-right: 50px; 
+    display: flex;       
+    align-items: center; 
+    position: relative;  /* 드롭다운 메뉴 위치 지정을 위한 기준점 */
 }
 
 section[class$="-section"] { /* 클래스 이름이 '-section'으로 끝나는 모든 요소에 적용 */
@@ -61,25 +110,25 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
 /* 각 카테고리 컨테이너별 배경 이미지 스타일 */
 /* notion -> concept */
 .concept-page {
-    background-image: url("/static/assets/img/notion-bg.svg");
+    background-image: url("../../static/assets/img/notion-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
 .event-page {
-    background-image: url("/static/assets/img/event-bg.svg");
+    background-image: url("../../static/assets/img/event-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
 .person-page {
-    background-image: url("/static/assets/img/person-bg.svg");
+    background-image: url("../../static/assets/img/person-bg.svg");
     background-size: cover;
     background-position: center;
 }
 
 .history-page {
-    background-image: url("/static/assets/img/history-bg.svg");
+    background-image: url("../../static/assets/img/history-bg.svg");
     background-size: cover;
     background-position: center;
 }
@@ -105,21 +154,6 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
     font-weight: 400;
     margin-left: auto;
     margin-right: 50px;
-}
-
-/* 드롭다운 컨테이너 (account 아이콘과 드롭다운 목록 감싼 것) */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* 드롭다운 버튼 (account 이미지) */
-.dropbtn {
-    margin-right: 50px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: block;
 }
 
 /* 드롭다운 내용 (초기에는 숨김) */
@@ -178,4 +212,237 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
     text-decoration: none;
     white-space: nowrap;
     padding-left: 30px;
+}
+
+/* 글자 스타일 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+body {
+    margin: 0; /* body 태그의 모든 기본 마진을 제거 */
+    padding: 0; /* 혹시 모를 기본 패딩도 제거 */
+}
+
+/* hr 선 스타일 */
+.line {
+    background-color: #D9D9D9;
+    height: 1px;
+    border: none;
+}
+
+.tag {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 80px;
+}
+
+.icon {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.logo {
+    padding-top:10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.same {
+    display: flex; 
+    align-items: center;
+    height: 100%;
+}
+
+.logout {
+    text-decoration: none;
+    color: #D9D9D9; 
+    font-family: "Pretendard Variable";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    padding-top:10px;
+}
+
+.logout p {
+    margin: 0; 
+    padding: 0;
+}
+
+.logout:hover {
+    color: #4D0099
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex; /* 버튼 내의 이미지를 flex로 정렬 */
+    align-items: center; /* 이미지 세로 중앙 정렬 */
+    margin: 0;
+    padding: 0;
+}
+
+.dropbtn img {
+    padding: 0;
+    margin: 0;
+}
+
+.account {
+    margin-left: auto; /* 오른쪽으로 밀어냄 */
+    margin-right: 50px; 
+    display: flex;       
+    align-items: center; 
+    position: relative;  /* 드롭다운 메뉴 위치 지정을 위한 기준점 */
+}
+
+section[class$="-section"] { /* 클래스 이름이 '-section'으로 끝나는 모든 요소에 적용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/* 각 섹션 컨테이너 (배경 이미지) 공통 스타일 */
+section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 section 내부 div에 적용 */
+    width: 1225px;
+    height: 168px;
+    border-radius: 40px;
+    border: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    position: relative; /* 자식 요소의 절대 위치 지정을 위해 설정 */
+    overflow: hidden; /* 내용이 넘치지 않도록 숨김 */
+}
+
+/* 각 카테고리 컨테이너별 배경 이미지 스타일 */
+/* notion -> concept */
+.concept-page {
+    background-image: url("../../static/assets/img/notion-bg.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.event-page {
+    background-image: url("../../static/assets/img/event-bg.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.person-page {
+    background-image: url("../../static/assets/img/person-bg.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.history-page {
+    background-image: url("../../static/assets/img/history-bg.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.concept, .event, .person, .history { 
+    color: #FFF;
+    font-family: "Pretendard Variable";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+/* "0/4, 4/5" 진도 표시 스타일 */
+#progress-concept,
+#progress-event,
+#progress-person,
+#progress-history {
+    font-size: 28px;
+    color: #FFF;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+/* 드롭다운 내용 (초기에는 숨김) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    min-width: 310px;
+    height: 383px;
+    z-index: 1;
+    border-radius: 20px;
+    border: 1px solid #D9D9D9;
+    right: 0;
+    top: 100%;
+    transform: translateY(30px);
+}
+
+/* JavaScript로 'show' 클래스가 추가되면 보이도록 */
+.dropdown-content.show {
+    display: block;
+}
+
+/* 드롭다운 타이틀 항목 */
+.dropdown-content .name {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    padding-left: 30px;
+}
+
+/* 드롭다운 세부 항목 */
+.dropdown-content a {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2.5;
+    text-decoration: none;
+    white-space: nowrap;
+    padding-left: 30px;
+}
+
+.dropdown-content .add {
+    color: #7D7D7D;
+    font-family: "Pretendard Variable";
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    padding-left: 30px;
+}
+
+
+/* hover 효과 */
+section div[class$="-page"]:hover {
+    cursor: pointer; /* 마우스 포인터 변경 */
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 클릭 효과 */
+section div[class$="-page"]:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
 }

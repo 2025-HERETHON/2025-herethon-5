@@ -46,18 +46,19 @@
 
             <hr class="mypage-divider" />
 
-            <div class="study-group"><!--이주연_날짜별--><!--날짜별, 파트별 id 다르게-->
-              {% if records_by_date %}
-                {% regroup records_by_date by updated_at.date as date_groups %}
-                {% for date_group in date_groups %}
+            <div class="study-group" id="study-by-date"><!--이주연_날짜별--><!--날짜별, 파트별 id 다르게-->
+              {% if records_date %}
+                {% for date_obj, records in records_date.items %}
                   <div class="study-group">
-                    <h2>{{ date_group.grouper|date:"n/j" }}</h2> <!--날짜-->
-                    {% for record in date_group.list %}
-                    <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}" class="study-card">
-                      <div class="study-info">
-                        <p class="study-number">{{ record.curriculum.id }}</p>
+                    <h2>{{ date_obj|date:"n/j" }}</h2> <!--날짜-->
+                    {% for record in records %}
+                    <a href="{% url 'learn:curriculum_detail' record.curriculum.category.slug record.curriculum.number %}" class="study-card">
+                      <p class="study-number">{{ record.curriculum.number }}</p>
+                      <div class="study-detail-container">
                         <p class="study-title">{{ record.curriculum.title }}</p><!--타이틀-->
                         <p class="study-desc">{{ record.curriculum.explanation }}</p><!--부제-->
+                      </div>
+                      <div class="date-container">
                         <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                       </div>
                     </a>
@@ -69,17 +70,20 @@
               {% endif %}
             </div>
 
-            <div class="study-group"><!--이주연_파트별--><!--display:none 사용 js로 display:block 전환-->
-              {% if records_by_part %}
-                {% for category, records in records_by_part.items %}
+            <div class="study-group" id="study-by-part"><!--이주연_파트별--><!--display:none 사용 js로 display:block 전환-->
+              {% if records_category %}
+                {% for category_name, records in records_category.items %}
                 <div class="study-group">
-                  <h2>{{ category }}</h2> <!--파트-->
+                  <h2>{{ category_name }}</h2> <!--파트-->
                   {% for record in records %}
-                  <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}" class="study-card">
-                    <div class="study-info">
-                      <p class="study-number">{{ record.curriculum.id }}</p>
+                  <a href="{% url 'learn:curriculum_detail' record.curriculum.category.slug record.curriculum.number %}" class="study-card">
+                    
+                    <p class="study-number">{{ record.curriculum.number }}</p>
+                    <div class="study-detail-container">
                       <p class="study-title">{{ record.curriculum.title }}</p>
                       <p class="study-desc">{{ record.curriculum.explanation }}</p>
+                    </div>
+                    <div class="date-container">
                       <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                     </div>
                   </a>

@@ -1,63 +1,100 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/learn/learn_complete.css' %}" />
     <title>해당 커리큘럼 완료</title>
 </head>
+
 <body>
     <!-- 이전(커리큘럼) -->
-    <a href="{% url 'learn:curriculum' curriculum.category.slug %}">←</a>
-    <br/>
+    <div class="header">
+    <a href="{% url 'quiz:quiz_view' category.slug curriculum.number %}">
+        <img src="{% static 'assets/img/arrow.svg' %}" alt="" />
+    </a>
+    <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+        <img src="{% static 'assets/logo2.png' %}" alt="로고">
+    </a>
+    </div>
 
+    <div class="content_container">
     <!-- 제목 -->
-    <h1>{{ curriculum.id }}. {{ curriculum.title }}</h1>
+    <h1 class="title">{{ number_in_category }}. {{ curriculum.title }}</h1>
 
     <!-- 단계 표시 -->
-    1 학습하기 2 퀴즈 풀기 3 학습 완료
-    <br/>
-    <br/>
-    
+    <div class="progressbar_container">
+        <div class="first">1</div>
+        <div class="line1"></div>
+        <div class="second">2</div>
+        <div class="line2"></div>
+        <div class="third">3</div>
+    </div>
+
+    <div class="progressbar_text">
+        <div class="study">학습하기</div>
+        <div class="quiz">퀴즈 풀기</div>
+        <div class="finish">학습 완료!</div>
+    </div>
+    <br /><br />
+
     <!-- 내용 -->
-    <div>
-        <p>수고하셨습니다!</p>
-        <p>{{ curriculum.id }}. {{ curriculum.title }} 학습을 완료하였어요!</p>
+    <div class="complete_text">
+        <p class="complete-congrats">수고하셨습니다!</p>
+        <span class="complete-title">{{ number_in_category }}. {{ curriculum.title }}</span>
+        <span class="complete-msg">학습을 완료하였어요!</span>
         <p>
-            <a href="{% url 'feedback_create' %}">클릭하여 학습과 관련한 의견 보내기</a>
+        <a class="complete-feedback-link" href="{% url 'feedback_create' %}">
+            클릭하여 학습과 관련한 의견 보내기
+        </a>
         </p>
     </div>
-    <br/>
-    
+    <br />
+
     <!-- 책 추천 -->
-    <div>
-        <h3>이런 책은 어때요?</h3>
+    <div class="recommendation_container">
+    <h3 class="recommendation_text">이런 책은 어때요?</h3>
 
-        {% for book in book_recommendations %}
-            {{ book.content|linebreaksbr }}
-            <!-- |linebreaksbr: 줄바꿈 포함 -->
-            <br/>
-            {% if book.image %}
-                <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width:150px;">
-                <br/>
-            {% endif %}
-
-            {% if book.link %}
-                <a href="{{ book.link }}">클릭하여 책 구매하러 가기</a>
-            {% endif %}
-
+    {% for book in book_recommendations %}
+        {{ book.content|linebreaksbr }}
+        <br />
+        {% if book.image %}
+        <img
+            class="book_image"
+            src="{{ book.image.url }}"
+            alt="{{ book.title }}"
+            style="width: 150px"
+        />
+        <br />
+        {% endif %}
+        {% if book.link %}
+            <a class="book_link" href="{{ book.link }}">
+            클릭하여 책 구매하러 가기
+            </a>
+        {% endif %}
+        <br />
         {% endfor %}
     </div>
-    <br/>
+    <br />
 
     <!-- 홈으로 돌아가기 & 다음 강좌 바로가기 -->
-    <a href="{% url 'home' %}">홈으로 돌아가기</a> <!--이주연_url 수정-->
+    <div class="button-container">
+        <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+        홈으로 돌아가기
+        </a>
 
-    {% if next_curriculum %}
-        <a href="{% url 'learn:curriculum' curriculum.category.slug %}">다음 강 학습하기</a>
-    {% else %}
-        <a href="{% url 'learn:category_complete' category_slug=curriculum.category.slug %}">다음 강 학습하기</a>
-    {% endif %}
-
-
+        {% if next_curriculum %}
+        <a class="go_next" href="{% url 'learn:curriculum' curriculum.category.slug %}">
+            이어서 학습하기
+        </a>
+        {% else %}
+        <a class="go_next" href="{% url 'learn:category_complete' category_slug=curriculum.category.slug %}">
+            이어서 학습하기
+        </a>
+        {% endif %}
+    </div>
+    </div>
 </body>
 </html>

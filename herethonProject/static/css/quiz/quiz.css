@@ -40,7 +40,7 @@ body{
     width:40px;
     height:40px;
     border-radius: 50%;
-    background-color: #4D0099;
+    background-color: #BDAED9;
     color:white;
     display:flex;
     justify-content: center;
@@ -49,7 +49,7 @@ body{
 .line1{
     display:flex;
     width:508px;
-    border-bottom:1px solid #4D0099;
+    border-bottom:1px solid #BDAED9;
 }
 .second{
     width:40px;
@@ -80,7 +80,7 @@ body{
     justify-content: center;    
 }
 .study{
-    color:#4D0099;
+    color:#BDAED9;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -111,6 +111,7 @@ body{
     font-style: normal;
     font-weight: 700;
 }
+
 .quiz_container{
     display:flex;
     justify-content: center;
@@ -128,18 +129,7 @@ body{
     font-weight: 600;
 }
 
-.OX_O{
-    width: 558px;
-    height: 70px;
-    border:1px solid #ABABAB;
-    border-radius: 30px;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 700;
-    color:#ABABAB;
-    background-color: white;
-}
-.OX_X{
+.OX_O, .OX_X{
     width: 558px;
     height: 70px;
     border:1px solid #ABABAB;
@@ -161,35 +151,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.answer1{
-    display: flex;
-    width: 1148px;
-    height: 70px;
-    padding: 14px 48px;
-    align-items: center;
-    border-radius: 30px;
-    border:1px solid #ABABAB;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    color:#ABABAB;
-    background-color: white;
-}
-.answer2{
-    display: flex;
-    width: 1148px;
-    height: 70px;
-    padding: 14px 48px;
-    align-items: center;
-    border-radius: 30px;
-    border:1px solid #ABABAB;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    color:#ABABAB;
-    background-color: white;
-}
-.answer3{
+.answer1, .answer2, .answer3{
     display: flex;
     width: 1148px;
     height: 70px;
@@ -210,18 +172,25 @@ body{
     margin-bottom:30px;
 }
 
+/* 정답설명 영역 */
 .quiz_answer{
     width: 1148px;
-    height: 295px;
-    border: 1px solid green;
+    min-height: 120px;
     border-radius:30px;
-    padding:28px 0 0 19px;
+    padding:20px 0 0 20px;
 }
-.true_container{
-    display:flex;
-    align-items: center;
+
+/* 정답일 때 테두리 색 */
+.quiz_answer.correct {
+    border: 0.8px solid #48742C;
 }
-.false_container{
+
+/* 오답일 때 테두리 색 */
+.quiz_answer.wrong {
+    border: 0.8px solid #BB271A; 
+}
+
+.true_container, .false_container{
     display:flex;
     align-items: center;
 }
@@ -235,13 +204,13 @@ body{
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    color:#BB271A;
+    color:#BB271A; 
 }
 .answer_reason{
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    color:#48742C;
+    color:#333;
 }
 
 .button_container{
@@ -249,4 +218,64 @@ body{
     display:flex;
     justify-content: flex-end;
     margin: 0 auto; 
+}
+
+/* 기본 선택됐을 때 */
+button.selected {
+    background-color: #4D0099;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #2c0066;
+}
+
+/* 정답 선택 시 */
+button.selected-correct {
+    background-color: rgba(72, 116, 44, 0.2);;
+    color: #48742C;
+    font-weight: 700;
+    border: 1px solid #48742C;
+}
+
+/* 오답 선택 시 */
+button.selected-wrong {
+    background-color: rgba(187, 39, 26, 0.2); ;
+    color: #BB271A;
+    font-weight: 700;
+    border: 0.8px solid #BB271A;
+}
+
+/* 내 멋대로 추가 */
+/* hover 효과 */
+.OX_O, .OX_X,
+.answer1, .answer2, .answer3{
+    transition: transform 0.2s ease;
+}
+
+.OX_O:hover, .OX_X:hover,
+.answer1:hover, .answer2:hover, .answer3:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.next:hover {
+    background: #3a0070;
+    color: #fff;
+    border-color: #3a0070;
+}
+
+/* 클릭 효과 */
+.OX_O:active, .OX_X:active,
+.answer1:active, .answer2:active, .answer3:active {
+    transform: scale(0.95);
+}
+
+/* 정답 선택 후 */
+body.quiz-done .OX_O:hover,
+body.quiz-done .OX_X:hover,
+body.quiz-done .answer1:hover,
+body.quiz-done .answer2:hover,
+body.quiz-done .answer3:hover {
+    background-color: inherit;
+    transform: none;
+    cursor: default;
 }

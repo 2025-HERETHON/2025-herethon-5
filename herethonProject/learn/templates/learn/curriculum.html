@@ -1,33 +1,71 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커리큘럼</title>
+    <link rel="stylesheet" href="{% static 'css/partpage.css' %}">
 </head>
+
 <body>
+<div>
     <!-- 이전(카테고리) -->
-    <a href="{% url 'home' %}">←</a> <!--이주연_url 수정-->
-    <br/>
+    <header class="container">
+        <span class="icon">
+            <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+                <img src="{% static 'assets/img/arrow.svg' %}" alt="이전 페이지">
+            </a>
+        </span>
 
-    <h2>{{ category.name }}</h2>
+        <span class="logo">
+            <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+                <img src="{% static 'assets/img/logo.svg' %}" alt="로고">
+            </a>
+        </span>
+        
+        <span class="account">
+            <div class="same"><button class="dropbtn"></button></div>
+            <div class="dropdown-content"></div>
+            <div class="same"><button class="logout"></button></div>
+        </span>
+        
+    </header>
+    <hr class="line">
 
-    <!-- 커리큘럼 나열 -->
-    {% for item in curriculums_with_status %}
-        <div>
-            {% if item.is_accessible %}
-                <h3>
-                <a href="{% url 'learn:curriculum_detail' item.curriculum.id %}">{{ item.curriculum.title }}</a>
-                {% if item.is_completed %}✅{% endif %}
-                </h3>
-            {% else %}
-                <h3 style="color:gray;">{{ item.curriculum.title }}</h3>
-            
-            {% endif %}
-            <p>{{ item.curriculum.explanation }}</p>
-        </div>
-    {% empty %}
-        등록된 커리큘럼이 없습니다.
-    {% endfor %}
+    <main>
+        <p class="card">{{ category.name }}</p>
+        <section class="card-section">
+            {% for item in curriculums_with_status %}
+                {% if item.is_accessible %}
+                    <a href="{% url 'learn:curriculum_detail' category.slug item.curriculum.number %}" class="card-link">
+                {% endif %}
+
+                <div class="card-container
+                    {% if not item.is_accessible %}disabled{% endif %}
+                    {% if item.is_completed %}completed{% endif %}
+                    {% if item.id == some_current_item_id and not item.is_completed %}current{% endif %}"
+                    data-item-id="{{ item.curriculum.number }}"
+                >
+                    <div class="card-number">{{ forloop.counter|stringformat:"02d" }}</div>
+                    <div class="card-content">
+                        <h3 class="card-title">{{ item.curriculum.title }}</h3>
+                        <p class="card-dst">{{ item.curriculum.explanation }}</p>
+                    </div>
+
+                    <div class="card-checkbox"></div>
+                </div>
+
+                {% if item.is_accessible %}
+                    </a>
+                {% endif %}
+            {% empty %}
+                <p>등록된 커리큘럼이 없습니다.</p>
+            {% endfor %}
+        </section>
+    </main>
+</div>
+
+<script src="{% static 'js/part.js' %}"></script>
 </body>
 </html>

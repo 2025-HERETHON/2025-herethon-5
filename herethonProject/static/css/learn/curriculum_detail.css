@@ -153,3 +153,11 @@ button{
     display:flex;
     justify-content: flex-end;
 }
+
+/*내 멋대로 추가*/
+/* hover 효과 */
+.button_container button:hover {
+    background: #3a0070;
+    color: #fff;
+    border-color: #3a0070;
+}
