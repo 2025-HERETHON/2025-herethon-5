@@ -55,20 +55,23 @@
       <div>
         {% if item.is_accessible %}
         <h3>
-          <a href="{% url 'learn:curriculum_detail' item.curriculum.id %}">
-            {{ item.curriculum.title }}
+          <a
+            class="test"
+            href="{% url 'learn:curriculum_detail' item.curriculum.id %}"
+          >
+            {{ item.number_in_category }} {{ item.curriculum.title }}
           </a>
           {% if item.is_completed %}✅{% endif %}
         </h3>
         {% else %}
-        <h3 style="color: gray">
-          {{ item.curriculum.title }} (먼저 이전 강의를 완료하세요)
-        </h3>
+        <!-- <h3 style="color: gray">
+            {{ item.number_in_category }} {{ item.curriculum.title }} (먼저 이전 강의를 완료하세요)
+        </h3> -->
         {% endif %}
         <p>{{ item.curriculum.explanation }}</p>
       </div>
       {% empty %}
-      <p>등록된 커리큘럼이 없습니다.</p>
+      <!-- <p>등록된 커리큘럼이 없습니다.</p> -->
       {% endfor %}
     </div>
   </body>
