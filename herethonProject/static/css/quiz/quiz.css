@@ -124,6 +124,8 @@ body{
     background-color: #F5F5F5;
     width:1148px;
     height:90px;
+    width: 1148;
+    align-items: center; /*이주연_가운데정렬 추가*/
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -193,6 +195,7 @@ body{
 .true_container, .false_container{
     display:flex;
     align-items: center;
+    gap: 7px;
 }
 .true{
     font-size: 20px;
@@ -211,6 +214,13 @@ body{
     font-style: normal;
     font-weight: 400;
     color:#333;
+}
+/*이주연_클래스 추가*/
+.answer-green {
+    color: #48742C;
+}
+.answer-red {
+    color: #BB271A;
 }
 
 .button_container{

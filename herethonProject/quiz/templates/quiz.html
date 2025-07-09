@@ -38,7 +38,7 @@
 
   <div class="quiz_container">
     <div class="quiz_question">
-      <h3>{{ quiz.question }}</h3>
+      <p>{{ quiz.question }}</p>
     </div>
   </div>
   <br/>
@@ -82,15 +82,17 @@
         {% if is_correct %}
           <div class="true_container">
             <img src="{% static 'assets/true.png' %}" alt="정답 표시">
-            <p class="true" style="color:green;">정답입니다!</p>
+            <p class="true" style="color:#48742C;">정답입니다!</p>
           </div>
         {% else %}
           <div class="false_container">
             <img src="{% static 'assets/false.png' %}" alt="오답 표시">
-            <p class="false" style="color:red;">오답입니다!</p>
+            <p class="false" style="color:#BB271A;">오답입니다!</p>
           </div>
         {% endif %}
-        <p class="answer_reason">{{ quiz.explanation|linebreaksbr }}</p>
+        <p class="answer_reason {% if is_correct %}answer-green{% else %}answer-red{% endif %}">
+          {{ quiz.explanation|linebreaksbr }}
+        </p>
       </div>
     </div>
 
