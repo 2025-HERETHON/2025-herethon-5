@@ -11,14 +11,13 @@ class CustomUser(AbstractUser):
 # 마이페이지 - 나의 학습
 class LearningRecord(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="사용자")
-    # content_title = models.CharField(max_length=128, verbose_name="학습 내용")
-    content_title = models.ForeignKey('learn.Curriculum', on_delete=models.CASCADE, verbose_name="학습 내용", default=1)
+    curriculum = models.ForeignKey('learn.Curriculum', on_delete=models.CASCADE, verbose_name="학습 내용", default=1)
     category = models.ForeignKey('learn.Category', on_delete=models.CASCADE, verbose_name="카테고리")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="마지막 학습일")
     
     class Meta:
-        unique_together = ('user', 'content_title', 'category')
+        unique_together = ('user', 'curriculum', 'category')
         ordering = ['-updated_at']
     
     def __str__(self):
-        return f"{self.user.username} - {self.content_title.title}"
+        return f"{self.user.username} - {self.curriculum.title}"

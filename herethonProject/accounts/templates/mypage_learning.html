@@ -46,25 +46,21 @@
 
             <hr class="mypage-divider" />
 
-            <div class="study-group-list"><!--이주연_날짜별--><!--날짜별, 파트별 id 다르게-->
+            <div class="study-group"><!--이주연_날짜별--><!--날짜별, 파트별 id 다르게-->
               {% if records_by_date %}
                 {% regroup records_by_date by updated_at.date as date_groups %}
                 {% for date_group in date_groups %}
                   <div class="study-group">
-                    <h2>{{ date_group.grouper|date:"n/j" }}</h2>
+                    <h2>{{ date_group.grouper|date:"n/j" }}</h2> <!--날짜-->
                     {% for record in date_group.list %}
-                      <div class="record-item">
-                        <p>
-                          <strong>
-                            <a href="{% url 'learn:curriculum_detail' record.content_title.id %}">
-                              {{ record.content_title.title }}
-                            </a>
-                          </strong>
-                        </p>
-                        <p>{{ record.content_title.explanation }}</p>
-                        <p>최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
+                    <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}" class="study-card">
+                      <div class="study-info">
+                        <p class="study-title">{{ record.curriculum.title }}</p><!--타이틀-->
+                        <p class="study-desc">{{ record.curriculum.explanation }}</p><!--부제-->
+                        <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                       </div>
-                      <hr>
+                    </a>
+                    <hr>
                     {% endfor %}
                   </div>
                 {% endfor %}
@@ -73,24 +69,20 @@
               {% endif %}
             </div>
 
-            <div class="study-group-list"><!--이주연_파트별--><!--display:none 사용 js로 display:block 전환-->
+            <div class="study-group"><!--이주연_파트별--><!--display:none 사용 js로 display:block 전환-->
               {% if records_by_part %}
                 {% for category, records in records_by_part.items %}
                 <div class="study-group">
-                  <h2>{{ category }}</h2>
+                  <h2>{{ category }}</h2> <!--파트-->
                   {% for record in records %}
-                    <div class="record-item">
-                      <p>
-                        <strong>
-                          <a href="{% url 'learn:curriculum_detail' record.content_title.id %}">
-                            {{ record.content_title.title }}
-                          </a>
-                        </strong>
-                      </p>
-                      <p>{{ record.content_title.explanation }}</p>
-                      <p>최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
+                  <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}" class="study-card">
+                    <div class="study-info">
+                      <p class="study-title">{{ record.curriculum.title }}</p>
+                      <p class="study-desc">{{ record.curriculum.explanation }}</p>
+                      <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                     </div>
-                    <hr>
+                  </a>
+                  <hr>
                   {% endfor %}
                 </div>
                 {% endfor %}
@@ -98,8 +90,6 @@
                 <p>아직 학습 기록이 없습니다.</p>
               {% endif %}
             </div>
-
-
           </section>
         </main>
       </div>
