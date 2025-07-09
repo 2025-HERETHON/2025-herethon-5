@@ -46,7 +46,7 @@ def curriculum(request, category_slug):
         completed_titles = LearningRecord.objects.filter(
             user=request.user,
             category=category
-        ).values_list('content_title', flat=True)
+        ).values_list('curriculum', flat=True)
         completed_curriculum_ids = set(Curriculum.objects.filter(
             title__in=completed_titles,
             category=category
@@ -110,7 +110,7 @@ def learn_complete(request, curriculum_id):
         LearningRecord.objects.update_or_create(
             user=request.user,
             category=curriculum.category,
-            content_title=curriculum, # content_title 필드 변경으로 코드 수정
+            curriculum=curriculum, # content_title 필드 변경으로 코드 수정
         )
     else:
         completed = request.session.get('completed_curriculums', [])
@@ -147,7 +147,7 @@ def category_complete(request, category_slug):
     if request.user.is_authenticated:
         completed_titles = LearningRecord.objects.filter(
             user=request.user, category=category
-        ).values_list('content_title', flat=True)
+        ).values_list('curriculum', flat=True)
         completed_ids = Curriculum.objects.filter(
             category=category, title__in=completed_titles
         ).values_list('id', flat=True)
@@ -183,7 +183,7 @@ def check_all_curriculums_completed(user_or_session, category):
         completed_titles = LearningRecord.objects.filter(
             user=user_or_session,
             category=category
-        ).values_list('content_title', flat=True)
+        ).values_list('curriculum', flat=True)
 
         # 완료한 제목을 가진 커리큘럼들의 id만 set으로 저장
         completed_curriculum_ids = set(Curriculum.objects.filter(

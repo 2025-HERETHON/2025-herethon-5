@@ -50,7 +50,7 @@
     <br/>
 
     <!-- 홈으로 돌아가기 & 다음 강좌 바로가기 -->
-    <a href="{% url 'learn:category_list' %}">홈으로 돌아가기</a>
+    <a href="{% url 'home' %}">홈으로 돌아가기</a> <!--이주연_url 수정-->
 
     {% if next_curriculum %}
         <a href="{% url 'learn:curriculum' curriculum.category.slug %}">다음 강 학습하기</a>
