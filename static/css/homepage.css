@@ -1,6 +1,11 @@
 /* 글자 스타일 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 
+body {
+    margin: 0; /* body 태그의 모든 기본 마진을 제거 */
+    padding: 0; /* 혹시 모를 기본 패딩도 제거 */
+}
+
 /* hr 선 스타일 */
 .line {
     background-color: #D9D9D9;
@@ -8,11 +13,15 @@
     border: none;
 }
 
+.tag {
+    text-decoration: none;
+}
+
 header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
+    min-height: 80px;
 }
 
 .icon {
@@ -25,13 +34,53 @@ header {
     padding-right: 0px;
 }
 
-.tag {
+.same {
+    display: flex; 
+    align-items: center;
+    height: 100%;
+}
+
+.logout {
     text-decoration: none;
+    color: #D9D9D9; 
+    font-family: "Pretendard Variable";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.logout p {
+    margin: 0; 
+    padding: 0;
+}
+
+.logout:hover {
+    color: #4D0099
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex; /* 버튼 내의 이미지를 flex로 정렬 */
+    align-items: center; /* 이미지 세로 중앙 정렬 */
+    margin: 0;
+    padding: 0;
+}
+
+.dropbtn img {
+    padding: 0;
+    margin: 0;
 }
 
 .account {
-    margin-left: auto;
-    margin-right: 50px;
+    margin-left: auto; /* 오른쪽으로 밀어냄 */
+    margin-right: 50px; 
+    display: flex;       
+    align-items: center; 
+    position: relative;  /* 드롭다운 메뉴 위치 지정을 위한 기준점 */
 }
 
 section[class$="-section"] { /* 클래스 이름이 '-section'으로 끝나는 모든 요소에 적용 */
@@ -107,21 +156,6 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
     margin-right: 50px;
 }
 
-/* 드롭다운 컨테이너 (account 아이콘과 드롭다운 목록 감싼 것) */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* 드롭다운 버튼 (account 이미지) */
-.dropbtn {
-    margin-right: 50px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: block;
-}
-
 /* 드롭다운 내용 (초기에는 숨김) */
 .dropdown-content {
     display: none;
@@ -178,20 +212,4 @@ section div[class$="-page"] { /* 클래스 이름이 '-page'로 끝나는 sectio
     text-decoration: none;
     white-space: nowrap;
     padding-left: 30px;
-}
-
-/* 로그아웃 경우 */
-.logout {
-    margin-left: auto;
-    margin-right: 100px;
-    color: #D9D9D9;
-    font-family: "Pretendard Variable";
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.logout:hover {
-    color: #4D0099
 }

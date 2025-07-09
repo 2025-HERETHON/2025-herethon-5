@@ -6,24 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학습 목록</title>
-    <link rel="stylesheet" href="../static/css/homepage.css">
+    <link rel="stylesheet" href="../../static/css/homepage.css"> 
+    <!-- 제가 herethonProject 폴더를 pull 받아서 작업한 거라 경로가 다를 겁니다! 일단 그대로 올리겠습니다! -->
 </head>
 <body>
     <div>
-        <header>
-            <a href="{% url 'home' %}" class="icon">
-                <img src="../static/assets/img/arrow.svg">
-            </a>
+        <header class="container">
+            <span class="icon">
+                <a href="{% url 'home' %}">
+                    <img src="../../static/assets/img/arrow.svg">
+                </a>
+            </span>
+            
             <span class="logo">
-                <img src="../static/assets/img/logo.svg">
+                <img src="../../static/assets/img/logo.svg">
             </span>
 
             <span class="account">
                 {% if user.is_authenticated %}
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <img src="../static/assets/img/account.svg">
-                    </button>
+                    <div class="same">
+                        <button class="dropbtn">
+                            <img src="../../static/assets/img/account.svg">
+                        </button>
+                    </div>
                     <div class="dropdown-content">
                         <!--로그인 상태-->
                             <p class="name">{{ user.name }}님</p>
@@ -33,12 +38,11 @@
                             <a href="{% url 'feedback_create' %}">의견 보내기</a><hr class="line">
                             <a href="{% url 'accounts:logout' %}">로그아웃</a>
                     </div>
-                </div>
                 <!-- 로그아웃 상태 -->
                 {% else %}
-                <a href="{% url 'accounts:login' %}" class="logout">
-                    <p>로그인</p>
-                </a>
+                    <div class="same">
+                        <a href="{% url 'accounts:login' %}" class="logout"><p>로그인</p></a>
+                    </div>
                 {% endif %}
             </span>
         </header>
@@ -60,6 +64,6 @@
     </main>
     </div>
 
-    <script src="../static/js/home.js"></script>
+    <script src="../../static/js/home.js"></script>
 </body>
-</html
+</html>
