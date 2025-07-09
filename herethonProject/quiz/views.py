@@ -5,38 +5,39 @@ from django.contrib.auth.decorators import login_required
 from learn.models import Curriculum
 
 @login_required
-def quiz_view(request, curriculum_id):
-    curriculum = get_object_or_404(Curriculum, id=curriculum_id)
-    category_slug = curriculum.category.slug
+def quiz_view(request, category_slug, curriculum_number):
+    curriculum = get_object_or_404(Curriculum, category__slug=category_slug, number=curriculum_number)
     quiz = get_object_or_404(Quiz, curriculum=curriculum)
+
+    curriculums_in_category = Curriculum.objects.filter(
+        category=curriculum.category
+    ).order_by('number')
+
+    number_in_category = curriculum.number
+    user_choice = None
+    is_correct = None
 
     if request.method == 'POST':
         user_choice = request.POST.get('answer')
         is_correct = (user_choice == quiz.correct_answer)
 
-        record, created = LearningRecord.objects.update_or_create(
+        LearningRecord.objects.update_or_create(
             user=request.user,
             category=curriculum.category,
-            content_title=curriculum.title,
+            curriculum=curriculum,
             defaults={}
         )
 
-        context = {
-            'quiz': quiz,
-            'user_choice': user_choice,
-            'is_correct': is_correct,
-            'explanation': quiz.explanation,
-            'curriculum': curriculum,
-            'category_slug': category_slug,
-        }
-        return render(request, 'quiz.html', context)
+    context = {
+        'category': curriculum.category,
+        'category_slug': category_slug,
+        'quiz': quiz,
+        'user_choice': user_choice,
+        'is_correct': is_correct,
+        'explanation': quiz.explanation,
+        'curriculum': curriculum,
+        'number_in_category': number_in_category,
+    }
 
-    return render(request, 'quiz.html', 
-                {'quiz': quiz, 
-                'curriculum': curriculum,
-                'category_slug': category_slug})
-
-
-
-
+    return render(request, 'quiz.html', context)
 

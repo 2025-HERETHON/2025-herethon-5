@@ -4,5 +4,5 @@ from .views import *
 app_name='quiz'
 
 urlpatterns = [
-    path('<int:curriculum_id>/', quiz_view, name='quiz'),
+    path('quiz/<slug:category_slug>/<int:curriculum_number>/', quiz_view, name='quiz_view'),
 ]
