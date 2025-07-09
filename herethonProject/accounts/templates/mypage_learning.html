@@ -55,12 +55,12 @@
                     {% for record in date_group.list %}
                     <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}" class="study-card">
                       <div class="study-info">
+                        <p class="study-number">{{ record.curriculum.id }}</p>
                         <p class="study-title">{{ record.curriculum.title }}</p><!--타이틀-->
                         <p class="study-desc">{{ record.curriculum.explanation }}</p><!--부제-->
                         <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                       </div>
                     </a>
-                    <hr>
                     {% endfor %}
                   </div>
                 {% endfor %}
@@ -77,12 +77,12 @@
                   {% for record in records %}
                   <a href="{% url 'learn:curriculum_detail' record.curriculum.id %}" class="study-card">
                     <div class="study-info">
+                      <p class="study-number">{{ record.curriculum.id }}</p>
                       <p class="study-title">{{ record.curriculum.title }}</p>
                       <p class="study-desc">{{ record.curriculum.explanation }}</p>
                       <p class="study-date">최근 학습일: {{ record.updated_at|date:"Y.m.d" }}</p>
                     </div>
                   </a>
-                  <hr>
                   {% endfor %}
                 </div>
                 {% endfor %}
