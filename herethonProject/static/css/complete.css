@@ -61,3 +61,7 @@ a>button{
     font-weight: 700;
     border:none;
 }
+
+a>button:hover{
+    background-color: rgba(189, 174, 217)
+}

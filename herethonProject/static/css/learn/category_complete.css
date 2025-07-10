@@ -73,7 +73,7 @@
   .curriculum-card {
     display: flex;
     align-items: center;
-    background: #faf7ff;
+    background: white;
     border: 1px solid #bdaed9;
     border-radius: 40px;
     padding: 30px 40px;
@@ -126,5 +126,5 @@
   }
   
   .curriculum-card:hover{
-    background-color: rgba(189, 174, 217, 0.2)
+    background-color: #F4EEFF66
   }

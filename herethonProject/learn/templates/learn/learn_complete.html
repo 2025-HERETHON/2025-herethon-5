@@ -55,9 +55,9 @@
 
     <!-- 책 추천 -->
     <div class="recommendation_container">
-    <h3 class="recommendation_text">이런 책은 어때요?</h3>
 
     {% for book in book_recommendations %}
+        <h3 class="recommendation_text">{{ book.title}}</h3>
         {{ book.content|linebreaksbr }}
         <br />
         {% if book.image %}
