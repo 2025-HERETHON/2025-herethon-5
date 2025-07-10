@@ -6,7 +6,7 @@ const pwForm = document.getElementById("pw-form");
 const pwBtn = document.querySelector(".pw-btn");
 
 // 정규식: 영문 8자 이상 
-const pwRegex = /^[A-Za-z]{8,}$/;
+const pwRegex = /^(?=.*[A-Za-z]).{8,}$/;
 
 function validatePwForm() {
   const current = currentInput.value.trim();
