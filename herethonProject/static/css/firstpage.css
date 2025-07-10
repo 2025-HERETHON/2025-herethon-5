@@ -85,7 +85,7 @@ section {
   font-size: 1.08rem;
   text-align: center;
   font-style: normal;
-  margin: 150px 0 15px 0;
+  margin: 50px 0 15px 0;
 }
 
 .main-quote strong {
@@ -172,4 +172,11 @@ section {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.dot-img {
+  padding: 0;
+  height: 20px;
+  width: auto;
+  margin: 0;
 }
