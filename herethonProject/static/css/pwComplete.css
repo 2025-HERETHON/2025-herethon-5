@@ -58,3 +58,7 @@ a.complete-btn {
 a.complete-btn:hover {
   background: #3a0070;
 }
+
+.dot-img {
+  padding: 35px 0;
+}
