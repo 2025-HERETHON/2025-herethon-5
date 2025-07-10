@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-b^@8+q8ivj7%78%9o$$f)+*pgzr)k%q54d5!y(f1^n41o!)6z#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # 배포할 때 바꾸기
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] # 배포할 때 바꾸기 'genteracy.pythonanywhere.com',
 
 
 # Application definition
@@ -131,6 +131,8 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+# STATIC_ROOT = os.path.join('staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
