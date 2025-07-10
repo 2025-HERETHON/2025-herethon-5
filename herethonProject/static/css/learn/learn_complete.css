@@ -216,3 +216,12 @@
     color: #fff;
     border-color: #3a0070;
   }
+
+
+  .link-img {
+    vertical-align: middle;
+}
+
+  .click-to-feedback {
+    margin-top: 35px;
+}

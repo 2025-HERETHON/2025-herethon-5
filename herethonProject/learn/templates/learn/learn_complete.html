@@ -45,10 +45,11 @@
         <p class="complete-congrats">수고하셨습니다!</p>
         <span class="complete-title">{{ number_in_category }}. {{ curriculum.title }}</span>
         <span class="complete-msg">학습을 완료하였어요!</span>
-        <p>
-        <a class="complete-feedback-link" href="{% url 'feedback_create' %}">
+        <p class="click-to-feedback">
+            <img class="link-img" src="{% static 'assets/img/complete_link.svg' %}" alt="" />
+            <a class="complete-feedback-link" href="{% url 'feedback_create' %}">
             클릭하여 학습과 관련한 의견 보내기
-        </a>
+            </a>
         </p>
     </div>
     <br />
