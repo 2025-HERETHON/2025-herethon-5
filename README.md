@@ -24,7 +24,7 @@
 
 | **이도윤** | **이주연** | **서태영** | **고유빈** | **이채빈** | **김유빈** |
 | :------: |  :------: | :------: | :------: | :------: | :------: |
-| [<img src="https://github.com/user-attachments/assets/892b7b60-75b7-4230-941a-f1bd013242cb" height=150 width=150> <br/> @yeon1615](https://github.com/yeon1615) | [<img src="https://github.com/user-attachments/assets/92b8fdce-9e3c-4dbd-b70e-82c188a4076b" height=150 width=150> <br/> @Cheorizzang](https://github.com/Cheorizzang) | [<img src="https://github.com/user-attachments/assets/55c98c6e-1ef9-4deb-8fd6-f84af505f097" height=150 width=150> <br/> @heejiyang](https://github.com/heejiyang) | [<img src="https://github.com/user-attachments/assets/210d2d1a-b821-46e3-98f7-2db7923a3855" height=150 width=150> <br/> @journey-ji](https://github.com/journey-ji) | [<img src="https://github.com/user-attachments/assets/9b160457-70a2-4d51-bf95-677c52190176" height=150 width=150> <br/> @newmember1](https://github.com/newmember1) | [<img src="https://github.com/user-attachments/assets/17a747d8-fa1f-4611-933d-306ce492023d" height=150 width=150> <br/> @newmember2](https://github.com/newmember2) |
+| [<img src="https://github.com/user-attachments/assets/892b7b60-75b7-4230-941a-f1bd013242cb" height=150 width=150> <br/> ](https://github.com/yeon1615) | [<img src="https://github.com/user-attachments/assets/92b8fdce-9e3c-4dbd-b70e-82c188a4076b" height=150 width=150> <br/> @leejuyeon7852](https://github.com/Cheorizzang) | [<img src="https://github.com/user-attachments/assets/55c98c6e-1ef9-4deb-8fd6-f84af505f097" height=150 width=150> <br/> @taeyoung0524](https://github.com/heejiyang) | [<img src="https://github.com/user-attachments/assets/210d2d1a-b821-46e3-98f7-2db7923a3855" height=150 width=150> <br/> @rhdbqls](https://github.com/journey-ji) | [<img src="https://github.com/user-attachments/assets/9b160457-70a2-4d51-bf95-677c52190176" height=150 width=150> <br/> @haebin1207](https://github.com/newmember1) | [<img src="https://github.com/user-attachments/assets/17a747d8-fa1f-4611-933d-306ce492023d" height=150 width=150> <br/> @kimybin](https://github.com/newmember2) |
 | PM/Design | Back-end | Front-end | Back-end | Front-end | Front-end |
 
 </div>
@@ -33,8 +33,8 @@
 
 ## 1. 개발 환경
 
-- Front : HTML, React, styled-components, Recoil
-- Back-end : 제공된 API 활용
+- Front : HTML, CSS, Javascript
+- Back-end : 제공된 API 활용 
 - 버전 및 이슈관리 : Github, Github Issues, Github Project
 - 협업 툴 : Discord, Notion, Github Wiki
 - 서비스 배포 환경 : Netlify
