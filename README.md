@@ -275,5 +275,90 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
+## 7. 파일 구조
+📦 2025-herethon-5/
+├── 📁 accounts/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── 📁 templates/
+│       ├── complete.html
+│       ├── login.html
+│       ├── mypage_learning.html
+│       ├── mypage_pwChange.html
+│       ├── pwComplete.html
+│       └── signup.html
+│
+├── 📁 feedback/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── 📁 templates/
+│       ├── feedback_create.html
+│       ├── feedbackComplete.html
+│       └── mypage_feedback.html
+│
+├── 📁 herethonProject/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+│
+├── 📁 home/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── 📁 templates/
+│       ├── firstpage.html
+│       └── home-login.html
+│
+├── 📁 learn/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── 📁 templates/
+│       └── 📁 learn/
+│           ├── category_complete.html
+│           ├── curriculum.html
+│           ├── curriculum_detail.html
+│           └── learn_complete.html
+│
+├── 📁 quiz/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── 📁 templates/
+│       └── quiz.html
+│
+├── 📁 static/
+│   ├── 📁 css/
+│   │   └── ...
+│   ├── 📁 js/
+│   │   └── ...
+│   └── 📁 assets/
+│       └── ...
+│
+├── db.sqlite3
+├── manage.py
+├── README.md
+└── requirements.txt
+
 
 
