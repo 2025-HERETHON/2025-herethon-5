@@ -239,7 +239,7 @@
 
 | 회원가입 |
 |----------|
-|<img width="2560" height="1398" alt="image" src="https://github.com/user-attachments/assets/5e50a547-962a-4ea2-b2c3-7ebbb3708727" />|
+|<img width="1867" height="901" alt="image" src="https://github.com/user-attachments/assets/430cbb9a-6f5e-4f31-a766-a7a79dd56bd2" />|
 
 
 
