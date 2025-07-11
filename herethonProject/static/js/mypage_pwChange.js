@@ -18,7 +18,7 @@ function validatePwForm() {
   const isNew2Valid = pwRegex.test(newPw2);
   const isMatch = newPw === newPw2 && newPw.length > 0;
 
-  // 입력창 스타일 처리
+  // 입력창 스타일 처리 (조건을 만족했을 시 입력창 색 변화)
   if (isCurrentValid) {
     currentInput.style.backgroundColor = 'rgba(189, 174, 217, 0.20)';
     currentInput.style.borderColor = '#BDAED9';
