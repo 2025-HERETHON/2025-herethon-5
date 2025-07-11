@@ -74,24 +74,73 @@
 
 ```
 ├── README.md
-├── .eslintrc.js
 ├── .gitignore
-├── .prettierrc.json
-├── package-lock.json
-├── package.json
-│
-├── public
-│    └── index.html
-└── src
-     ├── App.jsx
-     ├── index.jsx
-     ├── api
-     │     └── mandarinAPI.js
-     ├── asset
-     │     ├── fonts
-     │     ├── css_sprites.png
-     │     ├── logo-404.svg
-     │     └── logo-home.svg
+├── templates
+├── myvenv
+└── herethonProject
+     ┗ accounts
+         ┣ migrations
+         ┃ ┣ __pycache__
+         ┃ ┣ 0001_initial.py
+         ┃ ┣ 0002_alter_learningrecord_curriculum.py
+         ┃ ┗ __init__.py
+         ┣ templates
+         ┃ ┣ complete.html
+         ┃ ┣ login.html
+         ┃ ┣ mypage_learning.html
+         ┃ ┣ mypage_pwChange.html
+         ┃ ┣ pwComplete.html
+         ┃ ┗ signup.html
+         ┣ __pycache__
+         ┣ admin.py
+         ┣ apps.py
+         ┣ forms.py
+         ┣ models.py
+         ┣ tests.py
+         ┣ urls.py
+         ┣ views.py
+         ┗ __init__.py
+     ┗feedback
+         ┣ migrations
+         ┃ ┣ __pycache__
+         ┃ ┣ 0001_initial.py
+         ┃ ┣ 0002_remove_feedback_is_edited.py
+         ┃ ┗ __init__.py
+         ┣ templates
+         ┃ ┣ feedbackComplete.html
+         ┃ ┣ feedback_create.html
+         ┃ ┗ mypage_feedback.html
+         ┣ __pycache__
+         ┣ admin.py
+         ┣ apps.py
+         ┣ forms.py
+         ┣ models.py
+         ┣ tests.py
+         ┣ urls.py
+         ┣ views.py
+         ┗ __init__.py
+     ┗ herethonProject
+         ┣ __pycache__
+         ┣ asgi.py
+         ┣ settings.py
+         ┣ urls.py
+         ┣ wsgi.py
+         ┗ __init__.py
+     ┗ home
+         ┣ migrations
+         ┃ ┣ __pycache__
+         ┃ ┗ __init__.py
+         ┣ templates
+         ┃ ┣ firstpage.html
+         ┃ ┗ home-login.html
+         ┣ __pycache__
+         ┣ admin.py
+         ┣ apps.py
+         ┣ models.py
+         ┣ tests.py
+         ┣ urls.py
+         ┣ views.py
+         ┗ __init__.py
      │          .
      │          .
      │          .
