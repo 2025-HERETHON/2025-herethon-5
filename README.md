@@ -31,17 +31,30 @@
 
 <br>
 
-## 1. 개발 환경
+## 1. 협업 툴 및 기술 스택
 
-- Front : HTML, CSS, Javascript
-- Back-end : 제공된 API 활용 
-- 버전 및 이슈관리 : Github, Github Issues, Github Project
-- 협업 툴 : Discord, Notion, Github Wiki
-- 서비스 배포 환경 : Netlify
-- 디자인 : [Figma](https://www.figma.com/file/fAisC2pEKzxTOzet9CfqML/README(oh-my-code)?node-id=39%3A1814)
-- [커밋 컨벤션](https://github.com/likelion-project-README/README/wiki/%EC%BB%A4%EB%B0%8B-%EC%BB%A8%EB%B2%A4%EC%85%98)
-- [코드 컨벤션](https://github.com/likelion-project-README/README/wiki/%EC%BD%94%EB%93%9C-%EC%BB%A8%EB%B2%A4%EC%85%98)
-- [스프라이트](https://github.com/likelion-project-README/README/wiki/%EC%8A%A4%ED%94%84%EB%9D%BC%EC%9D%B4%ED%8A%B8)
+- Front 
+<div>
+    <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+    <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+</div>
+
+- Back-end
+<div>
+    <img src="https://img.shields.io/badge/python-E34F26?style=for-the-badge&logo=python&logoColor=white">
+    <img src="https://img.shields.io/badge/Django-1572B6?style=for-the-badge&logo=Django&logoColor=white">
+</div>
+
+- 협업 툴
+<div>
+    <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+    <img src="https://img.shields.io/badge/notion-E53888?style=for-the-badge&logo=notion&logoColor=white"/>
+    <img src="https://img.shields.io/badge/figma-89AC46?style=for-the-badge&logo=figma&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white">
+    <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+    <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
+</div>
 <br>
 
 ## 2. 채택한 개발 기술과 브랜치 전략
@@ -77,7 +90,7 @@
 - main, develop, Feat 브랜치로 나누어 개발을 하였습니다.
     - **main** 브랜치는 배포 단계에서만 사용하는 브랜치입니다.
     - **develop** 브랜치는 개발 단계에서 git-flow의 master 역할을 하는 브랜치입니다.
-    - **Feat** 브랜치는 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제해주었습니다.
+    - **Feature** 브랜치는 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제해주었습니다.
 
 <br>
 
@@ -155,7 +168,7 @@
 
 ## 4. 역할 분담
 
-### 🍊고지연
+### 🍊이도윤
 
 - **UI**
     - 페이지 : 홈, 검색, 게시글 작성, 게시글 수정, 게시글 상세, 채팅방
@@ -165,7 +178,7 @@
 
 <br>
     
-### 👻김민제
+### 👻이주연
 
 - **UI**
     - 페이지 : 프로필 설정, 프로필 수정, 팔로잉&팔로워 리스트, 상품 등록, 상품 수정, 채팅 목록, 404 페이지
@@ -175,7 +188,7 @@
 
 <br>
 
-### 😎양희지
+### 😎고유빈
 
 - **UI**
     - 페이지 : splash 페이지, sns 로그인 페이지, 로그인, 회원가입
@@ -185,7 +198,27 @@
 
 <br>
 
-### 🐬지창언
+### 🐬서태영영
+
+- **UI**
+    - 페이지 : 사용자 프로필 페이지
+    - 공통 컴포넌트 : 탑배너, 하단 모달창
+- **기능**
+    - 팔로우 & 언팔로우, 로그아웃, 하단 모달창, 댓글 삭제, 게시글 삭제, 상품 삭제, 사용자 게시글 앨범형 이미지, 탑 배너 뒤로가기 버튼, Alert 모달
+    
+<br>
+
+### 💟김유빈
+
+- **UI**
+    - 페이지 : 사용자 프로필 페이지
+    - 공통 컴포넌트 : 탑배너, 하단 모달창
+- **기능**
+    - 팔로우 & 언팔로우, 로그아웃, 하단 모달창, 댓글 삭제, 게시글 삭제, 상품 삭제, 사용자 게시글 앨범형 이미지, 탑 배너 뒤로가기 버튼, Alert 모달
+    
+<br>
+
+### ⭐이채빈
 
 - **UI**
     - 페이지 : 사용자 프로필 페이지
