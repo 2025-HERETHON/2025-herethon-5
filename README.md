@@ -363,4 +363,11 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
+## 8. 개발환경에서의 실행 방법 
+```
+$ django-admin startproject herethonProject
+$ python manage.py runserver
+```
+
+
 
