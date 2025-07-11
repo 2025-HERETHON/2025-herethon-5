@@ -1,16 +1,16 @@
+// getElementById로 HTML input 요소들 불러오기 -> 각 요소의 값이나 스타일 수정 가능 
 const idInput = document.getElementById('id');
 const passwordInput = document.getElementById('password');
 const submitBtn = document.getElementById('submitBtn');
 
-// 정규 표현식
-const engRegex = /^[A-Za-z]+$/;
+const engRegex = /^[A-Za-z]+$/; // 영문자만 허용하는 정규 표현식
 
 function validateInputs() {
     const idValue = idInput.value.trim();
     const passwordValue = passwordInput.value.trim();
 
-    const isIdValid = engRegex.test(idValue);
-    const isPasswordValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordValue);
+    const isIdValid = engRegex.test(idValue); // 영문자만 포함하는지 검증 
+    const isPasswordValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordValue); // 최소 8자 이상, 영문자 1개 이상 포함 여부 확인 
 
 
     if(isIdValid && isPasswordValid) {
