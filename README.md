@@ -70,183 +70,7 @@
 
 <br>
 
-## 3. 대략적인 프로젝트 구조
-
-```
-├── README.md
-├── .gitignore
-├── templates
-├── myvenv
-| ├─ ├─ include
-| ├─ ├─ Lib
-| ├─ ├─ Scripts
-├── templates
-└── herethonProject
-     ┗ accounts
-         ┣ migrations
-         ┃ ┣ __pycache__
-         ┃ ┣ 0001_initial.py
-         ┃ ┣ 0002_alter_learningrecord_curriculum.py
-         ┃ ┗ __init__.py
-         ┣ templates
-         ┃ ┣ complete.html
-         ┃ ┣ login.html
-         ┃ ┣ mypage_learning.html
-         ┃ ┣ mypage_pwChange.html
-         ┃ ┣ pwComplete.html
-         ┃ ┗ signup.html
-         ┣ __pycache__
-         ┣ admin.py
-         ┣ apps.py
-         ┣ forms.py
-         ┣ models.py
-         ┣ tests.py
-         ┣ urls.py
-         ┣ views.py
-         ┗ __init__.py
-     ┗ feedback
-         ┣ migrations
-         ┃ ┣ __pycache__
-         ┃ ┣ 0001_initial.py
-         ┃ ┣ 0002_remove_feedback_is_edited.py
-         ┃ ┗ __init__.py
-         ┣ templates
-         ┃ ┣ feedbackComplete.html
-         ┃ ┣ feedback_create.html
-         ┃ ┗ mypage_feedback.html
-         ┣ __pycache__
-         ┣ admin.py
-         ┣ apps.py
-         ┣ forms.py
-         ┣ models.py
-         ┣ tests.py
-         ┣ urls.py
-         ┣ views.py
-         ┗ __init__.py
-     ┗ herethonProject
-         ┣ __pycache__
-         ┣ asgi.py
-         ┣ settings.py
-         ┣ urls.py
-         ┣ wsgi.py
-         ┗ __init__.py
-     ┗ home
-         ┣ migrations
-         ┃ ┣ __pycache__
-         ┃ ┗ __init__.py
-         ┣ templates
-         ┃ ┣ firstpage.html
-         ┃ ┗ home-login.html
-         ┣ __pycache__
-         ┣ admin.py
-         ┣ apps.py
-         ┣ models.py
-         ┣ tests.py
-         ┣ urls.py
-         ┣ views.py
-         ┗ __init__.py
-     ┗ learn
-         ┣ migrations
-         ┃ ┣ __pycache__
-         ┃ ┣ 0001_initial.py
-         ┃ ┣ 0002_alter_category_number_alter_curriculum_number.py
-         ┃ ┗ __init__.py
-         ┣ templates
-         ┃ ┣ learn
-         ┃ ┃ ┣ category_complete.html
-         ┃ ┃ ┣ curriculum.html
-         ┃ ┃ ┣ curriculum_detail.html
-         ┃ ┃ ┗ learn_complete.html
-         ┃ ┗ .DS_Store
-         ┣ __pycache__
-         ┣ admin.py
-         ┣ apps.py
-         ┣ models.py
-         ┣ tests.py
-         ┣ urls.py
-         ┣ views.py
-         ┗ __init__.py
-    ┗ quiz
-         ┣ migrations
-         ┃ ┣ __pycache__
-         ┃ ┣ 0001_initial.py
-         ┃ ┗ __init__.py
-         ┣ templates
-         ┃ ┗ quiz.html
-         ┣ __pycache__
-         ┣ admin.py
-         ┣ apps.py
-         ┣ models.py
-         ┣ tests.py
-         ┣ urls.py
-         ┣ views.py
-         ┗ __init__.py
-   ┗ static
-         ┣ assets
-         ┃ ┣ img
-         ┃ ┃ ┣ account-2.svg
-         ┃ ┃ ┣ account.svg
-         ┃ ┃ ┣ arrow.svg
-         ┃ ┃ ┣ complete_link.svg
-         ┃ ┃ ┣ congratulation.png
-         ┃ ┃ ┣ dot.svg
-         ┃ ┃ ┣ event-bg.svg
-         ┃ ┃ ┣ history-bg.svg
-         ┃ ┃ ┣ logo.svg
-         ┃ ┃ ┣ notion-bg.svg
-         ┃ ┃ ┗ person-bg.svg
-         ┃ ┣ backbtn.svg
-         ┃ ┣ background.png
-         ┃ ┣ background.svg
-         ┃ ┣ Blind (1).png
-         ┃ ┣ Blind.png
-         ┃ ┣ Check Mark.png
-         ┃ ┣ false.png
-         ┃ ┣ feedback_complete.svg
-         ┃ ┣ logo.png
-         ┃ ┣ logo.svg
-         ┃ ┣ logo2.png
-         ┃ ┣ logo_graphic.svg
-         ┃ ┣ logo_white.svg
-         ┃ ┣ profile.svg
-         ┃ ┣ pw_change_complete.svg
-         ┃ ┗ true.png
-         ┣ css
-         ┃ ┣ learn
-         ┃ ┃ ┣ category_complete.css
-         ┃ ┃ ┣ curriculum_detail.css
-         ┃ ┃ ┗ learn_complete.css
-         ┃ ┣ quiz
-         ┃ ┃ ┗ quiz.css
-         ┃ ┣ complete.css
-         ┃ ┣ feedbackComplete.css
-         ┃ ┣ firstpage.css
-         ┃ ┣ homepage.css
-         ┃ ┣ login.css
-         ┃ ┣ mypage_feedback.css
-         ┃ ┣ mypage_learning.css
-         ┃ ┣ mypage_pwChange.css
-         ┃ ┣ partpage.css
-         ┃ ┣ pwComplete.css
-         ┃ ┗ signup.css
-         ┗ js
-         ┃ ┣ firstpage.js
-         ┃ ┣ home.js
-         ┃ ┣ lesson.js
-         ┃ ┣ loginValidation.js
-         ┃ ┣ mypage_feedback.js
-         ┃ ┣ mypage_learning.js
-         ┃ ┣ mypage_pwChange.js
-         ┃ ┣ part.js
-         ┃ ┣ passwordblind.js
-         ┃ ┣ placeholderblind.js
-         ┃ ┗ signupValidation.js
-     
-```
-
-<br>
-
-## 4. 역할 분담
+## 3. 역할 분담
 
 ### 🦁이도윤(PM/Design)
 
@@ -304,7 +128,7 @@
     
 <br>
 
-## 5. 개발 기간 및 작업 관리
+## 4. 개발 기간 및 작업 관리
 
 ### 개발 기간
 
@@ -314,7 +138,7 @@
 
 <br>
 
-## 6. 페이지별 기능
+## 5. 페이지별 기능
 
 ### [첫페이지]
 - 서비스 진입 시 화면 클릭 또는 스크롤하거나 4초가 지나면 main 섹션으로 넘어갑니다. 
@@ -438,7 +262,7 @@
 
 <br>
 
-## 7. 프로젝트 초기 세팅
+## 6. 프로젝트 초기 세팅
 ```
 1.프로젝트 클론
 $ git clone https://github.com/2025-HERETHON/2025-herethon-5.git
@@ -458,7 +282,7 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
-## 8. 개발환경에서의 실행 방법 
+## 7. 개발환경에서의 실행 방법 
 ```
 $ django-admin startproject herethonProject
 $ python manage.py runserver
