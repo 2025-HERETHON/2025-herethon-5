@@ -14,11 +14,12 @@
 
 오늘날 한국 사회는 온라인 공간을 주축으로 삼는 4세대 페미니즘적 기조를 강하게 보이기에, 소셜 미디어는 넘쳐나는 페미니즘 정보로 가득합니다. 그럼에도 무엇이 믿을 만한지, 어디서부터 시작해야 할지 판단하기란 여전히 어렵습니다. 젠터러시(Genteracy)는 바로 여기서 출발했습니다.
 
-### Her + Enlighten
 
-젠터러시(Genteracy)는 여성과 계몽을 주제로 누구나 검증된 정보와 체계적인 커리큘럼으로 여성학과 젠더 이슈를 올바르고 쉽게 학습할 수 있도록 돕는 마이크로러닝 교육 플랫폼입니다. 사회적 성별을 뜻하는 '젠더(Gender)'와 문해력을 뜻하는 '리터러시(Literacy)'를 합쳐, 단순 지식 전달애서 그치지 않고 젠더 **문해력을 키울 수 있도록 한다**는 의미를 담았습니다.
+**Her + Enlighten**
 
-젠터러시는 학문적 깊이와 대중성을 모두 고려해, **짧고 간결한 학습 모듈**로 구성된 커리큘럼을 제공합니다. 사용자는 일상 속 짧은 시간 안에서도 페미니즘의 개념과 역사, 쟁점을 단계별로 익힐 수 있으며, 더 알고 싶은 주제에 대해서는 신뢰 가능한 외부 강의, 서적, 칼럼 등으로 확장 학습이 가능하도록 하는 심화 **큐레이션 기능**도 함께 제공합니다. 이를 통해 파편화된 정보의 바다에서 길을 잃지 않고, 스스로 올바른 지식을 선택해 나갈 수 있는 힘을 키울 수 있습니다. 젠터러시는 누구나 젠더의 경계에 얽매이지 않고 온전한 자신으로 성장할 수 있도록, **안전하고 신뢰할 수 있는 학습 출발점**이 되고자 합니다.
+젠터러시(Genteracy)는 여성과 계몽을 주제로 누구나 검증된 정보와 체계적인 커리큘럼으로 여성학과 젠더 이슈를 올바르고 쉽게 학습할 수 있도록 돕는 **페미니즘 마이크로러닝 교육 플랫폼**입니다. 사회적 성별을 뜻하는 '젠더(Gender)'와 문해력을 뜻하는 '리터러시(Literacy)'를 합쳐, 단순 지식 전달에서 그치지 않고 **젠더** **문해력을 키울 수 있도록 한다**는 의미를 담았습니다.
+
+젠터러시는 학문적 깊이와 대중성을 모두 고려해, **짧고 간결한 학습 모듈**로 구성된 커리큘럼을 제공합니다. 사용자는 일상 속 짧은 시간 안에서도 페미니즘의 개념과 역사, 쟁점을 단계별로 익힐 수 있으며, 더 알고 싶은 주제에 대해서는 신뢰 가능한 외부 강의, 서적, 칼럼 등으로 확장 학습이 가능하도록 하는 **심화 큐레이션 기능**도 함께 제공합니다. 이를 통해 파편화된 정보의 바다에서 길을 잃지 않고, 스스로 올바른 지식을 선택해 나갈 수 있는 힘을 키울 수 있습니다. 젠터러시는 누구나 젠더의 경계에 얽매이지 않고 온전한 자신으로 성장할 수 있도록, **안전하고 신뢰할 수 있는 학습 출발점**이 되고자 합니다.
 
 <br>
 
@@ -28,7 +29,7 @@
 
 | **이도윤** | **이주연** | **서태영** | **고유빈** | **이채빈** | **김유빈** |
 | :------: |  :------: | :------: | :------: | :------: | :------: |
-| [<img src="https://github.com/user-attachments/assets/892b7b60-75b7-4230-941a-f1bd013242cb" height=150 width=150> <br/> ](https://github.com/yeon1615) | [<img src="https://github.com/user-attachments/assets/92b8fdce-9e3c-4dbd-b70e-82c188a4076b" height=150 width=150> <br/> @leejuyeon7852](https://github.com/Cheorizzang) | [<img src="https://github.com/user-attachments/assets/55c98c6e-1ef9-4deb-8fd6-f84af505f097" height=150 width=150> <br/> @taeyoung0524](https://github.com/heejiyang) | [<img src="https://github.com/user-attachments/assets/210d2d1a-b821-46e3-98f7-2db7923a3855" height=150 width=150> <br/> @rhdbqls](https://github.com/journey-ji) | [<img src="https://github.com/user-attachments/assets/9b160457-70a2-4d51-bf95-677c52190176" height=150 width=150> <br/> @chaebin1207](https://github.com/newmember1) | [<img src="https://github.com/user-attachments/assets/17a747d8-fa1f-4611-933d-306ce492023d" height=150 width=150> <br/> @kimybin](https://github.com/newmember2) |
+| [<img src="https://github.com/user-attachments/assets/892b7b60-75b7-4230-941a-f1bd013242cb" height=150 width=150> <br/> @doyoon36 ](https://github.com/yeon1615) | [<img src="https://github.com/user-attachments/assets/92b8fdce-9e3c-4dbd-b70e-82c188a4076b" height=150 width=150> <br/> @leejuyeon7852](https://github.com/Cheorizzang) | [<img src="https://github.com/user-attachments/assets/55c98c6e-1ef9-4deb-8fd6-f84af505f097" height=150 width=150> <br/> @taeyoung0524](https://github.com/heejiyang) | [<img src="https://github.com/user-attachments/assets/210d2d1a-b821-46e3-98f7-2db7923a3855" height=150 width=150> <br/> @rhdbqls](https://github.com/journey-ji) | [<img src="https://github.com/user-attachments/assets/9b160457-70a2-4d51-bf95-677c52190176" height=150 width=150> <br/> @chaebin1207](https://github.com/newmember1) | [<img src="https://github.com/user-attachments/assets/17a747d8-fa1f-4611-933d-306ce492023d" height=150 width=150> <br/> @kimybin](https://github.com/newmember2) |
 | PM/Design | Back-end | Front-end | Back-end | Front-end | Front-end |
 
 </div>
@@ -279,12 +280,6 @@ $ pip install -r requirements.txt
 $ python manage.py migrate
 
 5. 서버 실행
-$ python manage.py runserver
-```
-
-## 7. 개발환경에서의 실행 방법 
-```
-$ django-admin startproject herethonProject
 $ python manage.py runserver
 ```
 
