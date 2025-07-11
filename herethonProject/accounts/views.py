@@ -28,8 +28,8 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            if not remember_me:
-                request.session.set_expiry(0)
+            if not remember_me: # 로그인 유지를 하지 않으면
+                request.session.set_expiry(0) # 브라우저 닫히면 세션 만료
                 request.session.modified = True
             print('로그인 성공')
             return redirect('home')

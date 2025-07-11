@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
     
-# 마이페이지 - 나의 학습
+# 마이페이지 - 나의 학습 기록
 class LearningRecord(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="사용자")
     curriculum = models.ForeignKey('learn.Curriculum', on_delete=models.CASCADE, verbose_name="학습 내용")

@@ -11,7 +11,7 @@ def quiz_view(request, category_slug, curriculum_number):
 
     curriculums_in_category = Curriculum.objects.filter(
         category=curriculum.category
-    ).order_by('number')
+    ).order_by('number') # 해당 커리큘럼과 같은 카테고리에 속한 모든 커리큘럼을 number 기준 오름차순으로 불러옴
     
     number_in_category = curriculum.number
     user_choice = None
@@ -21,7 +21,7 @@ def quiz_view(request, category_slug, curriculum_number):
         user_choice = request.POST.get('answer')
         is_correct = (user_choice == quiz.correct_answer)
 
-        LearningRecord.objects.update_or_create(
+        LearningRecord.objects.update_or_create( # 퀴즈 완료 후 학습 기록 update
             user=request.user,
             category=curriculum.category,
             curriculum=curriculum,
