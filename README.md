@@ -70,13 +70,17 @@
 
 <br>
 
-## 3. 프로젝트 구조
+## 3. 대략적인 프로젝트 구조
 
 ```
 ├── README.md
 ├── .gitignore
 ├── templates
 ├── myvenv
+| ├─ ├─ include
+| ├─ ├─ Lib
+| ├─ ├─ Scripts
+├── templates
 └── herethonProject
      ┗ accounts
          ┣ migrations
@@ -100,7 +104,7 @@
          ┣ urls.py
          ┣ views.py
          ┗ __init__.py
-     ┗feedback
+     ┗ feedback
          ┣ migrations
          ┃ ┣ __pycache__
          ┃ ┣ 0001_initial.py
@@ -141,52 +145,103 @@
          ┣ urls.py
          ┣ views.py
          ┗ __init__.py
-     │          .
-     │          .
-     │          .
-     ├── atoms
-     │     ├── LoginData.js
-     │     └── LoginState.js
-     ├── common
-     │     ├── alert
-     │     │     ├── Alert.jsx
-     │     │     └── Alert.Style.jsx
-     │     ├── button
-     │     ├── comment
-     │     ├── inputBox
-     │     ├── post
-     │     ├── postModal
-     │     ├── product
-     │     ├── tabMenu
-     │     ├── topBanner
-     │     └── userBanner
-     ├── pages
-     │     ├── addProduct
-     │     │     ├── AddProduct.jsx
-     │     │     └── AddProduct.Style.jsx
-     │     ├── chatList
-     │     ├── chatRoom
-     │     ├── emailLogin
-     │     ├── followerList
-     │     ├── followingList
-     │     ├── home
-     │     ├── join
-     │     ├── page404
-     │     ├── postDetail
-     │     ├── postEdit
-     │     ├── postUpload
-     │     ├── productEdit
-     │     ├── profile
-     │     ├── profileEdit
-     │     ├── profileSetting
-     │     ├── search
-     │     ├── snsLogin
-     │     └── splash
-     ├── routes
-     │     ├── privateRoutes.jsx
-     │     └── privateRoutesRev.jsx  
-     └── styles
-           └── Globalstyled.jsx
+     ┗ learn
+         ┣ migrations
+         ┃ ┣ __pycache__
+         ┃ ┣ 0001_initial.py
+         ┃ ┣ 0002_alter_category_number_alter_curriculum_number.py
+         ┃ ┗ __init__.py
+         ┣ templates
+         ┃ ┣ learn
+         ┃ ┃ ┣ category_complete.html
+         ┃ ┃ ┣ curriculum.html
+         ┃ ┃ ┣ curriculum_detail.html
+         ┃ ┃ ┗ learn_complete.html
+         ┃ ┗ .DS_Store
+         ┣ __pycache__
+         ┣ admin.py
+         ┣ apps.py
+         ┣ models.py
+         ┣ tests.py
+         ┣ urls.py
+         ┣ views.py
+         ┗ __init__.py
+    ┗ quiz
+         ┣ migrations
+         ┃ ┣ __pycache__
+         ┃ ┣ 0001_initial.py
+         ┃ ┗ __init__.py
+         ┣ templates
+         ┃ ┗ quiz.html
+         ┣ __pycache__
+         ┣ admin.py
+         ┣ apps.py
+         ┣ models.py
+         ┣ tests.py
+         ┣ urls.py
+         ┣ views.py
+         ┗ __init__.py
+   ┗ static
+         ┣ assets
+         ┃ ┣ img
+         ┃ ┃ ┣ account-2.svg
+         ┃ ┃ ┣ account.svg
+         ┃ ┃ ┣ arrow.svg
+         ┃ ┃ ┣ complete_link.svg
+         ┃ ┃ ┣ congratulation.png
+         ┃ ┃ ┣ dot.svg
+         ┃ ┃ ┣ event-bg.svg
+         ┃ ┃ ┣ history-bg.svg
+         ┃ ┃ ┣ logo.svg
+         ┃ ┃ ┣ notion-bg.svg
+         ┃ ┃ ┗ person-bg.svg
+         ┃ ┣ backbtn.svg
+         ┃ ┣ background.png
+         ┃ ┣ background.svg
+         ┃ ┣ Blind (1).png
+         ┃ ┣ Blind.png
+         ┃ ┣ Check Mark.png
+         ┃ ┣ false.png
+         ┃ ┣ feedback_complete.svg
+         ┃ ┣ logo.png
+         ┃ ┣ logo.svg
+         ┃ ┣ logo2.png
+         ┃ ┣ logo_graphic.svg
+         ┃ ┣ logo_white.svg
+         ┃ ┣ profile.svg
+         ┃ ┣ pw_change_complete.svg
+         ┃ ┗ true.png
+         ┣ css
+         ┃ ┣ learn
+         ┃ ┃ ┣ category_complete.css
+         ┃ ┃ ┣ curriculum_detail.css
+         ┃ ┃ ┗ learn_complete.css
+         ┃ ┣ quiz
+         ┃ ┃ ┗ quiz.css
+         ┃ ┣ complete.css
+         ┃ ┣ feedbackComplete.css
+         ┃ ┣ firstpage.css
+         ┃ ┣ homepage.css
+         ┃ ┣ login.css
+         ┃ ┣ mypage_feedback.css
+         ┃ ┣ mypage_learning.css
+         ┃ ┣ mypage_pwChange.css
+         ┃ ┣ partpage.css
+         ┃ ┣ pwComplete.css
+         ┃ ┗ signup.css
+         ┗ js
+         ┃ ┣ firstpage.js
+         ┃ ┣ home.js
+         ┃ ┣ lesson.js
+         ┃ ┣ loginValidation.js
+         ┃ ┣ mypage_feedback.js
+         ┃ ┣ mypage_learning.js
+         ┃ ┣ mypage_pwChange.js
+         ┃ ┣ part.js
+         ┃ ┣ passwordblind.js
+         ┃ ┣ placeholderblind.js
+         ┃ ┗ signupValidation.js
+     
 ```
 
 <br>
@@ -195,9 +250,9 @@
 
 ### 🦁이도윤(PM/Design)
 
-- **UI**
-    - 페이지 : 홈, 검색, 게시글 작성, 게시글 수정, 게시글 상세, 채팅방
-    - 공통 컴포넌트 : 게시글 템플릿, 버튼
+- **기획**
+- **디자인**
+- **발표**
 
 
 <br>
@@ -256,11 +311,6 @@
 - 전체 개발 기간 : 2025-6-25 ~ 2025-7-11
 
 <br>
-
-### 작업 관리
-
-- GitHub Projects와 Issues를 사용하여 진행 상황을 공유했습니다.
-- 주간회의를 진행하며 작업 순서와 방향성에 대한 고민을 나누고 GitHub Wiki에 회의 내용을 기록했습니다.
 
 <br>
 
