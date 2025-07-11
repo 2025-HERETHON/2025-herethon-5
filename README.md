@@ -1,4 +1,4 @@
-# 젠터러시
+# 👩🏻‍🏫 젠터러시
 
 <img width="1876" height="1055" alt="image" src="https://github.com/user-attachments/assets/9fa31932-fda3-47cf-aedc-10a07aeb0ace" />
 
@@ -46,8 +46,8 @@
 
 - Back-end
 <div>
-    <img src="https://img.shields.io/badge/python-E34F26?style=for-the-badge&logo=python&logoColor=white">
-    <img src="https://img.shields.io/badge/Django-1572B6?style=for-the-badge&logo=Django&logoColor=white">
+    <img src="https://img.shields.io/badge/python-007ACC?style=for-the-badge&logo=python&logoColor=white">
+    <img src="https://img.shields.io/badge/Django-89AC46?style=for-the-badge&logo=Django&logoColor=white">
 </div>
 
 - 협업 툴
