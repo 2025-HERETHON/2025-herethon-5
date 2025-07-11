@@ -13,13 +13,13 @@
     <!-- 이전(카테고리) -->
     <header class="container">
         <span class="icon">
-            <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+            <a href="{% url 'home' %}">
                 <img src="{% static 'assets/img/arrow.svg' %}" alt="이전 페이지">
             </a>
         </span>
 
         <span class="logo">
-            <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+            <a href="{% url 'home' %}">
                 <img src="{% static 'assets/img/logo.svg' %}" alt="로고">
             </a>
         </span>
@@ -27,6 +27,7 @@
     </header>
     <hr class="line">
 
+    <!--커리큘럼 나열-->
     <main>
         <p class="card">{{ category.name }}</p>
         <section class="card-section">

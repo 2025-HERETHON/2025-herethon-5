@@ -15,7 +15,7 @@
     <a href="{% url 'quiz:quiz_view' category.slug curriculum.number %}">
         <img src="{% static 'assets/img/arrow.svg' %}" alt="" />
     </a>
-    <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+    <a href="{% url 'home' %}">
         <img src="{% static 'assets/logo2.png' %}" alt="로고">
     </a>
     </div>
@@ -54,7 +54,7 @@
     </div>
     <br />
 
-    <!-- 책 추천 -->
+    <!-- 책(콘텐츠) 추천 -->
     <div class="recommendation_container">
 
     {% for book in book_recommendations %}
@@ -82,14 +82,16 @@
 
     <!-- 홈으로 돌아가기 & 다음 강좌 바로가기 -->
     <div class="button-container">
-        <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
-        홈으로 돌아가기
+        <a href="{% url 'home' %}">
+            홈으로 돌아가기
         </a>
 
+        <!--커리큘럼 목록으로-->
         {% if next_curriculum %}
         <a class="go_next" href="{% url 'learn:curriculum' curriculum.category.slug %}">
             이어서 학습하기
         </a>
+        <!--해당 카테고리의 커리큘럼 모두 완료-->
         {% else %}
         <a class="go_next" href="{% url 'learn:category_complete' category_slug=curriculum.category.slug %}">
             이어서 학습하기

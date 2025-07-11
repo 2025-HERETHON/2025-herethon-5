@@ -1,23 +1,24 @@
+// getElementById로 HTML input 요소들 불러오기 -> 각 요소의 값이나 스타일 수정 가능 
 const idInput = document.getElementById('id');
 const nameInput = document.getElementById('name');
 const passwordInput = document.getElementById('password');
 const passwordConfirmInput = document.getElementById('passwordConfirm')
 const submitBtn = document.getElementById('submitBtn');
 
-// 정규 표현식
-const engRegex = /^[A-Za-z]+$/;
-const korRegex = /^[가-힣]+$/;
+
+const engRegex = /^[A-Za-z]+$/; // 영문자만 허용하는 정규 표현식
+const korRegex = /^[가-힣]+$/; // 한글만 허용하는 정규 표현식 
 
 function validateInputs() {
-    const idValue = idInput.value.trim();
+    const idValue = idInput.value.trim(); // trim() : 앞 뒤 공백 제거 
     const nameValue = nameInput.value.trim();
     const passwordValue = passwordInput.value.trim();
     const passwordConfirmValue = passwordConfirmInput.value.trim();
 
-    const isIdValid = engRegex.test(idValue);
-    const isNameValid = korRegex.test(nameValue);
-    const isPasswordValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordValue);
-    const isPasswordConfirmValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordConfirmValue);
+    const isIdValid = engRegex.test(idValue); // 영문만 포함하는지 검사
+    const isNameValid = korRegex.test(nameValue); // 한글만 포함하는지 검사 
+    const isPasswordValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordValue); // 최소 8자 이상, 영문자 1개 이상 포함 여부 확인 
+    const isPasswordConfirmValid = /^(?=.*[A-Za-z]).{8,}$/.test(passwordConfirmValue); // 동일 
 
     if(isIdValid){
         idInput.style.backgroundColor='rgba(189, 174, 217, 0.20)';
@@ -51,19 +52,19 @@ function validateInputs() {
     }
 
     if(isIdValid && isNameValid && isPasswordValid && isPasswordConfirmValid && passwordInput.value===passwordConfirmInput.value) {
-        submitBtn.classList.add('active');
+        submitBtn.classList.add('active'); // 모두 true인 경우 submitBtn 클래스에 active 클래스 추가
     } else {
-    submitBtn.classList.remove('active');
+    submitBtn.classList.remove('active'); // 하나라도 false인 경우 submitBtn 클래스에서 active 클래스 제거 
     }
 }
 
-// input 이벤트 연결
+// input 이벤트 연결(사용자가 input에 입력할 때마다 validateInputs 함수 실행)
 idInput.addEventListener('input', validateInputs);
 nameInput.addEventListener('input', validateInputs);
 passwordInput.addEventListener('input', validateInputs);
 passwordConfirmInput.addEventListener('input', validateInputs);
 
-// 클릭 이벤트 연결
+// 클릭 이벤트 연결(버튼이 활성화된 경우, complete.html로 이동)
 submitBtn.addEventListener('click', () => {
     if (submitBtn.classList.contains('active')) {
         window.location.href = '../templates/complete.html';

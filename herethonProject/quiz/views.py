@@ -12,7 +12,7 @@ def quiz_view(request, category_slug, curriculum_number):
     curriculums_in_category = Curriculum.objects.filter(
         category=curriculum.category
     ).order_by('number')
-
+    
     number_in_category = curriculum.number
     user_choice = None
     is_correct = None
