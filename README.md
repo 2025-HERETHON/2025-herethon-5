@@ -276,6 +276,7 @@ $ python manage.py runserver
 ```
 
 ## 7. 파일 구조
+```
 ├── 📦 2025-herethon-5/
 ├── ├── 📁 accounts/
 ├── │   ├── __init__.py
@@ -359,5 +360,6 @@ $ python manage.py runserver
 ├── ├── manage.py
 ├── ├── README.md
 └── └── requirements.txt
+```
 
 
