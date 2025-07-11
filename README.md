@@ -266,8 +266,8 @@
 
 | 홈페이지 |
 |----------|
-|<img width="2558" height="1396" alt="image" src="https://github.com/user-attachments/assets/9defab0a-2547-4bf1-8693-62e073ab0461" />
-<img width="2538" height="1399" alt="image" src="https://github.com/user-attachments/assets/c0ceca4e-6f34-416d-aa33-56efa3219032" />|
+|<img width="1886" height="907" alt="image" src="https://github.com/user-attachments/assets/f68614a8-c515-434a-a74e-3b98d2059407" />
+<img width="1873" height="908" alt="image" src="https://github.com/user-attachments/assets/b07311b4-97ab-426f-93dc-b937dfb0b36a" />|
 
 <br>
 
@@ -278,7 +278,7 @@
 
 | 마이페이지 - 나의 학습 페이지 |
 |----------|
-|<img width="2560" height="1399" alt="image" src="https://github.com/user-attachments/assets/caa19916-084a-4aa8-8f98-b61c8c5636cb" />|
+|<img width="1865" height="900" alt="image" src="https://github.com/user-attachments/assets/838a250a-1ad4-44ae-a8bc-ca5c22d64d8b" />|
 
 <br>
 
@@ -310,7 +310,7 @@
 
 | 학습하기 - 학습 단계|
 |----------|
-|<img width="2560" height="1398" alt="image" src="https://github.com/user-attachments/assets/d58b5cd1-30bc-4a9f-9638-b90a51e64601" />|
+|<img width="1865" height="891" alt="image" src="https://github.com/user-attachments/assets/a02b80e7-bae6-4e33-b7ad-6cbe85e93b60" />|
 
 <br>
 
@@ -319,7 +319,7 @@
 
 | 학습하기 - 퀴즈 풀기 단계 |
 |----------|
-|<img width="2560" height="1397" alt="image" src="https://github.com/user-attachments/assets/d3ecd47a-b6c2-47cd-9f1f-5a095f392f9a" />|
+|<img width="1882" height="885" alt="image" src="https://github.com/user-attachments/assets/5e09d93e-d5f0-4c7b-b1e8-a75ba6fa2cbf" />|
 
 <br>
 
@@ -335,8 +335,8 @@
 
 | 학습하기 - 학습 완료|
 |----------|
-|<img width="2560" height="1397" alt="image" src="https://github.com/user-attachments/assets/68cc19c2-4d75-48a1-bee9-2918b4dafe29" />
-<img width="2560" height="1395" alt="image" src="https://github.com/user-attachments/assets/50171aa7-345c-4a36-8b6c-739eb3bf4888" />|
+|<img width="1863" height="887" alt="image" src="https://github.com/user-attachments/assets/9a72e1d6-dd7a-4303-a88e-fa5f0ba7bd36" />
+<img width="2528" height="1374" alt="465298364-50171aa7-345c-4a36-8b6c-739eb3bf4888" src="https://github.com/user-attachments/assets/60bf7736-f456-431a-81c6-1fd18ed44807" />|
 
 <br>
 
