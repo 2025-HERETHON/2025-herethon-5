@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/feedbackComplete.css' %}" />
+    <title>의견 보내기 완료</title>
+  </head>
+  <body>
+    <main class="complete-main">
+      <div class="complete-icon">
+        <img
+          src="{% static 'assets/feedback_complete.svg' %}"
+          alt="의견 작성 완료 아이콘" 
+        />
+      </div>
+      <h2 class="complete-message">
+        {{ user.name }}님,<br />
+        소중한 의견이 전송되었어요!
+      </h2>
+      <p class="complete-sub-message">
+        보내주신 소중한 의견에 진심으로 감사드리며,<br />
+        최대한 빠른 시일 내에 답변드릴 수 있도록 노력하겠습니다.
+      </p>
+      <a class="complete-btn" href="{% url 'home' %}">홈으로</a>
+    </main>
+  </body>
+</html>

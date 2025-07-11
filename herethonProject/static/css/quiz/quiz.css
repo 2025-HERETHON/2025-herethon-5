@@ -1,0 +1,291 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    font-family: 'Pretendard-Regular';
+}
+
+.header{
+    width:100%;
+    border-bottom:1px solid #D9D9D9;
+    height:94px;
+    display:flex;
+    align-items: center;
+    gap:47px;
+    padding-left:36px;
+    margin-bottom:43px;
+}
+
+.title{
+    color:#4D0099;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+}
+.content_container{
+    padding:0 107px;
+}
+
+.progressbar_container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:15px;
+}
+.first{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background-color: #BDAED9;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.line1{
+    display:flex;
+    width:508px;
+    border-bottom:1px solid #BDAED9;
+}
+.second{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background-color: #4D0099;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.line2{
+    width:478px;
+    border-bottom:1px solid #BDAED9;
+}
+.third{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background-color: #BDAED9;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.progressbar_text{
+    display:flex;
+    justify-content: center;    
+}
+.study{
+    color:#BDAED9;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+.quiz{
+    color:#4D0099;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    padding-left:483px;
+    padding-right:447px;
+}
+.finish{
+    color:#BDAED9;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.next{
+    width:180px;
+    height:50px;
+    background-color: #4D0099;
+    color:white;
+    border-radius:30px;
+    border:none;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.quiz_container{
+    display:flex;
+    justify-content: center;
+}
+.quiz_question{
+    display:flex;
+    justify-content: center;
+    border-radius: 30px;
+    color:black;
+    background-color: #F5F5F5;
+    width:1148px;
+    height:90px;
+    width: 1148;
+    align-items: center; /*이주연_가운데정렬 추가*/
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.OX_O, .OX_X{
+    width: 558px;
+    height: 70px;
+    border:1px solid #ABABAB;
+    border-radius: 30px;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    color:#ABABAB;
+    background-color: white;
+}
+.answer_container1{
+    display:flex;
+    justify-content: center;
+    gap:36px;
+}
+.answer_container2{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.answer1, .answer2, .answer3{
+    display: flex;
+    width: 1148px;
+    height: 70px;
+    padding: 14px 48px;
+    align-items: center;
+    border-radius: 30px;
+    border:1px solid #ABABAB;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    color:#ABABAB;
+    background-color: white;
+}
+.answer_container{
+    display:flex;
+    justify-content: center;
+    margin-top:72px;
+    margin-bottom:30px;
+}
+
+/* 정답설명 영역 */
+.quiz_answer{
+    width: 1148px;
+    min-height: 120px;
+    border-radius:30px;
+    padding:28px 0 112px 19px;
+}
+
+/* 정답일 때 테두리 색 */
+.quiz_answer.correct {
+    border: 0.8px solid #48742C;
+}
+
+/* 오답일 때 테두리 색 */
+.quiz_answer.wrong {
+    border: 0.8px solid #BB271A; 
+}
+
+.true_container, .false_container{
+    display:flex;
+    align-items: center;
+    gap: 7px;
+}
+.true{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    color:#48742C;
+}
+.false{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    color:#BB271A; 
+}
+.answer_reason{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color:#333;
+}
+/*이주연_클래스 추가*/
+.answer-green {
+    color: #48742C;
+}
+.answer-red {
+    color: #BB271A;
+}
+
+.button_container{
+    width:1148px;
+    display:flex;
+    justify-content: flex-end;
+    margin: 0 auto; 
+}
+
+/* 기본 선택됐을 때 */
+button.selected {
+    background-color: #4D0099;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #2c0066;
+}
+
+/* 정답 선택 시 */
+button.selected-correct {
+    background-color: rgba(72, 116, 44, 0.2);;
+    color: #48742C;
+    font-weight: 700;
+    border: 1px solid #48742C;
+}
+
+/* 오답 선택 시 */
+button.selected-wrong {
+    background-color: rgba(187, 39, 26, 0.2); ;
+    color: #BB271A;
+    font-weight: 700;
+    border: 0.8px solid #BB271A;
+}
+
+/* 내 멋대로 추가 */
+/* hover 효과 */
+.OX_O, .OX_X,
+.answer1, .answer2, .answer3{
+    transition: transform 0.2s ease;
+}
+
+.OX_O:hover, .OX_X:hover,
+.answer1:hover, .answer2:hover, .answer3:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.next:hover {
+    background: #3a0070;
+    color: #fff;
+    border-color: #3a0070;
+}
+
+/* 클릭 효과 */
+.OX_O:active, .OX_X:active,
+.answer1:active, .answer2:active, .answer3:active {
+    transform: scale(0.95);
+}
+
+/* 정답 선택 후 */
+body.quiz-done .OX_O:hover,
+body.quiz-done .OX_X:hover,
+body.quiz-done .answer1:hover,
+body.quiz-done .answer2:hover,
+body.quiz-done .answer3:hover {
+    background-color: inherit;
+    transform: none;
+    cursor: default;
+}

@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커리큘럼</title>
+    <link rel="stylesheet" href="{% static 'css/learn/curriculum_detail.css' %}">
+</head>
+<body>
+    <!-- 이전(커리큘럼) -->
+    <!-- 저장 전 학습을 종료하시겠습니까? -->
+    <div class="header">
+    <a href="{% url 'learn:curriculum' curriculum.category.slug %}">
+        <img src="{% static 'assets/img/arrow.svg' %}" alt="이전 페이지">
+    </a>
+    <a href="{% url 'home' %}">
+        <img src="{% static 'assets/logo2.png' %}" alt="로고">
+    </a>
+    </div>
+
+    <div class="content_container">
+        <!-- 제목 -->
+        <h1 class="title">{{ number_in_category }}. {{ curriculum.title }}</h1>
+
+        <!-- 단계 표시 -->
+        <div class="progressbar_container">
+            <div class="first">1</div>
+            <div class="line1"></div>
+            <div class="second">2</div>
+            <div class="line2"></div>
+            <div class="third">3</div>
+        </div>
+
+        <div class="progressbar_text">
+            <div class="study">학습하기</div>
+            <div class="quiz">퀴즈 풀기</div>
+            <div class="finish">학습 완료!</div>
+        </div>
+        <br/>
+        
+        <div class="graybox">
+            <!-- 소제목&본문 내용 -->
+            {% for section in sections %}
+                <h3 class="box_title">{{ section.subtitle }}</h3>
+                <p class="box_content">{{ section.content|linebreaksbr }}</p>
+                <!-- |linebreaksbr: 줄바꿈 포함 -->
+                <br/>
+            {% empty %}
+                아직 등록된 내용이 없습니다. 잠시만 기다려주세요.
+            {% endfor %}
+        </div>
+
+        <!-- 출처 -->
+        <h3 class="source">출처</h3>
+        <div class="source_title">
+            {{ curriculum.source|linebreaksbr }}
+        </div>
+        <!-- |linebreaksbr: 줄바꿈 포함 -->
+        
+        
+        <!-- 퀴즈 풀기 단계로 -->
+        <div class="button_container">
+            <form method="GET" action="{% url 'quiz:quiz_view' category.slug curriculum.number %}">
+                    <button type="submit">완료</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

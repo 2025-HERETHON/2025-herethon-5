@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/quiz/quiz.css' %}">
+</head>
+<body class="{% if is_correct is not None %}quiz-done{% endif %}">
+<div class="header">
+  <a href="{% url 'learn:curriculum_detail' category.slug curriculum.number %}">
+    <img src="{% static 'assets/img/arrow.svg' %}" alt="이전 페이지">
+  </a>
+  <a href="{% url 'home' %}"><!--이주연_홈으로 수정-->
+      <img src="{% static 'assets/logo2.png' %}" alt="로고">
+  </a>
+</div>
+
+<div class="content_container">
+  <h1 class="title">{{ number_in_category }}. {{ curriculum.title }}</h1>
+
+  <div class="progressbar_container">
+    <div class="first">1</div>
+    <div class="line1"></div>
+    <div class="second">2</div>
+    <div class="line2"></div>
+    <div class="third">3</div>
+  </div>
+
+  <div class="progressbar_text">
+    <div class="study">학습하기</div>
+    <div class="quiz">퀴즈 풀기</div>
+    <div class="finish">학습 완료!</div>
+  </div>
+  <br/>
+
+  <div class="quiz_container">
+    <div class="quiz_question">
+      <p>{{ quiz.question }}</p>
+    </div>
+  </div>
+  <br/>
+
+  <!-- 정답 선택 -->
+  <form method="post">
+    {% csrf_token %}
+    {% if is_correct is None %}
+      {% if quiz.question_type == "ox" %}
+        <div class="answer_container1">
+          <button class="OX_O {% if user_choice == 'O' %}selected{% endif %}" type="submit" name="answer" value="O">O</button>
+          <button class="OX_X {% if user_choice == 'X' %}selected{% endif %}" type="submit" name="answer" value="X">X</button>
+        </div>
+      {% elif quiz.question_type == "choice" %}
+        <div class="answer_container2">
+          <button class="answer1 {% if user_choice == '1' %}selected{% endif %}" type="submit" name="answer" value="1">{{ quiz.choice1 }}</button><br>
+          <button class="answer2 {% if user_choice == '2' %}selected{% endif %}" type="submit" name="answer" value="2">{{ quiz.choice2 }}</button><br>
+          <button class="answer3 {% if user_choice == '3' %}selected{% endif %}" type="submit" name="answer" value="3">{{ quiz.choice3 }}</button>
+        </div>
+      {% endif %}
+    {% else %}
+      {% if quiz.question_type == "ox" %}
+        <div class="answer_container1">
+          <button class="OX_O {% if user_choice == 'O' %}{% if is_correct %}selected-correct{% else %}selected-wrong{% endif %}{% endif %}" disabled>O</button>
+          <button class="OX_X {% if user_choice == 'X' %}{% if is_correct %}selected-correct{% else %}selected-wrong{% endif %}{% endif %}" disabled>X</button>
+        </div>
+      {% elif quiz.question_type == "choice" %}
+        <div class="answer_container2">
+          <button class="answer1 {% if user_choice == '1' %}{% if is_correct %}selected-correct{% else %}selected-wrong{% endif %}{% endif %}" disabled>{{ quiz.choice1 }}</button><br>
+          <button class="answer2 {% if user_choice == '2' %}{% if is_correct %}selected-correct{% else %}selected-wrong{% endif %}{% endif %}" disabled>{{ quiz.choice2 }}</button><br>
+          <button class="answer3 {% if user_choice == '3' %}{% if is_correct %}selected-correct{% else %}selected-wrong{% endif %}{% endif %}" disabled>{{ quiz.choice3 }}</button>
+        </div>
+      {% endif %}
+    {% endif %}
+  </form>
+
+  <!-- 정답 여부 확인 -->
+  {% if is_correct is not None %}
+    <div class="answer_container">
+      <div class="quiz_answer {% if is_correct %}correct{% else %}wrong{% endif %}">
+        {% if is_correct %}
+          <div class="true_container">
+            <img src="{% static 'assets/true.png' %}" alt="정답 표시">
+            <p class="true" style="color:#48742C;">정답입니다!</p>
+          </div>
+        {% else %}
+          <div class="false_container">
+            <img src="{% static 'assets/false.png' %}" alt="오답 표시">
+            <p class="false" style="color:#BB271A;">오답입니다!</p>
+          </div>
+        {% endif %}
+        <p class="answer_reason {% if is_correct %}answer-green{% else %}answer-red{% endif %}">
+          {{ quiz.explanation|linebreaksbr }}
+        </p>
+      </div>
+    </div>
+
+    <!-- 학습 완료 버튼 -->
+    <div class="button_container">
+      <form method="GET" action="{% url 'learn:learn_complete' category.slug curriculum.number %}">
+        <button type="submit" class="next">완료</button>
+      </form>
+    </div>
+  {% endif %}
+
+</div>
+</body>
+</html>
