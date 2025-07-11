@@ -339,4 +339,24 @@
 
 <br>
 
+## 7. 프로젝트 초기 세팅
+```
+1.프로젝트 클론
+$ git clone https://github.com/2025-HERETHON/2025-herethon-5.git
+$ cd 2025-herethon-5
+
+2. 가상환경 생성 및 실행
+$ python -m venv myvenv
+$ source myvenv/Scripts/activate
+
+3. 필수 패키지 설치
+$ pip install -r requirements.txt
+
+4. 데이터베이스 마이그레이션
+$ python manage.py migrate
+
+5. 서버 실행
+$ python manage.py runserver
+```
+
 
