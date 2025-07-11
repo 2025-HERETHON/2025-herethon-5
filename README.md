@@ -239,7 +239,8 @@
 
 | 회원가입 |
 |----------|
-|<img width="1867" height="901" alt="image" src="https://github.com/user-attachments/assets/430cbb9a-6f5e-4f31-a766-a7a79dd56bd2" />|
+|<img width="1867" height="901" alt="image" src="https://github.com/user-attachments/assets/430cbb9a-6f5e-4f31-a766-a7a79dd56bd2" />
+<img width="1855" height="892" alt="image" src="https://github.com/user-attachments/assets/663d54ac-2893-4630-84ca-3139000cb1b0" />|
 
 
 
@@ -254,7 +255,7 @@
 
 | 로그인 |
 |----------|
-|<img width="2560" height="1398" alt="image" src="https://github.com/user-attachments/assets/7150799f-54b6-453b-acfc-c4ccf603c2d8" />|
+|<img width="1871" height="902" alt="image" src="https://github.com/user-attachments/assets/9226d1c4-48ba-4c94-8ec1-e56e21144f19" />|
 
 <br>
 
